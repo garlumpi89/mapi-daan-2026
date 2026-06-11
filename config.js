@@ -1,6 +1,6 @@
 window.WEDDING_CONFIG = {
   domain: "https://mapi-daan-2026.com",
-  googleScriptUrl: "", // Paste your deployed Google Apps Script Web App URL here
+  googleScriptUrl: "https://script.google.com/macros/s/AKfycbyPWP_a58m_guUM3QKd_psrXi5ais75JBYgfG0vvM5PNXjgVUFXZoQUdA9mUSm67xUnLw/exec", 
   googleDriveUrl: "", // Future Google Drive upload folder / file request link
   discountCode: "MARIAPILAR&DAAN26",
   maps: {
