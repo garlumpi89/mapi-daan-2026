@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 230">
+  <defs>
+    <filter id="wc" x="-15%" y="-15%" width="130%" height="130%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" seed="6" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="4.5"/>
+    </filter>
+    <filter id="wcSoft" x="-25%" y="-25%" width="150%" height="150%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="2" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="7"/>
+      <feGaussianBlur stdDeviation="0.4"/>
+    </filter>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8c8874"/>
+      <stop offset=".35" stop-color="#75715e"/>
+      <stop offset="1" stop-color="#5b5847"/>
+    </linearGradient>
+    <linearGradient id="bodyTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a39e8a"/>
+      <stop offset="1" stop-color="#84806c"/>
+    </linearGradient>
+    <linearGradient id="leather" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#55523f"/>
+      <stop offset="1" stop-color="#403d2e"/>
+    </linearGradient>
+    <radialGradient id="lens" cx="42%" cy="38%" r="75%">
+      <stop offset="0" stop-color="#5d6d77"/>
+      <stop offset=".5" stop-color="#39444c"/>
+      <stop offset="1" stop-color="#1f262c"/>
+    </radialGradient>
+    <linearGradient id="leafA" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#aeb589"/>
+      <stop offset="1" stop-color="#7d855694"/>
+    </linearGradient>
+    <linearGradient id="leafB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c4c9a0"/>
+      <stop offset="1" stop-color="#959c6b"/>
+    </linearGradient>
+    <radialGradient id="petal" cx="50%" cy="80%" r="80%">
+      <stop offset="0" stop-color="#faf6e9"/>
+      <stop offset="1" stop-color="#e3d6b4"/>
+    </radialGradient>
+    <path id="leaf" d="M0 0 C -8 -7, -10 -21, 0 -32 C 10 -21, 8 -7, 0 0 Z"/>
+    <path id="pSmall" d="M0 0 C -5 -6, -5.5 -15, 0 -22 C 5.5 -15, 5 -6, 0 0 Z"/>
+  </defs>
+
+  <!-- ===== laurel left ===== -->
+  <g filter="url(#wcSoft)">
+    <path d="M86 178 C 58 148, 56 96, 86 56" fill="none" stroke="#7c8455" stroke-width="2.4" opacity=".75" stroke-linecap="round"/>
+    <use href="#leaf" fill="url(#leafA)" opacity=".85" transform="translate(70 160) rotate(48) scale(.9)"/>
+    <use href="#leaf" fill="url(#leafB)" opacity=".8" transform="translate(60 132) rotate(30) scale(.95)"/>
+    <use href="#leaf" fill="url(#leafA)" opacity=".8" transform="translate(57 102) rotate(8) scale(.9)"/>
+    <use href="#leaf" fill="url(#leafB)" opacity=".8" transform="translate(64 74) rotate(-16) scale(.9)"/>
+    <use href="#leaf" fill="url(#leafA)" opacity=".75" transform="translate(80 52) rotate(-38) scale(.85)"/>
+    <g fill="#9aa172" opacity=".6">
+      <circle cx="80" cy="118" r="3"/><circle cx="74" cy="88" r="2.6"/>
+    </g>
+  </g>
+
+  <!-- ===== laurel right ===== -->
+  <g filter="url(#wcSoft)" transform="translate(380 0) scale(-1 1)">
+    <path d="M86 178 C 58 148, 56 96, 86 56" fill="none" stroke="#7c8455" stroke-width="2.4" opacity=".75" stroke-linecap="round"/>
+    <use href="#leaf" fill="url(#leafA)" opacity=".85" transform="translate(70 160) rotate(48) scale(.9)"/>
+    <use href="#leaf" fill="url(#leafB)" opacity=".8" transform="translate(60 132) rotate(30) scale(.95)"/>
+    <use href="#leaf" fill="url(#leafA)" opacity=".8" transform="translate(57 102) rotate(8) scale(.9)"/>
+    <use href="#leaf" fill="url(#leafB)" opacity=".8" transform="translate(64 74) rotate(-16) scale(.9)"/>
+    <use href="#leaf" fill="url(#leafA)" opacity=".75" transform="translate(80 52) rotate(-38) scale(.85)"/>
+    <g fill="#9aa172" opacity=".6">
+      <circle cx="80" cy="118" r="3"/><circle cx="74" cy="88" r="2.6"/>
+    </g>
+  </g>
+
+  <!-- ===== small blooms at laurel tips ===== -->
+  <g filter="url(#wc)" transform="translate(96 44) scale(.55)">
+    <g fill="url(#petal)">
+      <use href="#pSmall" transform="rotate(0)"/><use href="#pSmall" transform="rotate(60)"/>
+      <use href="#pSmall" transform="rotate(120)"/><use href="#pSmall" transform="rotate(180)"/>
+      <use href="#pSmall" transform="rotate(240)"/><use href="#pSmall" transform="rotate(300)"/>
+    </g>
+    <circle r="6.5" fill="#c4ab72"/>
+  </g>
+  <g filter="url(#wc)" transform="translate(284 44) scale(.55)">
+    <g fill="url(#petal)">
+      <use href="#pSmall" transform="rotate(0)"/><use href="#pSmall" transform="rotate(60)"/>
+      <use href="#pSmall" transform="rotate(120)"/><use href="#pSmall" transform="rotate(180)"/>
+      <use href="#pSmall" transform="rotate(240)"/><use href="#pSmall" transform="rotate(300)"/>
+    </g>
+    <circle r="6.5" fill="#c4ab72"/>
+  </g>
+
+  <!-- ===== camera ===== -->
+  <g filter="url(#wc)">
+    <!-- viewfinder hump -->
+    <rect x="146" y="56" width="34" height="22" rx="5" fill="url(#bodyTop)" stroke="#4d4a3a" stroke-width="1.6"/>
+    <rect x="152" y="61" width="14" height="9" rx="2" fill="#333126" opacity=".8"/>
+    <!-- shutter button -->
+    <rect x="232" y="58" width="20" height="13" rx="3.5" fill="#d3bd83" stroke="#a8935f" stroke-width="1.5"/>
+    <!-- wind lever -->
+    <rect x="262" y="62" width="14" height="8" rx="3" fill="#84806c"/>
+    <!-- body -->
+    <rect x="108" y="72" width="164" height="104" rx="12" fill="url(#body)" stroke="#45422f" stroke-width="2"/>
+    <!-- top plate -->
+    <rect x="108" y="72" width="164" height="24" rx="12" fill="url(#bodyTop)"/>
+    <!-- leatherette band -->
+    <rect x="108" y="106" width="164" height="44" fill="url(#leather)"/>
+    <g fill="#33312399" >
+      <rect x="116" y="111" width="42" height="34" rx="4"/>
+      <rect x="222" y="111" width="42" height="34" rx="4"/>
+    </g>
+    <!-- stitches -->
+    <g stroke="#8c887455" stroke-width="1" stroke-dasharray="3 3">
+      <line x1="110" y1="108" x2="270" y2="108"/>
+      <line x1="110" y1="148" x2="270" y2="148"/>
+    </g>
+    <!-- dial -->
+    <circle cx="132" cy="84" r="7" fill="#d3bd83" stroke="#a8935f" stroke-width="1.5"/>
+    <g stroke="#8a7244" stroke-width="1"><line x1="132" y1="78.5" x2="132" y2="81"/><line x1="137" y1="84" x2="134.5" y2="84"/></g>
+    <!-- flash window -->
+    <rect x="200" y="79" width="30" height="11" rx="2.5" fill="#ece5cf" opacity=".9"/>
+    <line x1="207" y1="79" x2="207" y2="90" stroke="#c9bf9d" stroke-width="1"/>
+    <line x1="222" y1="79" x2="222" y2="90" stroke="#c9bf9d" stroke-width="1"/>
+    <!-- lens -->
+    <circle cx="190" cy="126" r="38" fill="#45422f"/>
+    <circle cx="190" cy="126" r="33" fill="#33312a" stroke="#8c8874" stroke-width="1.4"/>
+    <circle cx="190" cy="126" r="25" fill="url(#lens)"/>
+    <circle cx="190" cy="126" r="11" fill="#161b20"/>
+    <circle cx="181" cy="116" r="5.5" fill="#cfdade" opacity=".7"/>
+    <circle cx="199" cy="136" r="2.6" fill="#9fb3ba" opacity=".4"/>
+    <!-- lens ring ticks -->
+    <g stroke="#8c887466" stroke-width="1.2">
+      <line x1="190" y1="90" x2="190" y2="95"/>
+      <line x1="222" y1="113" x2="217.5" y2="115.5"/>
+      <line x1="158" y1="113" x2="162.5" y2="115.5"/>
+    </g>
+    <!-- strap lugs -->
+    <circle cx="110" cy="100" r="3.6" fill="#84806c" stroke="#45422f" stroke-width="1.2"/>
+    <circle cx="270" cy="100" r="3.6" fill="#84806c" stroke="#45422f" stroke-width="1.2"/>
+  </g>
+
+  <!-- sparkles -->
+  <g filter="url(#wcSoft)" fill="#cbb985">
+    <path d="M296 70 l 2.6 6.4 6.4 2.6 -6.4 2.6 -2.6 6.4 -2.6 -6.4 -6.4 -2.6 6.4 -2.6 Z" opacity=".85"/>
+    <path d="M84 196 l 1.8 4.4 4.4 1.8 -4.4 1.8 -1.8 4.4 -1.8 -4.4 -4.4 -1.8 4.4 -1.8 Z" opacity=".6"/>
+    <path d="M298 188 l 1.5 3.8 3.8 1.5 -3.8 1.5 -1.5 3.8 -1.5 -3.8 -3.8 -1.5 3.8 -1.5 Z" opacity=".55"/>
+  </g>
+</svg>

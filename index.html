@@ -1,204 +1,608 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mapi & Daan · 03.10.2026</title>
-  <meta name="description" content="Boda de Mapi & Daan · 3 de octubre de 2026 · Villafranca, Navarra" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/main-v3.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapi &amp; Daan · 03 · 10 · 2026</title>
+<meta name="description" content="Boda de Mapi y Daan — 3 de octubre de 2026, Villafranca, Navarra.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Parisienne&family=Imperial+Script&family=Mrs+Saint+Delafield&family=Allura&family=Alex+Brush&family=Italianno&family=Monsieur+La+Doulaise&family=Tangerine:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🤍</text></svg>">
 </head>
 <body>
-  <div class="paper-grain"></div>
-  <img class="floral fixed top-left" src="assets/images/flowers_top_left.png" alt="" aria-hidden="true">
-  <img class="floral fixed top-right" src="assets/images/flowers_top_right.png" alt="" aria-hidden="true">
-  <img class="floral scroll left-mid" src="assets/images/flowers_left_mid.png" alt="" aria-hidden="true">
-  <img class="floral scroll right-mid" src="assets/images/flowers_right_mid.png" alt="" aria-hidden="true">
 
-  <header class="site-header" aria-label="Navegación principal">
-    <a class="mini-logo" href="./" aria-label="Inicio">Mapi & Daan</a>
-    <nav class="language-switcher" aria-label="Idioma">
-      <button class="lang active" data-lang="es">ES</button>
-      <span></span>
-      <button class="lang" data-lang="en">EN</button>
-      <span></span>
-      <button class="lang" data-lang="nl">NL</button>
-    </nav>
-  </header>
+<header class="site-header">
+  <a class="brand" href="#inicio" data-tab="home">Mapi &amp; Daan</a>
 
-  <a class="floating-rsvp" href="rsvp.html" data-i18n="floatingRsvp">Confirmar asistencia</a>
+  <nav class="tab-nav" aria-label="Secciones">
+    <a href="#inicio" data-tab="home" class="active" data-i18n="nav.home">Inicio</a>
+    <a href="#rsvp" data-tab="rsvp" data-i18n="nav.rsvp">RSVP</a>
+    <a href="#fotos" data-tab="fotos" data-i18n="nav.photos">Fotos</a>
+  </nav>
 
-  <main>
-    <section class="hero invitation-panel" id="inicio">
-      <div class="hero-inner">
-        <p class="eyebrow" data-i18n="heroIntro">Nos casamos</p>
-        <h1 class="names">Mapi <span>&</span> Daan</h1>
-        <div class="ornament" aria-hidden="true"></div>
-        <p class="date">03 · 10 · 2026</p>
-        <p class="place">Villafranca · Navarra</p>
-        <a class="primary-cta" href="rsvp.html" data-i18n="confirm">Confirmar asistencia</a>
-      </div>
-    </section>
+  <nav class="lang-switch" aria-label="Idioma">
+    <button data-lang="es">ES</button><span class="sep">|</span>
+    <button data-lang="en">EN</button><span class="sep">|</span>
+    <button data-lang="nl">NL</button>
+  </nav>
+</header>
 
-    <section class="watercolor-section reveal">
-      <div class="watercolor-wrap">
-        <img src="assets/images/carmelitas-watercolor.png" alt="Acuarela de la Terraza Padres Carmelitas" class="carmelitas" />
-      </div>
-      <div class="intro-copy">
-        <p data-i18n="welcomeText">Nos encantaría compartir este día tan especial con vosotros. Aquí encontraréis toda la información necesaria para acompañarnos durante el fin de semana.</p>
-        <h2>Terraza Padres Carmelitas</h2>
-        <p>Villafranca · Navarra</p>
-        <a class="text-link" href="https://maps.app.goo.gl/2AvCW6MnAVzk6SVA7" target="_blank" rel="noopener" data-i18n="viewLocation">Ver ubicación</a>
-      </div>
-    </section>
+<main>
 
-    <section class="timeline-section reveal" id="programa">
-      <p class="section-kicker" data-i18n="weekend">Fin de semana</p>
-      <h2 data-i18n="programTitle">Programa</h2>
+<!-- ════════════════════ PANEL: HOME ════════════════════ -->
+<div class="tab-panel active" id="panel-home">
+
+  <!-- cinematic invitation hero -->
+  <section class="hero-stage" id="hero-stage">
+    <div class="stage-glow" aria-hidden="true"></div>
+    <canvas id="particles" aria-hidden="true"></canvas>
+
+    <div class="stage-floral tl" data-depth="18" aria-hidden="true"><img src="assets/floral-corner.svg" alt=""></div>
+    <div class="stage-floral tr" data-depth="18" aria-hidden="true"><img src="assets/floral-corner.svg" alt=""></div>
+    <div class="stage-floral bl" data-depth="11" aria-hidden="true"><img src="assets/floral-corner.svg" alt=""></div>
+    <div class="stage-floral br" data-depth="11" aria-hidden="true"><img src="assets/floral-corner.svg" alt=""></div>
+
+    <div class="invite-card" id="invite-card">
+      <p class="card-kicker" data-i18n="hero.kicker">¡Nos casamos!</p>
+      <h1 class="script-names">Mapi<span class="card-amp">&amp;</span>Daan</h1>
+      <img class="card-church" alt="Monasterio de Villafranca"
+           src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoRp7NXAQmCkB2xen47ril_ITUWfAVeKskCPG5a-UuzTLFN3kDNMwqCKS_BQdqkex1Cv6E5CWw77-pWbNm4Ly5QcRxD1cjff2OJp0CK_tRfeotygGvOk3taT4nLB84XA_WbEhrw9teGb2DDgatQoKhjNwpZGJNLk5uTkQxvxXtITp18qW7oYoYzx-nGbEKSZC1ow9mhJ7reN4815Y-DLKX5qib-tX4X5wrLbjYSmrFmjt03pskPTwNY7QG95Bx04zLFq_3-gyXG6Y"
+           onerror="this.onerror=null;this.src='assets/church.svg'">
+      <p class="card-date" data-i18n="hero.date">03 · 10 · 2026</p>
+      <p class="card-place" data-i18n="hero.place">Villafranca · Navarra</p>
+      <div class="card-rule" aria-hidden="true"></div>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 9 l6 6 6-6"/></svg>
+    </div>
+  </section>
+
+  <!-- intro -->
+  <section class="hero" style="overflow:hidden; padding-top:54px;">
+    <div class="container" style="position:relative; z-index:2;">
+      <p class="lead fade-in" style="font-style:italic; font-size:1.15rem;" data-i18n="hero.intro">
+        Nos encantaría compartir este día tan especial con vosotros.
+        Aquí encontraréis toda la información necesaria para acompañarnos durante el fin de semana.
+      </p>
+    </div>
+  </section>
+
+  <!-- program -->
+  <section id="programa">
+    <div class="container">
+      <h2 class="section-title reveal" data-i18n="program.title">Programa del fin de semana</h2>
+      <div class="ornament reveal" aria-hidden="true">❧</div>
+
       <div class="timeline">
-        <div class="day-label friday">
-          <span data-i18n="friday">Viernes</span>
-          <strong>02 · 10 · 2026</strong>
+
+        <div class="day-block reveal">
+          <div class="day-label">
+            <div>
+              <div class="day-name" data-i18n="program.friday">Viernes</div>
+              <div class="day-date" data-i18n="program.friday.date">02 · 10 · 2026</div>
+            </div>
+            <svg class="sprig" viewBox="0 0 60 24" aria-hidden="true"><path d="M2 12 H 58" stroke="#a89a7d" stroke-width="1" opacity=".6"/><g fill="#a89a7d" opacity=".75"><ellipse cx="18" cy="8" rx="2.4" ry="6" transform="rotate(-40 18 8)"/><ellipse cx="30" cy="16" rx="2.4" ry="6" transform="rotate(40 30 16)"/><ellipse cx="42" cy="8" rx="2.4" ry="6" transform="rotate(-40 42 8)"/></g></svg>
+          </div>
+          <div class="events">
+            <div class="event">
+              <span class="event-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 3 L8 9 a3.5 3.5 0 0 0 7 0 V3"/><path d="M8 3 h7"/><path d="M11.5 12.5 V20"/><path d="M8.5 20 h6"/></svg>
+              </span>
+              <div class="time">20:00</div>
+              <div class="name" data-i18n="event.preboda">Preboda</div>
+              <div class="venue" data-i18n="event.preboda.venue">Bar Gorría</div>
+              <a class="map-link" href="https://maps.google.com/?q=Bar+Gorria+Villafranca+Navarra" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                <span data-i18n="map.view">Ver ubicación</span>
+              </a>
+            </div>
+          </div>
         </div>
-        <article class="timeline-item right">
-          <span class="dot"></span>
-          <div class="icon">🍻</div>
-          <div class="event-card">
-            <time>20:00</time>
-            <h3 data-i18n="preboda">Preboda</h3>
-            <p>Bar Gorría</p>
-            <a href="https://maps.app.goo.gl/xRAJWxKhCFq8vYCz7" target="_blank" rel="noopener" data-i18n="viewLocation">Ver ubicación</a>
-          </div>
-        </article>
 
-        <div class="day-label saturday">
-          <span data-i18n="saturday">Sábado</span>
-          <strong>03 · 10 · 2026</strong>
+        <div class="day-block reveal">
+          <div class="day-label">
+            <div>
+              <div class="day-name" data-i18n="program.saturday">Sábado</div>
+              <div class="day-date" data-i18n="program.saturday.date">03 · 10 · 2026</div>
+            </div>
+            <svg class="sprig" viewBox="0 0 60 24" aria-hidden="true"><path d="M2 12 H 58" stroke="#a89a7d" stroke-width="1" opacity=".6"/><g fill="#a89a7d" opacity=".75"><ellipse cx="18" cy="8" rx="2.4" ry="6" transform="rotate(-40 18 8)"/><ellipse cx="30" cy="16" rx="2.4" ry="6" transform="rotate(40 30 16)"/><ellipse cx="42" cy="8" rx="2.4" ry="6" transform="rotate(-40 42 8)"/></g></svg>
+          </div>
+          <div class="events">
+
+            <div class="event reveal">
+              <span class="event-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8.5" cy="13.5" r="4.5"/><circle cx="15.5" cy="13.5" r="4.5"/><path d="M10.5 7.5 L12 5 L13.5 7.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <div class="time">12:30</div>
+              <div class="name" data-i18n="event.ceremonia">Ceremonia</div>
+              <div class="venue" data-i18n="event.ceremonia.venue">Terraza Padres Carmelitas</div>
+              <a class="map-link" href="https://maps.google.com/?q=Padres+Carmelitas+Villafranca+Navarra" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                <span data-i18n="map.view">Ver ubicación</span>
+              </a>
+            </div>
+
+            <div class="event reveal">
+              <span class="event-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="5" width="16" height="12" rx="2.5"/><path d="M4 11 h16"/><circle cx="8" cy="17.5" r="1.6" fill="currentColor" stroke="none"/><circle cx="16" cy="17.5" r="1.6" fill="currentColor" stroke="none"/></svg>
+              </span>
+              <div class="time">14:00</div>
+              <div class="name" data-i18n="event.bus">Autobuses a Hotel Luze El Villa</div>
+              <div class="venue" data-i18n="event.bus.venue">Salida desde Villafranca</div>
+              <a class="map-link" href="https://maps.google.com/?q=Villafranca+Navarra" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                <span data-i18n="map.view">Ver ubicación</span>
+              </a>
+            </div>
+
+            <div class="event reveal">
+              <span class="event-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 4 L11 4 L8 11 Z" stroke-linejoin="round"/><path d="M8 11 V19 M5.5 19 h5"/><path d="M14 6 L20 6 L17 12 Z" stroke-linejoin="round"/><path d="M17 12 V19 M14.5 19 h5"/></svg>
+              </span>
+              <div class="time">14:30</div>
+              <div class="name" data-i18n="event.coctel">Cóctel</div>
+              <div class="venue"><a class="map-link" style="margin-top:0;" href="https://hotelluzeelvilla.com" target="_blank" rel="noopener"><span data-i18n="event.luze">Hotel Luze El Villa</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 L17 7 M9 7 h8 v8"/></svg></a></div>
+            </div>
+
+            <div class="event reveal">
+              <span class="event-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="13" r="6"/><path d="M12 7 V4"/><path d="M3 13 h2 M19 13 h2"/></svg>
+              </span>
+              <div class="time">16:00</div>
+              <div class="name" data-i18n="event.comida">Comida</div>
+              <div class="venue"><a class="map-link" style="margin-top:0;" href="https://hotelluzeelvilla.com" target="_blank" rel="noopener"><span data-i18n="event.luze">Hotel Luze El Villa</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 L17 7 M9 7 h8 v8"/></svg></a></div>
+            </div>
+
+            <div class="event reveal">
+              <span class="event-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="9" cy="4.5" r="1.6"/><circle cx="16" cy="5.5" r="1.6"/><path d="M9 7 q -2 4 -1 7 l -2 6"/><path d="M9 14 l 3 6"/><path d="M16 8 q 2 4 0.5 7 l 1.5 5"/><path d="M16.5 15 l -3 5"/></svg>
+              </span>
+              <div class="time">19:00</div>
+              <div class="name" data-i18n="event.baile">Baile</div>
+              <div class="venue"><a class="map-link" style="margin-top:0;" href="https://hotelluzeelvilla.com" target="_blank" rel="noopener"><span data-i18n="event.luze">Hotel Luze El Villa</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 L17 7 M9 7 h8 v8"/></svg></a></div>
+            </div>
+
+            <div class="event reveal">
+              <span class="event-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 17 q 8 -10 16 0" /><path d="M3 17 h18"/><path d="M12 7 V5"/><circle cx="12" cy="4" r="1"/></svg>
+              </span>
+              <div class="time">22:30</div>
+              <div class="name" data-i18n="event.recena">Recena</div>
+              <div class="venue" data-i18n="event.recena.venue">Casino Gamarre</div>
+              <a class="map-link" href="https://maps.google.com/?q=Casino+Gamarre+Villafranca+Navarra" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                <span data-i18n="map.view">Ver ubicación</span>
+              </a>
+            </div>
+
+            <div class="event reveal">
+              <span class="event-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="13" r="7"/><path d="M12 13 L12 9"/><path d="M12 13 L15 14.5"/><path d="M9 3 h6"/><path d="M12 3 v3"/></svg>
+              </span>
+              <div class="time">00:00</div>
+              <div class="name" data-i18n="event.fiesta">Fiesta</div>
+            </div>
+
+          </div>
         </div>
-        <article class="timeline-item right">
-          <span class="dot"></span>
-          <div class="icon">💍</div>
-          <div class="event-card">
-            <time>12:30</time>
-            <h3 data-i18n="ceremony">Ceremonia</h3>
-            <p>Terraza Padres Carmelitas</p>
-            <a href="https://maps.app.goo.gl/2AvCW6MnAVzk6SVA7" target="_blank" rel="noopener" data-i18n="viewLocation">Ver ubicación</a>
-          </div>
-        </article>
-        <article class="timeline-item left">
-          <span class="dot"></span>
-          <div class="icon">🚌</div>
-          <div class="event-card">
-            <time>14:00</time>
-            <h3 data-i18n="busToVilla">Autobuses a Hotel Luze El Villa</h3>
-            <p data-i18n="busDeparture">Salida desde Villafranca</p>
-            <a href="https://maps.app.goo.gl/1Bk1BkyjvLJaMyFRA" target="_blank" rel="noopener" data-i18n="viewLocation">Ver ubicación</a>
-          </div>
-        </article>
-        <article class="timeline-item right compact">
-          <span class="dot"></span>
-          <div class="icon">🥂</div>
-          <div class="event-card">
-            <time>14:30</time>
-            <h3 data-i18n="cocktail">Cóctel</h3>
-            <p><a class="venue-link" href="https://www.luzehoteles.com/luze-el-villa/" target="_blank" rel="noopener">Hotel Luze El Villa</a></p>
-          </div>
-        </article>
-        <article class="timeline-item left compact">
-          <span class="dot"></span>
-          <div class="icon">🍽️</div>
-          <div class="event-card">
-            <time>16:00</time>
-            <h3 data-i18n="lunch">Comida</h3>
-            <p><a class="venue-link" href="https://www.luzehoteles.com/luze-el-villa/" target="_blank" rel="noopener">Hotel Luze El Villa</a></p>
-          </div>
-        </article>
-        <article class="timeline-item right compact">
-          <span class="dot"></span>
-          <div class="icon">🎶</div>
-          <div class="event-card">
-            <time>19:00</time>
-            <h3 data-i18n="dance">Baile</h3>
-            <p><a class="venue-link" href="https://www.luzehoteles.com/luze-el-villa/" target="_blank" rel="noopener">Hotel Luze El Villa</a></p>
-          </div>
-        </article>
-        <article class="timeline-item left compact">
-          <span class="dot"></span>
-          <div class="icon">🚌</div>
-          <div class="event-card">
-            <time>22:00</time>
-            <h3 data-i18n="busBack">Autobuses a Villafranca</h3>
-          </div>
-        </article>
-        <article class="timeline-item right">
-          <span class="dot"></span>
-          <div class="icon">🍰</div>
-          <div class="event-card">
-            <time>22:30</time>
-            <h3 data-i18n="recena">Recena</h3>
-            <p>Casino Gayarre</p>
-            <a href="https://maps.app.goo.gl/Xi1665F6afaucKHz7" target="_blank" rel="noopener" data-i18n="viewLocation">Ver ubicación</a>
-          </div>
-        </article>
-        <article class="timeline-item left compact last">
-          <span class="dot"></span>
-          <div class="icon">🪩</div>
-          <div class="event-card">
-            <time>00:00</time>
-            <h3 data-i18n="party">Fiesta</h3>
-          </div>
-        </article>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="hotels-section reveal" id="alojamiento">
-      <p class="section-kicker" data-i18n="forGuests">Para invitados de fuera</p>
-      <h2 data-i18n="hotelsTitle">Alojamiento recomendado</h2>
-      <div class="hotel-grid">
-        <article class="hotel-card">
-          <h3>Hostal Martínez</h3>
-          <p data-i18n="hotelMartinez">Ideal para quienes quieran alojarse en pleno centro de Villafranca.</p>
-          <a href="http://www.hostalmartinez.com/" target="_blank" rel="noopener" data-i18n="visitWebsite">Visitar web</a>
+  <!-- accommodation -->
+  <section id="alojamiento" style="padding-top:20px;">
+    <div class="container">
+      <h2 class="section-title reveal" data-i18n="stay.title">Alojamiento recomendado</h2>
+
+      <div class="cards">
+
+        <article class="card reveal">
+          <img class="card-photo" alt="Hostal Martínez"
+               src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeG_X1BA18ssJvLyuQpOHdSUjUHLbDzcNQCr4nrALA3cnCe6KtidanHV-OyYR22jxXks0hhojS2ZD9FXM5FxdjaW6wyQXOWd-9gOGDUoVZ2jDw4aAIgw3DgJpGG2Km3iHSUPu2f3Yg4loA644wHFYhXGFmGUC_IachZQppvIChRwiXCz26iApR1rP2ffVh8tMO8gJl_pJ6fyf3X2s4QOchxg5_5qzcYQbBg4EYU5HW8zrrXTzfWUDfpZfuS-ZjwG-lhkGAe1BLYqM"
+               onerror="this.style.display='none'">
+          <h3 data-i18n="stay.martinez">Hostal Martínez</h3>
+          <p data-i18n="stay.martinez.desc">Ideal para quienes quieran alojarse en pleno centro de Villafranca.</p>
+          <a class="map-link" href="https://maps.google.com/?q=Hostal+Martinez+Villafranca+Navarra" target="_blank" rel="noopener">
+            <span data-i18n="stay.more">Ver más</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 L17 7 M9 7 h8 v8"/></svg>
+          </a>
         </article>
-        <article class="hotel-card">
-          <h3>Apartamentos Rurales Esencia de Bardenas</h3>
-          <p data-i18n="hotelBardenas">Perfectos para familias o grupos que prefieran disponer de más espacio.</p>
-          <a href="https://apartamentosruralesbardenas.com/" target="_blank" rel="noopener" data-i18n="visitWebsite">Visitar web</a>
+
+        <article class="card reveal d1">
+          <img class="card-photo" alt="Apartamentos Rurales Esencia de Bardenas"
+               src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_-A78HQ7gyAmTE4Gn8FLDl7KGBoLcCejhq-uXnNFhHAtSWE3MwwF_XDf21POJamqe8g8yHTVjWI9jmvQxjiQ1emmyyMrwPKdtGmzOeLnkN2IH5zYutbicCiQS6EVQkZrttWfb1xu7EQ78Llop21T9bXDy3Aq3anQI1lYdJ26QJB88t5ot9W5coB-lr2Oh_EHHHDrLtEuM36TbJVVojnOY7kt1ESzVbSG_HS9-HfDuNfzbsVtNBiavXs--voRjs0l_j7LkD77jvXk"
+               onerror="this.style.display='none'">
+          <h3 data-i18n="stay.esencia">Apartamentos Rurales Esencia de Bardenas</h3>
+          <p data-i18n="stay.esencia.desc">Perfectos para familias o grupos que prefieran disponer de más espacio.</p>
+          <a class="map-link" href="https://maps.google.com/?q=Esencia+de+Bardenas+Villafranca+Navarra" target="_blank" rel="noopener">
+            <span data-i18n="stay.more">Ver más</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 L17 7 M9 7 h8 v8"/></svg>
+          </a>
         </article>
-        <article class="hotel-card">
-          <h3>Camping Bardenas</h3>
-          <p data-i18n="hotelCamping">Bungalows y otras opciones de alojamiento.</p>
-          <a href="https://www.campingbardenas.com/" target="_blank" rel="noopener" data-i18n="visitWebsite">Visitar web</a>
+
+        <article class="card reveal d2">
+          <img class="card-photo" alt="Camping Bardenas"
+               src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzof9ZcBl_NdPs7qXEPWKGK9SLskqRdnlIrKKpdAuGyp-xSUmwVwv3qGHn6B91yzoGrp8RkZhOetSqKBH8xWQCuGLAWtTX4Jyy6paC8lFtSAQneKzBqYTctFr8Ier-KY_9ml91casOP2Av-SgLKjlXCcYzcp10ii4RoVqCjWS47pChCeq9ziNHFdsY6_L85nvjJmjrVv7WDjx9SnH5fiBCfPibu2SOB2lMugj0r5l2yeleau8HJUIpruQ4-i7o1XYywREPLrYt-NM"
+               onerror="this.style.display='none'">
+          <h3 data-i18n="stay.camping">Camping Bardenas</h3>
+          <p data-i18n="stay.camping.desc">Bungalows y otras opciones de alojamiento.</p>
+          <a class="map-link" href="https://maps.google.com/?q=Camping+Bardenas+Villafranca+Navarra" target="_blank" rel="noopener">
+            <span data-i18n="stay.more">Ver más</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 L17 7 M9 7 h8 v8"/></svg>
+          </a>
         </article>
-        <article class="hotel-card featured">
-          <h3>Hotel Luze El Villa</h3>
-          <p data-i18n="hotelLuze">Lugar de celebración del cóctel, comida y baile.</p>
-          <div class="discount"><span data-i18n="discount">Código descuento</span><strong>MARIAPILAR&DAAN26</strong></div>
-          <a href="https://www.luzehoteles.com/luze-el-villa/" target="_blank" rel="noopener" data-i18n="visitWebsite">Visitar web</a>
+
+        <article class="card reveal d3">
+          <img class="card-photo" alt="Hotel Luze El Villa"
+               src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGrkRT4ikkL81bJiHsRhUaRIYkayAmOwVuMaVVd62koORLoqngWblwXDWtF4Li6RK099rF29srFlxXwBCV50OypqYxvqwLOpMU8eLmKSkW8d6Lz0dwxbIp7zUz9AvftsW4o6SpvUEA5QDTrHaym_-2D1nM0ubSZSYYauRjvhljRL9Dt5RfHjh-HvgH7eACgVKcolUscNMuR17__P-lUUWeFe7JQz07uRS_uBPcZIKL2yCYTysa7dE2snjToxfxWSQ7lXT5LzrR_BE"
+               onerror="this.style.display='none'">
+          <h3 data-i18n="stay.luze">Hotel Luze El Villa</h3>
+          <p data-i18n="stay.luze.desc">Lugar de celebración del cóctel, comida y baile.</p>
+          <p class="promo"><span data-i18n="stay.luze.promo">Código descuento:</span><br><strong>MAPI&amp;DAAN26</strong></p>
+          <a class="map-link" href="https://hotelluzeelvilla.com" target="_blank" rel="noopener">
+            <span data-i18n="stay.more">Ver más</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 L17 7 M9 7 h8 v8"/></svg>
+          </a>
         </article>
+
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="final-cta reveal" id="confirmar">
-      <img class="floral bottom-left" src="assets/images/flowers_bottom_left.png" alt="" aria-hidden="true">
-      <img class="floral bottom-right" src="assets/images/flowers_bottom_right.png" alt="" aria-hidden="true">
-      <div class="cta-card">
-        <p class="heart">♡</p>
-        <h2 data-i18n="joinUs">¿Nos acompañáis?</h2>
-        <p data-i18n="deadline">Confirma tu asistencia antes del 1 de septiembre.</p>
-        <a class="primary-cta" href="rsvp.html" data-i18n="confirm">Confirmar asistencia</a>
-        <a class="secondary-link" href="fotos.html" data-i18n="sharePhotos">Compartir fotos</a>
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container reveal">
+      <div class="heart" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20s-7.5-4.8-9.4-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.4 11c-1.9 4.2-9.4 9-9.4 9Z"/></svg>
       </div>
-    </section>
-  </main>
+      <h2 class="section-title" data-i18n="cta.title">¿Nos acompañáis?</h2>
+      <p data-i18n="cta.text">Confirma tu asistencia antes del 1 de septiembre.</p>
+      <a class="btn" href="#rsvp" data-tab="rsvp" data-i18n="cta.rsvp">Confirmar asistencia</a>
+      <br>
+      <a class="text-link" href="#fotos" data-tab="fotos" data-i18n="cta.photos">Compartir fotos</a>
+    </div>
+  </section>
 
-  <footer class="site-footer">
-    <span>© Mapi & Daan 2026</span>
-    <span data-i18n="madeWithLove">Hecho con amor</span>
-  </footer>
+</div>
 
-  <script src="assets/js/main-v3.js"></script>
+<!-- ════════════════════ PANEL: RSVP ════════════════════ -->
+<div class="tab-panel" id="panel-rsvp">
+<section style="position:relative; overflow:hidden;">
+
+  <div class="corner-floral tl animate-sway" aria-hidden="true"><img src="assets/floral-corner.svg" alt=""></div>
+  <div class="corner-floral tr animate-sway" aria-hidden="true"><img src="assets/floral-corner.svg" alt=""></div>
+
+  <div class="container" style="position:relative; z-index:2;">
+    <h1 class="section-title" data-i18n="rsvp.title">Confirma tu asistencia</h1>
+    <div class="ornament" aria-hidden="true">❧</div>
+    <p class="lead" data-i18n="rsvp.intro">Por favor, completa el siguiente formulario antes del 1 de septiembre de 2026.</p>
+
+    <form id="rsvp-form" class="form-wrap" novalidate>
+
+      <div class="form-row">
+        <div class="q-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3 v4 M16 3 v4 M4 10 h16"/><path d="M9 15 l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <label class="q-label" data-i18n="rsvp.q1">1. ¿Podrás acompañarnos el 3 de octubre de 2026?</label>
+          <div class="radio-group">
+            <label class="radio-pill"><input type="radio" name="asistencia" value="si" required><span data-i18n="rsvp.q1.yes">Sí, asistiré</span></label>
+            <label class="radio-pill"><input type="radio" name="asistencia" value="no"><span data-i18n="rsvp.q1.no">No podré asistir</span></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="q-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19 a5.5 5.5 0 0 1 11 0"/><circle cx="16.5" cy="9.5" r="2.6"/><path d="M15.5 14.5 a4.6 4.6 0 0 1 5 4.5"/></svg>
+        </div>
+        <div>
+          <label class="q-label" for="personas" data-i18n="rsvp.q2">2. ¿Cuántas personas asistiréis?</label>
+          <select id="personas" name="personas">
+            <option value="" data-i18n-option="rsvp.q2.placeholder" selected>Selecciona una opción</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="q-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 19 L17 7 a2.1 2.1 0 0 1 3 3 L8 22 l-4 1 1-4 Z" stroke-linejoin="round"/><path d="M15 9 l3 3"/></svg>
+        </div>
+        <div>
+          <label class="q-label" for="nombres" data-i18n="rsvp.q3">3. Nombres y apellidos de los asistentes</label>
+          <input type="text" id="nombres" name="nombres" data-i18n-placeholder="rsvp.q3.placeholder" placeholder="Escribe los nombres y apellidos separados por comas">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="q-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="13" rx="2.5"/><path d="M4 10 h16"/><circle cx="8" cy="18.5" r="1.6" fill="currentColor" stroke="none"/><circle cx="16" cy="18.5" r="1.6" fill="currentColor" stroke="none"/></svg>
+        </div>
+        <div>
+          <label class="q-label" data-i18n="rsvp.q4">4. ¿Necesitaréis utilizar el autobús?</label>
+          <div class="radio-group">
+            <label class="radio-pill"><input type="radio" name="autobus" value="si"><span data-i18n="rsvp.yes">Sí</span></label>
+            <label class="radio-pill"><input type="radio" name="autobus" value="no"><span data-i18n="rsvp.no">No</span></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="q-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="9" cy="4.5" r="1.6"/><circle cx="16" cy="5.5" r="1.6"/><path d="M9 7 q -2 4 -1 7 l -2 6"/><path d="M9 14 l 3 6"/><path d="M16 8 q 2 4 0.5 7 l 1.5 5"/><path d="M16.5 15 l -3 5"/></svg>
+        </div>
+        <div>
+          <label class="q-label" data-i18n="rsvp.q5">5. ¿Asistiréis también a la preboda del viernes?</label>
+          <div class="radio-group">
+            <label class="radio-pill"><input type="radio" name="preboda" value="si"><span data-i18n="rsvp.yes">Sí</span></label>
+            <label class="radio-pill"><input type="radio" name="preboda" value="no"><span data-i18n="rsvp.no">No</span></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="q-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="13" r="6"/><path d="M12 7 V4"/><path d="M3 13 h2 M19 13 h2"/></svg>
+        </div>
+        <div>
+          <label class="q-label" for="alergias" data-i18n="rsvp.q6">6. Menús especiales y alergias (por asistente)</label>
+          <input type="text" id="alergias" name="alergias" data-i18n-placeholder="rsvp.q6.placeholder" placeholder="Indica alergias o intolerancias">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="q-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M9 18 V6 l10 -2 v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg>
+        </div>
+        <div>
+          <label class="q-label" for="cancion" data-i18n="rsvp.q7">7. ¿Qué canción no puede faltar en la pista de baile?</label>
+          <input type="text" id="cancion" name="cancion" data-i18n-placeholder="rsvp.q7.placeholder" placeholder="Escribe tu canción">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="q-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M4 6 h16 v11 h-9 l-4 3 v-3 h-3 Z"/></svg>
+        </div>
+        <div>
+          <label class="q-label" for="mensaje" data-i18n="rsvp.q8">8. ¿Queréis dejarnos algún mensaje?</label>
+          <textarea id="mensaje" name="mensaje" data-i18n-placeholder="rsvp.q8.placeholder" placeholder="Escribe tu mensaje (opcional)"></textarea>
+        </div>
+      </div>
+
+      <div class="form-footer">
+        <button type="submit" class="btn" id="submit-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 7 l9 7 9-7"/></svg>
+          <span data-i18n="rsvp.submit">Enviar confirmación</span>
+        </button>
+        <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+        <p class="thanks" data-i18n="rsvp.thanks">¡Gracias! Nos hace mucha ilusión compartir este día con vosotros.</p>
+      </div>
+    </form>
+
+    <div class="success-panel" id="success-panel">
+      <div class="heart" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20s-7.5-4.8-9.4-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.4 11c-1.9 4.2-9.4 9-9.4 9Z"/></svg>
+      </div>
+      <h2 class="section-title" data-i18n="rsvp.success.title">¡Confirmación enviada!</h2>
+      <p data-i18n="rsvp.success.text">Muchas gracias por responder. ¡Nos vemos el 3 de octubre!</p>
+      <p style="margin-top:28px;"><a class="text-link" href="#inicio" data-tab="home" data-i18n="nav.home">Inicio</a></p>
+    </div>
+
+  </div>
+</section>
+</div>
+
+<!-- ════════════════════ PANEL: FOTOS ════════════════════ -->
+<div class="tab-panel" id="panel-fotos">
+<section style="position:relative; overflow:hidden;">
+
+  <div class="corner-floral tl animate-sway" aria-hidden="true"><img src="assets/floral-corner.svg" alt=""></div>
+  <div class="corner-floral tr animate-sway" aria-hidden="true"><img src="assets/floral-corner.svg" alt=""></div>
+
+  <div class="container" style="text-align:center; position:relative; z-index:2;">
+    <h1 class="section-title" data-i18n="photos.title">Comparte tus fotos con nosotros</h1>
+    <div class="ornament" aria-hidden="true">❧</div>
+    <p class="lead" data-i18n="photos.intro">
+      Nos encantará revivir este fin de semana a través de vuestros ojos.
+      Subid aquí vuestras fotos y vídeos de la boda y de todos los momentos especiales que vivamos juntos.
+    </p>
+
+    <div class="camera-art" aria-hidden="true">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoVglH29yRBeG7vq9wEx6Z0u60k1R_D42s0d3S8P85UWRRpDGeHBRnySK457ErQOwNNFHjHEYCk9w5B7_1o6axHbftO4iWgoXQB-YondDdon9Ia41Tpy7y5zcyj31FX3Cryl8QaVYiMM-3BhEiBEn0ngHOIxDYvLyj0PL6Ypnd6Bj8powanX9b63GVFYJ0owjoioXJEPxVzhDbDtFYKUNl1oxac0vuI--2_oEI0XZTmMF5Qeoarfc8JEtSb1IKC3_uc1hqSyeViIg" alt="" onerror="this.onerror=null;this.src='assets/camera.svg'">
+    </div>
+
+    <a class="btn" id="album-link" href="https://photos.app.goo.gl/REPLACE_WITH_ALBUM_LINK" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M8 7 l1.5-3 h5 L16 7"/><circle cx="12" cy="13.5" r="3.6"/></svg>
+      <span data-i18n="photos.upload">Subir fotos a Google Photos</span>
+    </a>
+
+    <div class="how-box">
+      <div class="box-title" data-i18n="photos.how">¿Cómo funciona?</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="4" y="4" width="12" height="12" rx="2"/><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M14 11 v6 M11 14 h6"/></svg>
+          </div>
+          <p data-i18n="photos.step1">Haz clic en el botón para acceder al álbum compartido.</p>
+        </div>
+        <div class="step">
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.8"/><path d="M3 17 l5-5 4 4 3-3 6 6" stroke-linejoin="round"/></svg>
+          </div>
+          <p data-i18n="photos.step2">Añade tus fotos y vídeos cuando quieras.</p>
+        </div>
+        <div class="step">
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="6" width="16" height="13" rx="2.5"/><path d="M9 6 l1.2-2.4 h3.6 L15 6"/><circle cx="12" cy="12.5" r="3"/></svg>
+          </div>
+          <p data-i18n="photos.step3">¡Así podremos revivir cada momento juntos!</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:70px;">
+      <div class="heart" style="color:var(--accent);" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20s-7.5-4.8-9.4-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.4 11c-1.9 4.2-9.4 9-9.4 9Z"/></svg>
+      </div>
+      <h2 class="section-title" style="margin-top:10px;" data-i18n="photos.thanks.title">¡Gracias!</h2>
+      <p class="lead" style="margin-top:12px;" data-i18n="photos.thanks.text">Vuestras fotos son el mejor recuerdo que nos llevaremos.</p>
+    </div>
+
+  </div>
+</section>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <span data-i18n="footer.copy">© Mapi &amp; Daan 2026</span>
+  <span class="love"><span data-i18n="footer.love">Hecho con amor</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7.5-4.8-9.4-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.4 11c-1.9 4.2-9.4 9-9.4 9Z"/></svg>
+  </span>
+</footer>
+
+<!-- script-font preview tool: pick the calligraphy live, choice is remembered -->
+<details class="font-picker" id="font-picker">
+  <summary title="Probar caligrafías">Aa</summary>
+  <div class="fp-menu">
+    <div class="fp-title">Fuente de los nombres</div>
+    <button data-font="Imperial Script" style="font-family:&#39;Imperial Script&#39;,cursive; font-size:1.6rem;">Mapi &amp; Daan</button>
+    <button data-font="Mrs Saint Delafield" style="font-family:&#39;Mrs Saint Delafield&#39;,cursive; font-size:1.35rem;">Mapi &amp; Daan</button>
+    <button data-font="Parisienne" style="font-family:'Parisienne',cursive;">Mapi &amp; Daan</button>
+    <button data-font="Allura" style="font-family:'Allura',cursive;">Mapi &amp; Daan</button>
+    <button data-font="Alex Brush" style="font-family:'Alex Brush',cursive;">Mapi &amp; Daan</button>
+    <button data-font="Italianno" style="font-family:'Italianno',cursive; font-size:1.7rem;">Mapi &amp; Daan</button>
+    <button data-font="Monsieur La Doulaise" style="font-family:'Monsieur La Doulaise',cursive; font-size:1.3rem;">Mapi &amp; Daan</button>
+    <button data-font="Tangerine" style="font-family:'Tangerine',cursive; font-size:1.8rem;">Mapi &amp; Daan</button>
+    <button data-font="Great Vibes" style="font-family:'Great Vibes',cursive;">Mapi &amp; Daan</button>
+  </div>
+</details>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+<script>
+/* ================= TABS ================= */
+(function () {
+  const tabs = { home: "panel-home", rsvp: "panel-rsvp", fotos: "panel-fotos" };
+  const hashFor = { home: "#inicio", rsvp: "#rsvp", fotos: "#fotos" };
+
+  function showTab(name, push) {
+    if (!tabs[name]) name = "home";
+    Object.entries(tabs).forEach(function ([key, id]) {
+      document.getElementById(id).classList.toggle("active", key === name);
+    });
+    document.querySelectorAll("[data-tab]").forEach(function (a) {
+      if (a.closest(".tab-nav")) a.classList.toggle("active", a.getAttribute("data-tab") === name);
+    });
+    if (push !== false) history.replaceState(null, "", hashFor[name]);
+    window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });
+  }
+
+  function fromHash() {
+    const h = location.hash;
+    if (h === "#rsvp") return "rsvp";
+    if (h === "#fotos") return "fotos";
+    return "home";
+  }
+
+  document.addEventListener("click", function (e) {
+    const a = e.target.closest("[data-tab]");
+    if (!a) return;
+    e.preventDefault();
+    showTab(a.getAttribute("data-tab"));
+  });
+
+  window.addEventListener("hashchange", function () { showTab(fromHash(), false); });
+  showTab(fromHash(), false);
+})();
+
+/* ================= FONT PICKER ================= */
+(function () {
+  const picker = document.getElementById("font-picker");
+  if (!picker) return;
+  function apply(font) {
+    document.documentElement.style.setProperty("--script", "'" + font + "', cursive");
+    localStorage.setItem("md-script-font-v4", font);
+    picker.querySelectorAll("button[data-font]").forEach(function (b) {
+      b.classList.toggle("active", b.getAttribute("data-font") === font);
+    });
+  }
+  const saved = localStorage.getItem("md-script-font-v4");
+  if (saved) apply(saved);
+  picker.querySelectorAll("button[data-font]").forEach(function (b) {
+    b.addEventListener("click", function () { apply(b.getAttribute("data-font")); });
+  });
+})();
+
+/* ================= RSVP → Google Sheet =================
+   1. Create the Google Sheet + Apps Script (see README.md)
+   2. Paste the Web App URL below.                          */
+const SHEET_ENDPOINT = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
+
+document.getElementById("rsvp-form").addEventListener("submit", async function (e) {
+  e.preventDefault();
+  const form = e.target;
+  const status = document.getElementById("form-status");
+  const btnLabel = document.querySelector("#submit-btn span");
+
+  const attendance = form.querySelector('input[name="asistencia"]:checked');
+  if (!attendance) {
+    status.className = "form-status error";
+    status.textContent = t("rsvp.required");
+    return;
+  }
+
+  const data = {
+    fecha: new Date().toISOString(),
+    asistencia: attendance.value,
+    personas: form.personas.value,
+    nombres: form.nombres.value.trim(),
+    autobus: (form.querySelector('input[name="autobus"]:checked') || {}).value || "",
+    preboda: (form.querySelector('input[name="preboda"]:checked') || {}).value || "",
+    alergias: form.alergias.value.trim(),
+    cancion: form.cancion.value.trim(),
+    mensaje: form.mensaje.value.trim()
+  };
+
+  status.className = "form-status";
+  status.textContent = t("rsvp.sending");
+  btnLabel.textContent = t("rsvp.sending");
+
+  try {
+    if (SHEET_ENDPOINT.startsWith("http")) {
+      await fetch(SHEET_ENDPOINT, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(data)
+      });
+    } else {
+      console.warn("SHEET_ENDPOINT not configured yet. Submission:", data);
+      await new Promise(function (r) { setTimeout(r, 600); });
+    }
+    form.style.display = "none";
+    status.textContent = "";
+    const panel = document.getElementById("success-panel");
+    panel.style.display = "block";
+    panel.scrollIntoView({ behavior: "smooth", block: "center" });
+  } catch (err) {
+    status.className = "form-status error";
+    status.textContent = t("rsvp.error");
+    btnLabel.textContent = t("rsvp.submit");
+  }
+});
+</script>
 </body>
 </html>

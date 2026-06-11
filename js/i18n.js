@@ -1,0 +1,316 @@
+/* ============================================
+   Mapi & Daan — i18n (ES / EN / NL)
+   ============================================ */
+
+const I18N = {
+  es: {
+    // Shared
+    "nav.title": "Mapi & Daan",
+    "nav.home": "Inicio",
+    "nav.rsvp": "RSVP",
+    "nav.photos": "Fotos",
+    "footer.copy": "© Mapi & Daan 2026",
+    "footer.love": "Hecho con amor",
+
+    // Home
+    "hero.kicker": "¡Nos casamos!",
+    "hero.date": "03 · 10 · 2026",
+    "hero.place": "Villafranca · Navarra",
+    "hero.intro": "Nos encantaría compartir este día tan especial con vosotros. Aquí encontraréis toda la información necesaria para acompañarnos durante el fin de semana.",
+    "program.title": "Programa del fin de semana",
+    "program.friday": "Viernes",
+    "program.friday.date": "02 · 10 · 2026",
+    "program.saturday": "Sábado",
+    "program.saturday.date": "03 · 10 · 2026",
+    "event.preboda": "Preboda",
+    "event.preboda.venue": "Bar Gorría",
+    "event.ceremonia": "Ceremonia",
+    "event.ceremonia.venue": "Terraza Padres Carmelitas",
+    "event.bus": "Autobuses a Hotel Luze El Villa",
+    "event.bus.venue": "Salida desde Villafranca",
+    "event.coctel": "Cóctel",
+    "event.comida": "Comida",
+    "event.baile": "Baile",
+    "event.luze": "Hotel Luze El Villa",
+    "event.recena": "Recena",
+    "event.recena.venue": "Casino Gamarre",
+    "event.fiesta": "Fiesta",
+    "map.view": "Ver ubicación",
+    "stay.title": "Alojamiento recomendado",
+    "stay.martinez": "Hostal Martínez",
+    "stay.martinez.desc": "Ideal para quienes quieran alojarse en pleno centro de Villafranca.",
+    "stay.esencia": "Apartamentos Rurales Esencia de Bardenas",
+    "stay.esencia.desc": "Perfectos para familias o grupos que prefieran disponer de más espacio.",
+    "stay.camping": "Camping Bardenas",
+    "stay.camping.desc": "Bungalows y otras opciones de alojamiento.",
+    "stay.luze": "Hotel Luze El Villa",
+    "stay.luze.desc": "Lugar de celebración del cóctel, comida y baile.",
+    "stay.luze.promo": "Código descuento:",
+    "stay.more": "Ver más",
+    "cta.title": "¿Nos acompañáis?",
+    "cta.text": "Confirma tu asistencia antes del 1 de septiembre.",
+    "cta.rsvp": "Confirmar asistencia",
+    "cta.photos": "Compartir fotos",
+
+    // RSVP
+    "rsvp.title": "Confirma tu asistencia",
+    "rsvp.intro": "Por favor, completa el siguiente formulario antes del 1 de septiembre de 2026.",
+    "rsvp.q1": "1. ¿Podrás acompañarnos el 3 de octubre de 2026?",
+    "rsvp.q1.yes": "Sí, asistiré",
+    "rsvp.q1.no": "No podré asistir",
+    "rsvp.q2": "2. ¿Cuántas personas asistiréis?",
+    "rsvp.q2.placeholder": "Selecciona una opción",
+    "rsvp.q3": "3. Nombres y apellidos de los asistentes",
+    "rsvp.q3.placeholder": "Escribe los nombres y apellidos separados por comas",
+    "rsvp.q4": "4. ¿Necesitaréis utilizar el autobús?",
+    "rsvp.q5": "5. ¿Asistiréis también a la preboda del viernes?",
+    "rsvp.q6": "6. Menús especiales y alergias (por asistente)",
+    "rsvp.q6.placeholder": "Indica alergias o intolerancias",
+    "rsvp.q7": "7. ¿Qué canción no puede faltar en la pista de baile?",
+    "rsvp.q7.placeholder": "Escribe tu canción",
+    "rsvp.q8": "8. ¿Queréis dejarnos algún mensaje?",
+    "rsvp.q8.placeholder": "Escribe tu mensaje (opcional)",
+    "rsvp.yes": "Sí",
+    "rsvp.no": "No",
+    "rsvp.submit": "Enviar confirmación",
+    "rsvp.thanks": "¡Gracias! Nos hace mucha ilusión compartir este día con vosotros.",
+    "rsvp.sending": "Enviando…",
+    "rsvp.success.title": "¡Confirmación enviada!",
+    "rsvp.success.text": "Muchas gracias por responder. ¡Nos vemos el 3 de octubre!",
+    "rsvp.error": "No se ha podido enviar. Por favor, inténtalo de nuevo.",
+    "rsvp.required": "Por favor, responde a la primera pregunta.",
+
+    // Photos
+    "photos.title": "Comparte tus fotos con nosotros",
+    "photos.intro": "Nos encantará revivir este fin de semana a través de vuestros ojos. Subid aquí vuestras fotos y vídeos de la boda y de todos los momentos especiales que vivamos juntos.",
+    "photos.upload": "Subir fotos a Google Photos",
+    "photos.how": "¿Cómo funciona?",
+    "photos.step1": "Haz clic en el botón para acceder al álbum compartido.",
+    "photos.step2": "Añade tus fotos y vídeos cuando quieras.",
+    "photos.step3": "¡Así podremos revivir cada momento juntos!",
+    "photos.thanks.title": "¡Gracias!",
+    "photos.thanks.text": "Vuestras fotos son el mejor recuerdo que nos llevaremos."
+  },
+
+  en: {
+    "nav.title": "Mapi & Daan",
+    "nav.home": "Home",
+    "nav.rsvp": "RSVP",
+    "nav.photos": "Photos",
+    "footer.copy": "© Mapi & Daan 2026",
+    "footer.love": "Made with love",
+
+    "hero.kicker": "We're getting married!",
+    "hero.date": "03 · 10 · 2026",
+    "hero.place": "Villafranca · Navarra",
+    "hero.intro": "We would love to share this special day with you. Here you will find all the information you need to join us throughout the weekend.",
+    "program.title": "Weekend programme",
+    "program.friday": "Friday",
+    "program.friday.date": "02 · 10 · 2026",
+    "program.saturday": "Saturday",
+    "program.saturday.date": "03 · 10 · 2026",
+    "event.preboda": "Pre-wedding party",
+    "event.preboda.venue": "Bar Gorría",
+    "event.ceremonia": "Ceremony",
+    "event.ceremonia.venue": "Terraza Padres Carmelitas",
+    "event.bus": "Buses to Hotel Luze El Villa",
+    "event.bus.venue": "Departing from Villafranca",
+    "event.coctel": "Cocktail",
+    "event.comida": "Lunch",
+    "event.baile": "Dancing",
+    "event.luze": "Hotel Luze El Villa",
+    "event.recena": "Late-night bites",
+    "event.recena.venue": "Casino Gamarre",
+    "event.fiesta": "Party",
+    "map.view": "View location",
+    "stay.title": "Recommended accommodation",
+    "stay.martinez": "Hostal Martínez",
+    "stay.martinez.desc": "Ideal if you would like to stay right in the centre of Villafranca.",
+    "stay.esencia": "Apartamentos Rurales Esencia de Bardenas",
+    "stay.esencia.desc": "Perfect for families or groups who prefer more space.",
+    "stay.camping": "Camping Bardenas",
+    "stay.camping.desc": "Bungalows and other accommodation options.",
+    "stay.luze": "Hotel Luze El Villa",
+    "stay.luze.desc": "Venue for the cocktail, lunch and dancing.",
+    "stay.luze.promo": "Discount code:",
+    "stay.more": "See more",
+    "cta.title": "Will you join us?",
+    "cta.text": "Please confirm your attendance before 1 September.",
+    "cta.rsvp": "Confirm attendance",
+    "cta.photos": "Share photos",
+
+    "rsvp.title": "Confirm your attendance",
+    "rsvp.intro": "Please complete the following form before 1 September 2026.",
+    "rsvp.q1": "1. Will you be able to join us on 3 October 2026?",
+    "rsvp.q1.yes": "Yes, I will attend",
+    "rsvp.q1.no": "I won't be able to attend",
+    "rsvp.q2": "2. How many people will attend?",
+    "rsvp.q2.placeholder": "Select an option",
+    "rsvp.q3": "3. Full names of the guests",
+    "rsvp.q3.placeholder": "Write the full names separated by commas",
+    "rsvp.q4": "4. Will you need the bus?",
+    "rsvp.q5": "5. Will you also join the pre-wedding party on Friday?",
+    "rsvp.q6": "6. Special menus and allergies (per guest)",
+    "rsvp.q6.placeholder": "Tell us about allergies or intolerances",
+    "rsvp.q7": "7. Which song can't be missing from the dance floor?",
+    "rsvp.q7.placeholder": "Write your song",
+    "rsvp.q8": "8. Would you like to leave us a message?",
+    "rsvp.q8.placeholder": "Write your message (optional)",
+    "rsvp.yes": "Yes",
+    "rsvp.no": "No",
+    "rsvp.submit": "Send confirmation",
+    "rsvp.thanks": "Thank you! We are so excited to share this day with you.",
+    "rsvp.sending": "Sending…",
+    "rsvp.success.title": "Confirmation sent!",
+    "rsvp.success.text": "Thank you so much for replying. See you on 3 October!",
+    "rsvp.error": "Something went wrong. Please try again.",
+    "rsvp.required": "Please answer the first question.",
+
+    "photos.title": "Share your photos with us",
+    "photos.intro": "We would love to relive this weekend through your eyes. Upload your photos and videos of the wedding and of all the special moments we share together.",
+    "photos.upload": "Upload photos to Google Photos",
+    "photos.how": "How does it work?",
+    "photos.step1": "Click the button to open the shared album.",
+    "photos.step2": "Add your photos and videos whenever you like.",
+    "photos.step3": "That way we can relive every moment together!",
+    "photos.thanks.title": "Thank you!",
+    "photos.thanks.text": "Your photos are the best memory we will take with us."
+  },
+
+  nl: {
+    "nav.title": "Mapi & Daan",
+    "nav.home": "Home",
+    "nav.rsvp": "RSVP",
+    "nav.photos": "Foto's",
+    "footer.copy": "© Mapi & Daan 2026",
+    "footer.love": "Gemaakt met liefde",
+
+    "hero.kicker": "Wij gaan trouwen!",
+    "hero.date": "03 · 10 · 2026",
+    "hero.place": "Villafranca · Navarra",
+    "hero.intro": "We zouden deze bijzondere dag heel graag met jullie delen. Hier vinden jullie alle informatie om het hele weekend met ons mee te vieren.",
+    "program.title": "Weekendprogramma",
+    "program.friday": "Vrijdag",
+    "program.friday.date": "02 · 10 · 2026",
+    "program.saturday": "Zaterdag",
+    "program.saturday.date": "03 · 10 · 2026",
+    "event.preboda": "Pre-wedding borrel",
+    "event.preboda.venue": "Bar Gorría",
+    "event.ceremonia": "Ceremonie",
+    "event.ceremonia.venue": "Terraza Padres Carmelitas",
+    "event.bus": "Bussen naar Hotel Luze El Villa",
+    "event.bus.venue": "Vertrek vanuit Villafranca",
+    "event.coctel": "Borrel",
+    "event.comida": "Diner",
+    "event.baile": "Dansen",
+    "event.luze": "Hotel Luze El Villa",
+    "event.recena": "Nachtelijke snack",
+    "event.recena.venue": "Casino Gamarre",
+    "event.fiesta": "Feest",
+    "map.view": "Bekijk locatie",
+    "stay.title": "Aanbevolen accommodatie",
+    "stay.martinez": "Hostal Martínez",
+    "stay.martinez.desc": "Ideaal voor wie midden in het centrum van Villafranca wil verblijven.",
+    "stay.esencia": "Apartamentos Rurales Esencia de Bardenas",
+    "stay.esencia.desc": "Perfect voor gezinnen of groepen die graag meer ruimte hebben.",
+    "stay.camping": "Camping Bardenas",
+    "stay.camping.desc": "Bungalows en andere overnachtingsmogelijkheden.",
+    "stay.luze": "Hotel Luze El Villa",
+    "stay.luze.desc": "Locatie van de borrel, het diner en het dansfeest.",
+    "stay.luze.promo": "Kortingscode:",
+    "stay.more": "Meer info",
+    "cta.title": "Vieren jullie met ons mee?",
+    "cta.text": "Bevestig je aanwezigheid vóór 1 september.",
+    "cta.rsvp": "Aanwezigheid bevestigen",
+    "cta.photos": "Foto's delen",
+
+    "rsvp.title": "Bevestig je aanwezigheid",
+    "rsvp.intro": "Vul dit formulier alsjeblieft vóór 1 september 2026 in.",
+    "rsvp.q1": "1. Kun je er op 3 oktober 2026 bij zijn?",
+    "rsvp.q1.yes": "Ja, ik kom",
+    "rsvp.q1.no": "Ik kan er helaas niet bij zijn",
+    "rsvp.q2": "2. Met hoeveel personen komen jullie?",
+    "rsvp.q2.placeholder": "Maak een keuze",
+    "rsvp.q3": "3. Voor- en achternamen van de gasten",
+    "rsvp.q3.placeholder": "Schrijf de namen gescheiden door komma's",
+    "rsvp.q4": "4. Maken jullie gebruik van de bus?",
+    "rsvp.q5": "5. Komen jullie ook naar de pre-wedding borrel op vrijdag?",
+    "rsvp.q6": "6. Speciale menu's en allergieën (per gast)",
+    "rsvp.q6.placeholder": "Vermeld allergieën of intoleranties",
+    "rsvp.q7": "7. Welk nummer mag niet ontbreken op de dansvloer?",
+    "rsvp.q7.placeholder": "Schrijf je nummer",
+    "rsvp.q8": "8. Willen jullie een berichtje achterlaten?",
+    "rsvp.q8.placeholder": "Schrijf je bericht (optioneel)",
+    "rsvp.yes": "Ja",
+    "rsvp.no": "Nee",
+    "rsvp.submit": "Bevestiging versturen",
+    "rsvp.thanks": "Dankjewel! We kijken er enorm naar uit deze dag met jullie te delen.",
+    "rsvp.sending": "Versturen…",
+    "rsvp.success.title": "Bevestiging verzonden!",
+    "rsvp.success.text": "Heel erg bedankt voor je reactie. Tot 3 oktober!",
+    "rsvp.error": "Versturen is niet gelukt. Probeer het opnieuw.",
+    "rsvp.required": "Beantwoord alsjeblieft de eerste vraag.",
+
+    "photos.title": "Deel jullie foto's met ons",
+    "photos.intro": "We willen dit weekend graag herbeleven door jullie ogen. Upload hier jullie foto's en video's van de bruiloft en van alle bijzondere momenten die we samen beleven.",
+    "photos.upload": "Foto's uploaden naar Google Photos",
+    "photos.how": "Hoe werkt het?",
+    "photos.step1": "Klik op de knop om het gedeelde album te openen.",
+    "photos.step2": "Voeg je foto's en video's toe wanneer je maar wilt.",
+    "photos.step3": "Zo kunnen we elk moment samen herbeleven!",
+    "photos.thanks.title": "Dankjewel!",
+    "photos.thanks.text": "Jullie foto's zijn de mooiste herinnering die we meenemen."
+  }
+};
+
+const LANGS = ["es", "en", "nl"];
+
+function getLang() {
+  const saved = localStorage.getItem("md-lang");
+  if (saved && LANGS.includes(saved)) return saved;
+  const nav = (navigator.language || "es").slice(0, 2).toLowerCase();
+  return LANGS.includes(nav) ? nav : "es";
+}
+
+function setLang(lang) {
+  if (!LANGS.includes(lang)) lang = "es";
+  localStorage.setItem("md-lang", lang);
+  applyLang(lang);
+}
+
+function t(key) {
+  const lang = getLang();
+  return (I18N[lang] && I18N[lang][key]) || I18N.es[key] || key;
+}
+
+function applyLang(lang) {
+  const dict = I18N[lang] || I18N.es;
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-i18n]").forEach(function (el) {
+    const key = el.getAttribute("data-i18n");
+    if (dict[key] !== undefined) el.textContent = dict[key];
+  });
+
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
+    const key = el.getAttribute("data-i18n-placeholder");
+    if (dict[key] !== undefined) el.setAttribute("placeholder", dict[key]);
+  });
+
+  document.querySelectorAll(".lang-switch button[data-lang]").forEach(function (btn) {
+    btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
+  });
+
+  // select placeholder option
+  document.querySelectorAll("option[data-i18n-option]").forEach(function (opt) {
+    const key = opt.getAttribute("data-i18n-option");
+    if (dict[key] !== undefined) opt.textContent = dict[key];
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".lang-switch button[data-lang]").forEach(function (btn) {
+    btn.addEventListener("click", function () { setLang(btn.getAttribute("data-lang")); });
+  });
+  applyLang(getLang());
+});

@@ -1,0 +1,224 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 400">
+  <defs>
+    <!-- watercolor edge filters -->
+    <filter id="wc" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02 0.03" numOctaves="3" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="6"/>
+    </filter>
+    <filter id="wcWash" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.02" numOctaves="3" seed="3" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="18"/>
+      <feGaussianBlur stdDeviation="2.2"/>
+    </filter>
+    <filter id="wcFine" x="-15%" y="-15%" width="130%" height="130%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="9" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3"/>
+    </filter>
+    <!-- paint grain overlay -->
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="5" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.5 0.5 0.5 0 0" result="a"/>
+      <feComposite in="SourceGraphic" in2="a" operator="in"/>
+    </filter>
+
+    <linearGradient id="skyW" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b9cdd8"/>
+      <stop offset=".7" stop-color="#d8e2e4" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#eef0e8" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="stoneA" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e9d8b6"/>
+      <stop offset=".6" stop-color="#dcc394"/>
+      <stop offset="1" stop-color="#c8a873"/>
+    </linearGradient>
+    <linearGradient id="stoneB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f0e2c4"/>
+      <stop offset="1" stop-color="#d6bd92"/>
+    </linearGradient>
+    <linearGradient id="stoneC" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e2cda4"/>
+      <stop offset="1" stop-color="#c3a06b"/>
+    </linearGradient>
+    <linearGradient id="roofT" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cf9166"/>
+      <stop offset="1" stop-color="#a96c47"/>
+    </linearGradient>
+    <linearGradient id="roofT2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c5825a"/>
+      <stop offset="1" stop-color="#96573a"/>
+    </linearGradient>
+    <linearGradient id="cypress" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6d7c46"/>
+      <stop offset="1" stop-color="#48542e"/>
+    </linearGradient>
+    <radialGradient id="ground" cx="50%" cy="0%" r="120%">
+      <stop offset="0" stop-color="#d9c69b"/>
+      <stop offset="1" stop-color="#c2ab7e" stop-opacity=".4"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ================= SKY WASH ================= -->
+  <g filter="url(#wcWash)">
+    <rect x="20" y="14" width="640" height="240" rx="60" fill="url(#skyW)" opacity=".75"/>
+    <ellipse cx="120" cy="70" rx="95" ry="26" fill="#a9c0cf" opacity=".35"/>
+    <ellipse cx="540" cy="50" rx="85" ry="22" fill="#a9c0cf" opacity=".3"/>
+    <ellipse cx="350" cy="38" rx="70" ry="16" fill="#c3d4dc" opacity=".35"/>
+  </g>
+
+  <!-- distant mountain -->
+  <g filter="url(#wcWash)">
+    <path d="M0 250 Q 60 196 130 226 Q 170 240 210 248 L 210 270 L 0 270 Z" fill="#9eb2bd" opacity=".5"/>
+    <path d="M430 252 Q 520 222 620 244 L 680 252 L 680 272 L 430 272 Z" fill="#aebfa0" opacity=".45"/>
+  </g>
+
+  <!-- ================= BUILDINGS ================= -->
+  <g filter="url(#wc)">
+
+    <!-- rear long wing (left, behind tower) -->
+    <rect x="60" y="196" width="130" height="72" fill="url(#stoneB)" opacity=".95"/>
+    <path d="M54 196 L 125 168 L 196 196 Z" fill="url(#roofT)"/>
+    <path d="M70 214 a 7 7 0 0 1 14 0 v 12 h -14 Z" fill="#8a6f4b" opacity=".75"/>
+    <path d="M100 214 a 7 7 0 0 1 14 0 v 12 h -14 Z" fill="#8a6f4b" opacity=".7"/>
+    <path d="M130 214 a 7 7 0 0 1 14 0 v 12 h -14 Z" fill="#8a6f4b" opacity=".75"/>
+
+    <!-- BELL TOWER -->
+    <g>
+      <rect x="196" y="92" width="62" height="176" fill="url(#stoneA)"/>
+      <!-- shading on right face -->
+      <rect x="236" y="92" width="22" height="176" fill="#b3905e" opacity=".4"/>
+      <!-- cornice between tiers -->
+      <rect x="191" y="148" width="72" height="8" fill="#cfae79"/>
+      <rect x="191" y="84" width="72" height="9" fill="#d9bb86"/>
+      <!-- belfry tier (lighter stone) -->
+      <rect x="199" y="40" width="56" height="46" fill="url(#stoneB)"/>
+      <!-- belfry arches -->
+      <path d="M206 84 v-22 a 9 9 0 0 1 18 0 v 22 Z" fill="#6f5d40" opacity=".85"/>
+      <path d="M231 84 v-22 a 9 9 0 0 1 18 0 v 22 Z" fill="#6f5d40" opacity=".85"/>
+      <circle cx="215" cy="68" r="3.4" fill="#caa96c"/>
+      <circle cx="240" cy="68" r="3.4" fill="#caa96c"/>
+      <!-- spire -->
+      <rect x="195" y="34" width="64" height="8" fill="#cfae79"/>
+      <path d="M195 34 L 227 2 L 259 34 Z" fill="url(#roofT2)"/>
+      <line x1="227" y1="2" x2="227" y2="-12" stroke="#7d4f35" stroke-width="2.4"/>
+      <path d="M227 -12 l 9 4.5 l -9 4.5 Z" fill="#7d4f35"/>
+      <!-- tower windows -->
+      <path d="M216 112 a 11 11 0 0 1 22 0 v 20 h -22 Z" fill="#766243" opacity=".8"/>
+      <!-- clock -->
+      <circle cx="227" cy="180" r="13" fill="#f4ecd6" stroke="#b3905e" stroke-width="2"/>
+      <line x1="227" y1="180" x2="227" y2="171" stroke="#6e5a3b" stroke-width="1.8"/>
+      <line x1="227" y1="180" x2="234" y2="181" stroke="#6e5a3b" stroke-width="1.8"/>
+      <!-- arched door -->
+      <path d="M213 268 v -28 a 14 14 0 0 1 28 0 v 28 Z" fill="#7a5f3e"/>
+      <path d="M217 268 v -25 a 10 10 0 0 1 20 0 v 25 Z" fill="#574630"/>
+    </g>
+
+    <!-- MAIN NAVE -->
+    <g>
+      <rect x="258" y="152" width="170" height="116" fill="url(#stoneB)"/>
+      <!-- gable -->
+      <path d="M252 152 L 343 110 L 434 152 Z" fill="url(#roofT)"/>
+      <path d="M252 152 L 343 110 L 343 152 Z" fill="#b97f57" opacity=".5"/>
+      <!-- bell-cote on the ridge -->
+      <rect x="333" y="88" width="20" height="24" fill="url(#stoneB)"/>
+      <path d="M330 88 L 343 76 L 356 88 Z" fill="url(#roofT2)"/>
+      <path d="M338 108 v -9 a 5 5 0 0 1 10 0 v 9 Z" fill="#6f5d40"/>
+      <!-- rose window -->
+      <circle cx="343" cy="176" r="15" fill="#f4ecd6" stroke="#b3905e" stroke-width="2"/>
+      <circle cx="343" cy="176" r="8.5" fill="none" stroke="#c2a26d" stroke-width="1.4"/>
+      <line x1="343" y1="161" x2="343" y2="191" stroke="#c2a26d" stroke-width="1.2"/>
+      <line x1="328" y1="176" x2="358" y2="176" stroke="#c2a26d" stroke-width="1.2"/>
+      <!-- portal -->
+      <path d="M321 268 v -42 a 22 22 0 0 1 44 0 v 42 Z" fill="#8a6f4b"/>
+      <path d="M327 268 v -38 a 16 16 0 0 1 32 0 v 38 Z" fill="#5d4b33"/>
+      <line x1="343" y1="230" x2="343" y2="268" stroke="#473a28" stroke-width="1.4"/>
+      <!-- side windows -->
+      <path d="M280 212 a 9 9 0 0 1 18 0 v 18 h -18 Z" fill="#8a6f4b" opacity=".85"/>
+      <path d="M390 212 a 9 9 0 0 1 18 0 v 18 h -18 Z" fill="#8a6f4b" opacity=".85"/>
+    </g>
+
+    <!-- RIGHT PAVILION (hipped roof, like the sketch) -->
+    <g>
+      <rect x="428" y="170" width="140" height="98" fill="url(#stoneC)"/>
+      <path d="M420 170 L 462 132 L 534 132 L 576 170 Z" fill="url(#roofT2)"/>
+      <path d="M420 170 L 462 132 L 470 170 Z" fill="#8d5238" opacity=".45"/>
+      <!-- upper small windows -->
+      <path d="M446 192 a 8 8 0 0 1 16 0 v 14 h -16 Z" fill="#8a6f4b" opacity=".85"/>
+      <path d="M490 192 a 8 8 0 0 1 16 0 v 14 h -16 Z" fill="#8a6f4b" opacity=".85"/>
+      <path d="M534 192 a 8 8 0 0 1 16 0 v 14 h -16 Z" fill="#8a6f4b" opacity=".85"/>
+      <!-- arcade at base -->
+      <path d="M446 268 v -22 a 10 10 0 0 1 20 0 v 22 Z" fill="#7a5f3e" opacity=".9"/>
+      <path d="M478 268 v -22 a 10 10 0 0 1 20 0 v 22 Z" fill="#7a5f3e" opacity=".9"/>
+      <path d="M510 268 v -22 a 10 10 0 0 1 20 0 v 22 Z" fill="#7a5f3e" opacity=".9"/>
+    </g>
+
+    <!-- far right low wing -->
+    <rect x="568" y="206" width="72" height="62" fill="url(#stoneB)" opacity=".95"/>
+    <path d="M562 206 L 604 184 L 646 206 Z" fill="url(#roofT)"/>
+    <path d="M594 226 a 7 7 0 0 1 14 0 v 12 h -14 Z" fill="#8a6f4b" opacity=".7"/>
+  </g>
+
+  <!-- ================= CYPRESSES ================= -->
+  <g filter="url(#wcFine)">
+    <path d="M150 268 C 136 230 138 186 152 158 C 166 186 165 230 154 268 Z" fill="url(#cypress)" opacity=".95"/>
+    <path d="M124 268 C 114 240 116 208 126 188 C 137 208 135 240 128 268 Z" fill="url(#cypress)" opacity=".75"/>
+    <path d="M448 268 C 438 244 440 218 449 200 C 459 218 457 244 452 268 Z" fill="url(#cypress)" opacity=".7"/>
+    <path d="M588 268 C 574 226 576 180 590 150 C 605 180 603 228 592 268 Z" fill="url(#cypress)" opacity=".95"/>
+    <path d="M620 268 C 611 242 613 214 622 196 C 632 214 630 242 624 268 Z" fill="url(#cypress)" opacity=".8"/>
+  </g>
+
+  <!-- ================= FOREGROUND ================= -->
+  <g filter="url(#wc)">
+    <!-- ground wash -->
+    <rect x="0" y="266" width="680" height="60" fill="url(#ground)"/>
+    <!-- stone wall -->
+    <rect x="0" y="266" width="680" height="14" fill="#cdb589" opacity=".9"/>
+    <line x1="0" y1="266" x2="680" y2="266" stroke="#a98c5c" stroke-width="1.6" opacity=".7"/>
+    <!-- wall stones suggestion -->
+    <g stroke="#a98c5c" stroke-width="1" opacity=".4">
+      <line x1="40" y1="266" x2="40" y2="280"/><line x1="110" y1="266" x2="110" y2="280"/>
+      <line x1="180" y1="266" x2="180" y2="280"/><line x1="250" y1="266" x2="250" y2="280"/>
+      <line x1="320" y1="266" x2="320" y2="280"/><line x1="390" y1="266" x2="390" y2="280"/>
+      <line x1="460" y1="266" x2="460" y2="280"/><line x1="530" y1="266" x2="530" y2="280"/>
+      <line x1="600" y1="266" x2="600" y2="280"/>
+    </g>
+    <!-- path -->
+    <path d="M240 326 L 296 280 H 392 L 448 326 Z" fill="#e6d8b4" opacity=".85"/>
+  </g>
+
+  <!-- lamppost -->
+  <g filter="url(#wcFine)">
+    <line x1="96" y1="266" x2="96" y2="196" stroke="#4d4636" stroke-width="3"/>
+    <path d="M88 196 h 16 l -3 -12 h -10 Z" fill="#4d4636"/>
+    <circle cx="96" cy="190" r="4" fill="#ecd9a0"/>
+    <ellipse cx="96" cy="190" rx="9" ry="8" fill="#f2e2ae" opacity=".35"/>
+  </g>
+
+  <!-- couple walking -->
+  <g filter="url(#wcFine)">
+    <!-- groom -->
+    <g fill="#43402f">
+      <circle cx="316" cy="234" r="5.4"/>
+      <path d="M309 241 q 7 -4.5 14 0 l 2.5 24 q -9.5 3.5 -19 0 Z"/>
+      <path d="M312 263 l -2 12 M 322 263 l 2 12" stroke="#43402f" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </g>
+    <!-- bride -->
+    <g>
+      <circle cx="336" cy="236" r="5" fill="#43402f"/>
+      <path d="M336 230 q 7 -3 8 4" fill="none" stroke="#43402f" stroke-width="2"/>
+      <path d="M329 243 q 7 -4.5 14 0 l 6.5 24 q -13.5 5 -27 0 Z" fill="#f7f1de" stroke="#b9a87e" stroke-width="1.4"/>
+      <!-- bouquet -->
+      <circle cx="329" cy="252" r="3.4" fill="#a9b184"/>
+    </g>
+    <!-- joined hands suggestion -->
+    <path d="M323 252 q 4 2 7 1" stroke="#43402f" stroke-width="1.6" fill="none"/>
+  </g>
+
+  <!-- grass + tiny blooms -->
+  <g filter="url(#wcFine)" stroke="#7c8455" stroke-width="1.5" fill="none" opacity=".65" stroke-linecap="round">
+    <path d="M36 324 q 5 -14 0 -24"/><path d="M46 324 q -5 -12 3 -22"/><path d="M28 324 q -3 -10 -8 -16"/>
+    <path d="M640 324 q 5 -14 0 -24"/><path d="M652 324 q -5 -12 3 -20"/><path d="M628 322 q -3 -10 -8 -16"/>
+  </g>
+  <g filter="url(#wcFine)" fill="#f3ecd6" opacity=".9">
+    <circle cx="52" cy="306" r="3"/><circle cx="34" cy="312" r="2.4"/><circle cx="646" cy="308" r="3"/><circle cx="660" cy="314" r="2.2"/>
+  </g>
+</svg>
