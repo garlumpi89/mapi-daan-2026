@@ -1,0 +1,4 @@
+function getLang(){return localStorage.getItem('weddingLang')||((navigator.language||'es').startsWith('nl')?'nl':(navigator.language||'es').startsWith('en')?'en':'es')}
+function setLang(lang){localStorage.setItem('weddingLang',lang);document.documentElement.lang=lang;document.querySelectorAll('[data-i18n]').forEach(el=>{const key=el.dataset.i18n;if(I18N[lang][key]) el.textContent=I18N[lang][key]});document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{const key=el.dataset.i18nPlaceholder;if(I18N[lang][key]) el.placeholder=I18N[lang][key]});document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));document.dispatchEvent(new CustomEvent('langchange',{detail:{lang}}))}
+function initLang(){document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));setLang(getLang())}
+document.addEventListener('DOMContentLoaded',initLang);
