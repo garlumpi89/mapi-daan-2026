@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 1800">
+<style>.s{fill:none;stroke:#6f8a67;stroke-width:3;stroke-linecap:round;opacity:.72}.l{fill:#9fb491;opacity:.55}.b{fill:#8fa5dd;opacity:.82}.p{fill:#e8a5ad;opacity:.82}.y{fill:#e8c75a;opacity:.82}.w{fill:#f8f5e8;stroke:#c9c7ac;stroke-width:1.2;opacity:.9}.v{fill:#aa92d3;opacity:.78}</style>
+<path class="s" d="M30 40 C90 210 12 330 72 520 C126 694 28 820 82 1010 C132 1188 46 1352 120 1578"/>
+<path class="s" d="M152 120 C92 320 198 485 132 650 C66 815 162 1030 92 1210 C28 1370 104 1550 72 1760"/>
+<path class="s" d="M230 300 C160 460 240 640 174 790 C122 910 212 1100 166 1270 C126 1420 192 1620 142 1770"/>
+<g><ellipse class="l" cx="64" cy="240" rx="18" ry="42" transform="rotate(42 64 240)"/><ellipse class="l" cx="100" cy="382" rx="16" ry="38" transform="rotate(-48 100 382)"/><ellipse class="l" cx="54" cy="640" rx="18" ry="42" transform="rotate(42 54 640)"/><ellipse class="l" cx="114" cy="930" rx="16" ry="38" transform="rotate(-48 114 930)"/><ellipse class="l" cx="64" cy="1260" rx="18" ry="42" transform="rotate(42 64 1260)"/><ellipse class="l" cx="116" cy="1490" rx="18" ry="40" transform="rotate(-48 116 1490)"/></g>
+<g><circle class="b" cx="38" cy="150" r="16"/><circle class="b" cx="64" cy="168" r="15"/><circle class="b" cx="50" cy="190" r="14"/><circle class="y" cx="52" cy="170" r="5"/>
+<circle class="p" cx="98" cy="330" r="18"/><circle class="p" cx="124" cy="338" r="14"/><circle class="y" cx="112" cy="335" r="5"/>
+<circle class="w" cx="32" cy="520" r="22"/><circle class="w" cx="56" cy="536" r="18"/><circle class="y" cx="44" cy="528" r="5"/>
+<circle class="v" cx="196" cy="250" r="9"/><circle class="v" cx="190" cy="280" r="9"/><circle class="v" cx="182" cy="310" r="8"/>
+<circle class="y" cx="166" cy="700" r="19"/><circle class="y" cx="194" cy="716" r="13"/><circle class="p" cx="66" cy="870" r="15"/><circle class="b" cx="36" cy="1130" r="15"/><circle class="b" cx="63" cy="1146" r="13"/><circle class="p" cx="146" cy="1320" r="17"/><circle class="w" cx="52" cy="1570" r="24"/><circle class="y" cx="72" cy="1600" r="16"/></g>
+</svg>

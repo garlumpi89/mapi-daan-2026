@@ -7,11 +7,16 @@
 <meta name="description" content="Boda de Mapi y Daan — 3 de octubre de 2026, Villafranca, Navarra.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Parisienne&family=Imperial+Script&family=Mrs+Saint+Delafield&family=Allura&family=Alex+Brush&family=Italianno&family=Monsieur+La+Doulaise&family=Tangerine:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🤍</text></svg>">
 </head>
 <body>
+<div class="flower-frame-bg" aria-hidden="true"></div>
+<div class="floral-border floral-border-top" aria-hidden="true"></div>
+<div class="floral-border floral-border-left" aria-hidden="true"></div>
+<div class="floral-border floral-border-right" aria-hidden="true"></div>
+<div class="floral-border floral-border-bottom" aria-hidden="true"></div>
 
 <header class="site-header">
   <a class="brand" href="#inicio" data-tab="home">Mapi &amp; Daan</a>
@@ -19,7 +24,6 @@
   <nav class="tab-nav" aria-label="Secciones">
     <a href="#inicio" data-tab="home" class="active" data-i18n="nav.home">Inicio</a>
     <a href="#rsvp" data-tab="rsvp" data-i18n="nav.rsvp">RSVP</a>
-    <a href="#fotos" data-tab="fotos" data-i18n="nav.photos">Fotos</a>
   </nav>
 
   <nav class="lang-switch" aria-label="Idioma">
@@ -36,23 +40,13 @@
 
   <!-- cinematic invitation hero -->
   <section class="hero-stage" id="hero-stage">
-    <div class="stage-glow" aria-hidden="true"></div>
-    <canvas id="particles" aria-hidden="true"></canvas>
-
-    <div class="stage-floral tl" data-depth="18" aria-hidden="true"><img src="assets/floral-corner.svg" alt=""></div>
-    <div class="stage-floral tr" data-depth="18" aria-hidden="true"><img src="assets/floral-corner.svg" alt=""></div>
-    <div class="stage-floral bl" data-depth="11" aria-hidden="true"><img src="assets/floral-corner.svg" alt=""></div>
-    <div class="stage-floral br" data-depth="11" aria-hidden="true"><img src="assets/floral-corner.svg" alt=""></div>
-
     <div class="invite-card" id="invite-card">
       <p class="card-kicker" data-i18n="hero.kicker">¡Nos casamos!</p>
       <h1 class="script-names">Mapi<span class="card-amp">&amp;</span>Daan</h1>
-      <img class="card-church" alt="Monasterio de Villafranca"
-           src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoRp7NXAQmCkB2xen47ril_ITUWfAVeKskCPG5a-UuzTLFN3kDNMwqCKS_BQdqkex1Cv6E5CWw77-pWbNm4Ly5QcRxD1cjff2OJp0CK_tRfeotygGvOk3taT4nLB84XA_WbEhrw9teGb2DDgatQoKhjNwpZGJNLk5uTkQxvxXtITp18qW7oYoYzx-nGbEKSZC1ow9mhJ7reN4815Y-DLKX5qib-tX4X5wrLbjYSmrFmjt03pskPTwNY7QG95Bx04zLFq_3-gyXG6Y"
-           onerror="this.onerror=null;this.src='assets/church.svg'">
       <p class="card-date" data-i18n="hero.date">03 · 10 · 2026</p>
       <p class="card-place" data-i18n="hero.place">Villafranca · Navarra</p>
       <div class="card-rule" aria-hidden="true"></div>
+      <img class="card-church" alt="Acuarela original de la Terraza Padres Carmelitas" src="assets/church-original-transparent.png">
     </div>
 
     <div class="scroll-hint" aria-hidden="true">
@@ -74,7 +68,6 @@
   <section id="programa">
     <div class="container">
       <h2 class="section-title reveal" data-i18n="program.title">Programa del fin de semana</h2>
-      <div class="ornament reveal" aria-hidden="true">❧</div>
 
       <div class="timeline">
 
@@ -84,17 +77,16 @@
               <div class="day-name" data-i18n="program.friday">Viernes</div>
               <div class="day-date" data-i18n="program.friday.date">02 · 10 · 2026</div>
             </div>
-            <svg class="sprig" viewBox="0 0 60 24" aria-hidden="true"><path d="M2 12 H 58" stroke="#a89a7d" stroke-width="1" opacity=".6"/><g fill="#a89a7d" opacity=".75"><ellipse cx="18" cy="8" rx="2.4" ry="6" transform="rotate(-40 18 8)"/><ellipse cx="30" cy="16" rx="2.4" ry="6" transform="rotate(40 30 16)"/><ellipse cx="42" cy="8" rx="2.4" ry="6" transform="rotate(-40 42 8)"/></g></svg>
           </div>
           <div class="events">
             <div class="event">
               <span class="event-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 3 L8 9 a3.5 3.5 0 0 0 7 0 V3"/><path d="M8 3 h7"/><path d="M11.5 12.5 V20"/><path d="M8.5 20 h6"/></svg>
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 18h14v27a7 7 0 0 1-7 7h0a7 7 0 0 1-7-7V18Z"/><path d="M17 25h14"/><path d="M31 24h4a6 6 0 0 1 0 12h-4"/><path d="M43 48V21l10-3v24"/><circle cx="39" cy="48" r="4"/><circle cx="49" cy="42" r="4"/><path d="M16 52h22"/></svg>
               </span>
               <div class="time">20:00</div>
               <div class="name" data-i18n="event.preboda">Preboda</div>
               <div class="venue" data-i18n="event.preboda.venue">Bar Gorría</div>
-              <a class="map-link" href="https://maps.google.com/?q=Bar+Gorria+Villafranca+Navarra" target="_blank" rel="noopener">
+              <a class="map-link" href="https://maps.app.goo.gl/xRAJWxKhCFq8vYCz7" target="_blank" rel="noopener">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
                 <span data-i18n="map.view">Ver ubicación</span>
               </a>
@@ -108,18 +100,17 @@
               <div class="day-name" data-i18n="program.saturday">Sábado</div>
               <div class="day-date" data-i18n="program.saturday.date">03 · 10 · 2026</div>
             </div>
-            <svg class="sprig" viewBox="0 0 60 24" aria-hidden="true"><path d="M2 12 H 58" stroke="#a89a7d" stroke-width="1" opacity=".6"/><g fill="#a89a7d" opacity=".75"><ellipse cx="18" cy="8" rx="2.4" ry="6" transform="rotate(-40 18 8)"/><ellipse cx="30" cy="16" rx="2.4" ry="6" transform="rotate(40 30 16)"/><ellipse cx="42" cy="8" rx="2.4" ry="6" transform="rotate(-40 42 8)"/></g></svg>
           </div>
           <div class="events">
 
             <div class="event reveal">
               <span class="event-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8.5" cy="13.5" r="4.5"/><circle cx="15.5" cy="13.5" r="4.5"/><path d="M10.5 7.5 L12 5 L13.5 7.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="26" cy="35" r="12"/><circle cx="40" cy="35" r="12"/><path d="M34 20l4-7 6 7"/><path d="M34 20h14"/><path d="M16 49h34"/></svg>
               </span>
               <div class="time">12:30</div>
               <div class="name" data-i18n="event.ceremonia">Ceremonia</div>
               <div class="venue" data-i18n="event.ceremonia.venue">Terraza Padres Carmelitas</div>
-              <a class="map-link" href="https://maps.google.com/?q=Padres+Carmelitas+Villafranca+Navarra" target="_blank" rel="noopener">
+              <a class="map-link" href="https://maps.app.goo.gl/2AvCW6MnAVzk6SVA7" target="_blank" rel="noopener">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
                 <span data-i18n="map.view">Ver ubicación</span>
               </a>
@@ -127,12 +118,12 @@
 
             <div class="event reveal">
               <span class="event-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="5" width="16" height="12" rx="2.5"/><path d="M4 11 h16"/><circle cx="8" cy="17.5" r="1.6" fill="currentColor" stroke="none"/><circle cx="16" cy="17.5" r="1.6" fill="currentColor" stroke="none"/></svg>
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="18" width="43" height="25" rx="5"/><path d="M14 26h33M14 34h33"/><path d="M18 43v5M43 43v5"/><circle cx="18" cy="49" r="4"/><circle cx="43" cy="49" r="4"/><path d="M52 29h3a4 4 0 0 1 4 4v6h-7"/><path d="M6 55h50"/><path d="M52 12c4 0 7 3 7 7 0 6-7 11-7 11s-7-5-7-11c0-4 3-7 7-7Z"/><circle cx="52" cy="19" r="2"/></svg>
               </span>
               <div class="time">14:00</div>
-              <div class="name" data-i18n="event.bus">Autobuses a Hotel Luze El Villa</div>
+              <div class="name" data-i18n="event.bus">Autobuses a Zona Chic Castejón</div>
               <div class="venue" data-i18n="event.bus.venue">Salida desde Villafranca</div>
-              <a class="map-link" href="https://maps.google.com/?q=Villafranca+Navarra" target="_blank" rel="noopener">
+              <a class="map-link" href="https://maps.app.goo.gl/1Bk1BkyjvLJaMyFRA" target="_blank" rel="noopener">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
                 <span data-i18n="map.view">Ver ubicación</span>
               </a>
@@ -140,39 +131,12 @@
 
             <div class="event reveal">
               <span class="event-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 4 L11 4 L8 11 Z" stroke-linejoin="round"/><path d="M8 11 V19 M5.5 19 h5"/><path d="M14 6 L20 6 L17 12 Z" stroke-linejoin="round"/><path d="M17 12 V19 M14.5 19 h5"/></svg>
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 17h15l-3 20a7 7 0 0 1-9 0Z"/><path d="M25.5 41v11M18 52h15"/><path d="M37 17h15l-3 20a7 7 0 0 1-9 0Z"/><path d="M44.5 41v11M37 52h15"/><path d="M23 23h8M42 23h8"/><path d="M33 31l6 0"/><path d="M28 12l4 4M41 12l-4 4"/></svg>
               </span>
               <div class="time">14:30</div>
               <div class="name" data-i18n="event.coctel">Cóctel</div>
-              <div class="venue"><a class="map-link" style="margin-top:0;" href="https://hotelluzeelvilla.com" target="_blank" rel="noopener"><span data-i18n="event.luze">Hotel Luze El Villa</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 L17 7 M9 7 h8 v8"/></svg></a></div>
-            </div>
-
-            <div class="event reveal">
-              <span class="event-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="13" r="6"/><path d="M12 7 V4"/><path d="M3 13 h2 M19 13 h2"/></svg>
-              </span>
-              <div class="time">16:00</div>
-              <div class="name" data-i18n="event.comida">Comida</div>
-              <div class="venue"><a class="map-link" style="margin-top:0;" href="https://hotelluzeelvilla.com" target="_blank" rel="noopener"><span data-i18n="event.luze">Hotel Luze El Villa</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 L17 7 M9 7 h8 v8"/></svg></a></div>
-            </div>
-
-            <div class="event reveal">
-              <span class="event-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="9" cy="4.5" r="1.6"/><circle cx="16" cy="5.5" r="1.6"/><path d="M9 7 q -2 4 -1 7 l -2 6"/><path d="M9 14 l 3 6"/><path d="M16 8 q 2 4 0.5 7 l 1.5 5"/><path d="M16.5 15 l -3 5"/></svg>
-              </span>
-              <div class="time">19:00</div>
-              <div class="name" data-i18n="event.baile">Baile</div>
-              <div class="venue"><a class="map-link" style="margin-top:0;" href="https://hotelluzeelvilla.com" target="_blank" rel="noopener"><span data-i18n="event.luze">Hotel Luze El Villa</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 L17 7 M9 7 h8 v8"/></svg></a></div>
-            </div>
-
-            <div class="event reveal">
-              <span class="event-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 17 q 8 -10 16 0" /><path d="M3 17 h18"/><path d="M12 7 V5"/><circle cx="12" cy="4" r="1"/></svg>
-              </span>
-              <div class="time">22:30</div>
-              <div class="name" data-i18n="event.recena">Recena</div>
-              <div class="venue" data-i18n="event.recena.venue">Casino Gamarre</div>
-              <a class="map-link" href="https://maps.google.com/?q=Casino+Gamarre+Villafranca+Navarra" target="_blank" rel="noopener">
+              <div class="venue" data-i18n="event.luze">Hotel Luze El Villa</div>
+              <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Hotel%20Luze%20El%20Villa%20Castejon%20Navarra" target="_blank" rel="noopener">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
                 <span data-i18n="map.view">Ver ubicación</span>
               </a>
@@ -180,7 +144,54 @@
 
             <div class="event reveal">
               <span class="event-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="13" r="7"/><path d="M12 13 L12 9"/><path d="M12 13 L15 14.5"/><path d="M9 3 h6"/><path d="M12 3 v3"/></svg>
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="34" r="13"/><circle cx="32" cy="34" r="7"/><path d="M15 16v36"/><path d="M10 16v14a5 5 0 0 0 10 0V16"/><path d="M49 16v36"/><path d="M49 16c7 5 8 16 0 23"/></svg>
+              </span>
+              <div class="time">16:00</div>
+              <div class="name" data-i18n="event.comida">Comida</div>
+              <div class="venue" data-i18n="event.luze">Hotel Luze El Villa</div>
+              <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Hotel%20Luze%20El%20Villa%20Castejon%20Navarra" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                <span data-i18n="map.view">Ver ubicación</span>
+              </a>
+            </div>
+
+            <div class="event reveal">
+              <span class="event-icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M31 16c5 5 5 12 0 18"/><path d="M31 34l-8 17"/><path d="M31 34l12 16"/><path d="M25 22l-9 9"/><path d="M36 23l9 8"/><circle cx="32" cy="12" r="4"/><path d="M44 20c4 4 4 10 1 15"/><path d="M50 35c-1 7-6 12-15 15"/><path d="M18 32c-4 7-2 13 5 19"/><path d="M20 51c8 3 18 3 27-2"/></svg>
+              </span>
+              <div class="time">19:00</div>
+              <div class="name" data-i18n="event.baile">Baile</div>
+              <div class="venue" data-i18n="event.luze">Hotel Luze El Villa</div>
+              <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Hotel%20Luze%20El%20Villa%20Castejon%20Navarra" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                <span data-i18n="map.view">Ver ubicación</span>
+              </a>
+            </div>
+
+            <div class="event reveal">
+              <span class="event-icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="18" width="43" height="25" rx="5"/><path d="M14 26h33M14 34h33"/><path d="M18 43v5M43 43v5"/><circle cx="18" cy="49" r="4"/><circle cx="43" cy="49" r="4"/><path d="M52 29h3a4 4 0 0 1 4 4v6h-7"/><path d="M6 55h50"/><path d="M52 12c4 0 7 3 7 7 0 6-7 11-7 11s-7-5-7-11c0-4 3-7 7-7Z"/><circle cx="52" cy="19" r="2"/></svg>
+              </span>
+              <div class="time">22:00</div>
+              <div class="name" data-i18n="event.bus.return">Autobuses a Villafranca</div>
+            </div>
+
+            <div class="event reveal">
+              <span class="event-icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 45h30"/><path d="M19 45V34h26v11"/><path d="M21 34V25h22v9"/><path d="M24 25V18h16v7"/><path d="M32 18v-5"/><path d="M29 13c0-3 3-5 3-5s3 2 3 5"/><path d="M23 37c4 4 8 4 12 0 4 4 8 4 12 0"/><path d="M16 51h32"/></svg>
+              </span>
+              <div class="time">22:30</div>
+              <div class="name" data-i18n="event.recena">Recena</div>
+              <div class="venue" data-i18n="event.recena.venue">Casino Gayarre</div>
+              <a class="map-link" href="https://maps.app.goo.gl/Xi1665F6afaucKHz7" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                <span data-i18n="map.view">Ver ubicación</span>
+              </a>
+            </div>
+
+            <div class="event reveal">
+              <span class="event-icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="36" r="16"/><path d="M19 30h26M17 37h30M22 48h20M32 20v32M25 23c4 8 4 18 0 27M39 23c-4 8-4 18 0 27"/><path d="M32 11v8M27 11h10"/><path d="M12 17l4 4M52 17l-4 4M11 55l5-3M53 55l-5-3"/></svg>
               </span>
               <div class="time">00:00</div>
               <div class="name" data-i18n="event.fiesta">Fiesta</div>
@@ -205,7 +216,7 @@
                onerror="this.style.display='none'">
           <h3 data-i18n="stay.martinez">Hostal Martínez</h3>
           <p data-i18n="stay.martinez.desc">Ideal para quienes quieran alojarse en pleno centro de Villafranca.</p>
-          <a class="map-link" href="https://maps.google.com/?q=Hostal+Martinez+Villafranca+Navarra" target="_blank" rel="noopener">
+          <a class="map-link" href="http://www.hostalmartinez.com/" target="_blank" rel="noopener">
             <span data-i18n="stay.more">Ver más</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 L17 7 M9 7 h8 v8"/></svg>
           </a>
@@ -217,7 +228,7 @@
                onerror="this.style.display='none'">
           <h3 data-i18n="stay.esencia">Apartamentos Rurales Esencia de Bardenas</h3>
           <p data-i18n="stay.esencia.desc">Perfectos para familias o grupos que prefieran disponer de más espacio.</p>
-          <a class="map-link" href="https://maps.google.com/?q=Esencia+de+Bardenas+Villafranca+Navarra" target="_blank" rel="noopener">
+          <a class="map-link" href="https://apartamentosruralesbardenas.com/" target="_blank" rel="noopener">
             <span data-i18n="stay.more">Ver más</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 L17 7 M9 7 h8 v8"/></svg>
           </a>
@@ -229,26 +240,34 @@
                onerror="this.style.display='none'">
           <h3 data-i18n="stay.camping">Camping Bardenas</h3>
           <p data-i18n="stay.camping.desc">Bungalows y otras opciones de alojamiento.</p>
-          <a class="map-link" href="https://maps.google.com/?q=Camping+Bardenas+Villafranca+Navarra" target="_blank" rel="noopener">
+          <a class="map-link" href="https://www.campingbardenas.com/" target="_blank" rel="noopener">
             <span data-i18n="stay.more">Ver más</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 L17 7 M9 7 h8 v8"/></svg>
           </a>
         </article>
 
         <article class="card reveal d3">
-          <img class="card-photo" alt="Hotel Luze El Villa"
-               src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGrkRT4ikkL81bJiHsRhUaRIYkayAmOwVuMaVVd62koORLoqngWblwXDWtF4Li6RK099rF29srFlxXwBCV50OypqYxvqwLOpMU8eLmKSkW8d6Lz0dwxbIp7zUz9AvftsW4o6SpvUEA5QDTrHaym_-2D1nM0ubSZSYYauRjvhljRL9Dt5RfHjh-HvgH7eACgVKcolUscNMuR17__P-lUUWeFe7JQz07uRS_uBPcZIKL2yCYTysa7dE2snjToxfxWSQ7lXT5LzrR_BE"
+          <img class="card-photo luze-photo" alt="Hotel Luze El Villa"
+               src="assets/luze-clean.png"
                onerror="this.style.display='none'">
           <h3 data-i18n="stay.luze">Hotel Luze El Villa</h3>
           <p data-i18n="stay.luze.desc">Lugar de celebración del cóctel, comida y baile.</p>
-          <p class="promo"><span data-i18n="stay.luze.promo">Código descuento:</span><br><strong>MAPI&amp;DAAN26</strong></p>
-          <a class="map-link" href="https://hotelluzeelvilla.com" target="_blank" rel="noopener">
+          <p class="promo"><span data-i18n="stay.luze.promo">Código descuento:</span><br><strong>MARIAPILAR&amp;DAAN26</strong></p>
+          <a class="map-link" href="https://www.luzehoteles.com/luze-el-villa/" target="_blank" rel="noopener">
             <span data-i18n="stay.more">Ver más</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 L17 7 M9 7 h8 v8"/></svg>
           </a>
         </article>
 
       </div>
+    </div>
+  </section>
+
+  <!-- dress code -->
+  <section id="dress-code" class="dress-code-section">
+    <div class="container reveal">
+      <h2 class="section-title" data-i18n="dress.title">Dress code</h2>
+      <p class="dress-code-note" data-i18n="dress.note">Os pedimos vestir de manera formal para celebrar este día tan especial.</p>
     </div>
   </section>
 
@@ -261,8 +280,6 @@
       <h2 class="section-title" data-i18n="cta.title">¿Nos acompañáis?</h2>
       <p data-i18n="cta.text">Confirma tu asistencia antes del 1 de septiembre.</p>
       <a class="btn" href="#rsvp" data-tab="rsvp" data-i18n="cta.rsvp">Confirmar asistencia</a>
-      <br>
-      <a class="text-link" href="#fotos" data-tab="fotos" data-i18n="cta.photos">Compartir fotos</a>
     </div>
   </section>
 
@@ -292,6 +309,26 @@
             <label class="radio-pill"><input type="radio" name="asistencia" value="si" required><span data-i18n="rsvp.q1.yes">Sí, asistiré</span></label>
             <label class="radio-pill"><input type="radio" name="asistencia" value="no"><span data-i18n="rsvp.q1.no">No podré asistir</span></label>
           </div>
+        </div>
+      </div>
+
+      <div class="form-row contact-row">
+        <div class="q-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+        </div>
+        <div>
+          <label class="q-label" for="contactName" data-i18n="rsvp.contactName">Nombre de contacto</label>
+          <input type="text" id="contactName" name="contactName" data-i18n-placeholder="rsvp.contactName.placeholder" placeholder="Nombre de la persona que rellena el formulario">
+        </div>
+      </div>
+
+      <div class="form-row contact-row">
+        <div class="q-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.66 2.8a2 2 0 0 1-.45 2.11L8.1 9.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.31 1.84.53 2.8.66A2 2 0 0 1 22 16.92Z"/></svg>
+        </div>
+        <div>
+          <label class="q-label" for="phone" data-i18n="rsvp.phone">Teléfono de contacto</label>
+          <input type="tel" id="phone" name="phone" data-i18n-placeholder="rsvp.phone.placeholder" placeholder="Teléfono de contacto">
         </div>
       </div>
 
@@ -404,66 +441,6 @@
 </section>
 </div>
 
-<!-- ════════════════════ PANEL: FOTOS ════════════════════ -->
-<div class="tab-panel" id="panel-fotos">
-<section style="position:relative; overflow:hidden;">
-
-  <div class="corner-floral tl animate-sway" aria-hidden="true"><img src="assets/floral-corner.svg" alt=""></div>
-  <div class="corner-floral tr animate-sway" aria-hidden="true"><img src="assets/floral-corner.svg" alt=""></div>
-
-  <div class="container" style="text-align:center; position:relative; z-index:2;">
-    <h1 class="section-title" data-i18n="photos.title">Comparte tus fotos con nosotros</h1>
-    <div class="ornament" aria-hidden="true">❧</div>
-    <p class="lead" data-i18n="photos.intro">
-      Nos encantará revivir este fin de semana a través de vuestros ojos.
-      Subid aquí vuestras fotos y vídeos de la boda y de todos los momentos especiales que vivamos juntos.
-    </p>
-
-    <div class="camera-art" aria-hidden="true">
-      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoVglH29yRBeG7vq9wEx6Z0u60k1R_D42s0d3S8P85UWRRpDGeHBRnySK457ErQOwNNFHjHEYCk9w5B7_1o6axHbftO4iWgoXQB-YondDdon9Ia41Tpy7y5zcyj31FX3Cryl8QaVYiMM-3BhEiBEn0ngHOIxDYvLyj0PL6Ypnd6Bj8powanX9b63GVFYJ0owjoioXJEPxVzhDbDtFYKUNl1oxac0vuI--2_oEI0XZTmMF5Qeoarfc8JEtSb1IKC3_uc1hqSyeViIg" alt="" onerror="this.onerror=null;this.src='assets/camera.svg'">
-    </div>
-
-    <a class="btn" id="album-link" href="https://photos.app.goo.gl/REPLACE_WITH_ALBUM_LINK" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M8 7 l1.5-3 h5 L16 7"/><circle cx="12" cy="13.5" r="3.6"/></svg>
-      <span data-i18n="photos.upload">Subir fotos a Google Photos</span>
-    </a>
-
-    <div class="how-box">
-      <div class="box-title" data-i18n="photos.how">¿Cómo funciona?</div>
-      <div class="steps">
-        <div class="step">
-          <div class="step-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="4" y="4" width="12" height="12" rx="2"/><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M14 11 v6 M11 14 h6"/></svg>
-          </div>
-          <p data-i18n="photos.step1">Haz clic en el botón para acceder al álbum compartido.</p>
-        </div>
-        <div class="step">
-          <div class="step-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.8"/><path d="M3 17 l5-5 4 4 3-3 6 6" stroke-linejoin="round"/></svg>
-          </div>
-          <p data-i18n="photos.step2">Añade tus fotos y vídeos cuando quieras.</p>
-        </div>
-        <div class="step">
-          <div class="step-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="6" width="16" height="13" rx="2.5"/><path d="M9 6 l1.2-2.4 h3.6 L15 6"/><circle cx="12" cy="12.5" r="3"/></svg>
-          </div>
-          <p data-i18n="photos.step3">¡Así podremos revivir cada momento juntos!</p>
-        </div>
-      </div>
-    </div>
-
-    <div style="margin-top:70px;">
-      <div class="heart" style="color:var(--accent);" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20s-7.5-4.8-9.4-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.4 11c-1.9 4.2-9.4 9-9.4 9Z"/></svg>
-      </div>
-      <h2 class="section-title" style="margin-top:10px;" data-i18n="photos.thanks.title">¡Gracias!</h2>
-      <p class="lead" style="margin-top:12px;" data-i18n="photos.thanks.text">Vuestras fotos son el mejor recuerdo que nos llevaremos.</p>
-    </div>
-
-  </div>
-</section>
-</div>
-
 </main>
 
 <footer class="site-footer">
@@ -473,47 +450,31 @@
   </span>
 </footer>
 
-<!-- script-font preview tool: pick the calligraphy live, choice is remembered -->
-<details class="font-picker" id="font-picker">
-  <summary title="Probar caligrafías">Aa</summary>
-  <div class="fp-menu">
-    <div class="fp-title">Fuente de los nombres</div>
-    <button data-font="Imperial Script" style="font-family:&#39;Imperial Script&#39;,cursive; font-size:1.6rem;">Mapi &amp; Daan</button>
-    <button data-font="Mrs Saint Delafield" style="font-family:&#39;Mrs Saint Delafield&#39;,cursive; font-size:1.35rem;">Mapi &amp; Daan</button>
-    <button data-font="Parisienne" style="font-family:'Parisienne',cursive;">Mapi &amp; Daan</button>
-    <button data-font="Allura" style="font-family:'Allura',cursive;">Mapi &amp; Daan</button>
-    <button data-font="Alex Brush" style="font-family:'Alex Brush',cursive;">Mapi &amp; Daan</button>
-    <button data-font="Italianno" style="font-family:'Italianno',cursive; font-size:1.7rem;">Mapi &amp; Daan</button>
-    <button data-font="Monsieur La Doulaise" style="font-family:'Monsieur La Doulaise',cursive; font-size:1.3rem;">Mapi &amp; Daan</button>
-    <button data-font="Tangerine" style="font-family:'Tangerine',cursive; font-size:1.8rem;">Mapi &amp; Daan</button>
-    <button data-font="Great Vibes" style="font-family:'Great Vibes',cursive;">Mapi &amp; Daan</button>
-  </div>
-</details>
-
 <script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
 <script>
 /* ================= TABS ================= */
 (function () {
-  const tabs = { home: "panel-home", rsvp: "panel-rsvp", fotos: "panel-fotos" };
-  const hashFor = { home: "#inicio", rsvp: "#rsvp", fotos: "#fotos" };
+  const tabs = { home: "panel-home", rsvp: "panel-rsvp" };
+  const hashFor = { home: "#inicio", rsvp: "#rsvp" };
 
   function showTab(name, push) {
     if (!tabs[name]) name = "home";
     Object.entries(tabs).forEach(function ([key, id]) {
       document.getElementById(id).classList.toggle("active", key === name);
     });
+    document.body.classList.toggle("rsvp-active", name === "rsvp");
     document.querySelectorAll("[data-tab]").forEach(function (a) {
       if (a.closest(".tab-nav")) a.classList.toggle("active", a.getAttribute("data-tab") === name);
     });
     if (push !== false) history.replaceState(null, "", hashFor[name]);
+    window.dispatchEvent(new Event("resize"));
     window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });
   }
 
   function fromHash() {
     const h = location.hash;
     if (h === "#rsvp") return "rsvp";
-    if (h === "#fotos") return "fotos";
     return "home";
   }
 
@@ -528,28 +489,10 @@
   showTab(fromHash(), false);
 })();
 
-/* ================= FONT PICKER ================= */
-(function () {
-  const picker = document.getElementById("font-picker");
-  if (!picker) return;
-  function apply(font) {
-    document.documentElement.style.setProperty("--script", "'" + font + "', cursive");
-    localStorage.setItem("md-script-font-v4", font);
-    picker.querySelectorAll("button[data-font]").forEach(function (b) {
-      b.classList.toggle("active", b.getAttribute("data-font") === font);
-    });
-  }
-  const saved = localStorage.getItem("md-script-font-v4");
-  if (saved) apply(saved);
-  picker.querySelectorAll("button[data-font]").forEach(function (b) {
-    b.addEventListener("click", function () { apply(b.getAttribute("data-font")); });
-  });
-})();
-
 /* ================= RSVP → Google Sheet =================
    1. Create the Google Sheet + Apps Script (see README.md)
    2. Paste the Web App URL below.                          */
-const SHEET_ENDPOINT = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
+const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbzpeDRbGEc3iGOm8mAtPk4IgD0t7HXCQdWhR17BmzofR79TAuaytg69nz9kvAJ_ABKqbg/exec";
 
 document.getElementById("rsvp-form").addEventListener("submit", async function (e) {
   e.preventDefault();
@@ -564,16 +507,29 @@ document.getElementById("rsvp-form").addEventListener("submit", async function (
     return;
   }
 
+  const guestNames = form.nombres.value
+    .split(/[\n,]+/)
+    .map(function (name) { return name.trim(); })
+    .filter(Boolean);
+
+  const allergiesText = form.alergias.value.trim();
+
   const data = {
-    fecha: new Date().toISOString(),
-    asistencia: attendance.value,
-    personas: form.personas.value,
-    nombres: form.nombres.value.trim(),
-    autobus: (form.querySelector('input[name="autobus"]:checked') || {}).value || "",
-    preboda: (form.querySelector('input[name="preboda"]:checked') || {}).value || "",
-    alergias: form.alergias.value.trim(),
-    cancion: form.cancion.value.trim(),
-    mensaje: form.mensaje.value.trim()
+    language: (window.currentLang || document.documentElement.lang || "es"),
+    attendance: attendance.value,
+    contactName: form.contactName ? form.contactName.value.trim() : "",
+    phone: form.phone ? form.phone.value.trim() : "",
+    guestCount: form.personas.value || "",
+    guestNames: guestNames,
+    prewedding: (form.querySelector('input[name="preboda"]:checked') || {}).value || "",
+    bus: (form.querySelector('input[name="autobus"]:checked') || {}).value || "",
+    guestDetails: guestNames.length
+      ? guestNames.map(function (name) { return { name: name, menu: "", allergies: allergiesText }; })
+      : (allergiesText ? [{ name: "", menu: "", allergies: allergiesText }] : []),
+    song: form.cancion.value.trim(),
+    notes: "",
+    message: form.mensaje.value.trim(),
+    source: "mapi-daan-2026.com"
   };
 
   status.className = "form-status";

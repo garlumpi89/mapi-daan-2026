@@ -1,110 +1,77 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 620" fill="none">
   <defs>
-    <filter id="wc" x="-20%" y="-20%" width="140%" height="140%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="11" result="n"/>
-      <feDisplacementMap in="SourceGraphic" in2="n" scale="4"/>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="0.25"/>
     </filter>
-    <filter id="wcSoft" x="-30%" y="-30%" width="160%" height="160%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="4" result="n"/>
-      <feDisplacementMap in="SourceGraphic" in2="n" scale="6"/>
-      <feGaussianBlur stdDeviation="0.35"/>
-    </filter>
-    <radialGradient id="petal" cx="50%" cy="78%" r="80%">
-      <stop offset="0" stop-color="#fdfaf2"/>
-      <stop offset=".55" stop-color="#f6efdd"/>
-      <stop offset="1" stop-color="#e8dcbf"/>
-    </radialGradient>
-    <radialGradient id="petalShade" cx="50%" cy="82%" r="78%">
-      <stop offset="0" stop-color="#f1e8d2"/>
-      <stop offset="1" stop-color="#dccfae"/>
-    </radialGradient>
-    <radialGradient id="center" cx="42%" cy="38%" r="70%">
-      <stop offset="0" stop-color="#dcc27a"/>
-      <stop offset=".6" stop-color="#c9a84c"/>
-      <stop offset="1" stop-color="#a8893c"/>
-    </radialGradient>
-    <linearGradient id="leafA" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#c3bda3"/>
-      <stop offset="1" stop-color="#9e9678"/>
-    </linearGradient>
-    <linearGradient id="leafB" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#d6d0b9"/>
-      <stop offset="1" stop-color="#b3ab8c"/>
-    </linearGradient>
-    <linearGradient id="leafC" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#aaa285"/>
-      <stop offset="1" stop-color="#8a8266"/>
-    </linearGradient>
-    <path id="p" d="M0 0 C -7.5 -8.5, -8.5 -24, 0 -34 C 8.5 -24, 7.5 -8.5, 0 0 Z"/>
-    <path id="pS" d="M0 0 C -5.5 -6.5, -6 -17, 0 -24 C 6 -17, 5.5 -6.5, 0 0 Z"/>
-    <path id="leaf" d="M0 0 C -8.5 -7.5, -10.5 -22, 0 -34 C 10.5 -22, 8.5 -7.5, 0 0 Z"/>
+    <style>
+      .stem{stroke:#6f835f;stroke-width:3.2;stroke-linecap:round;opacity:.78}
+      .stem2{stroke:#9bab82;stroke-width:2.1;stroke-linecap:round;opacity:.68}
+      .leaf{fill:#78916a;opacity:.58}
+      .leaf2{fill:#a7b98e;opacity:.46}
+      .blue{fill:#8da7dc;opacity:.86}.blue2{fill:#6f88c8;opacity:.72}
+      .pink{fill:#e7a3aa;opacity:.82}.pink2{fill:#f2c6c0;opacity:.74}
+      .yellow{fill:#eec84e;opacity:.78}.cream{fill:#f7f4dd;opacity:.86}
+      .purple{fill:#b8a5d8;opacity:.77}.white{fill:#eef3e9;opacity:.74}
+      .center{fill:#b49a45;opacity:.9}
+    </style>
   </defs>
+  <g filter="url(#soft)">
+    <!-- long airy stems inspired by the invitation wildflowers -->
+    <path class="stem" d="M70 600 C92 500 84 405 128 320 C176 226 205 158 208 38"/>
+    <path class="stem" d="M142 612 C164 505 194 425 256 350 C318 274 344 186 360 72"/>
+    <path class="stem2" d="M32 532 C86 460 118 381 132 282"/>
+    <path class="stem2" d="M228 585 C220 488 224 380 292 254"/>
+    <path class="stem2" d="M18 430 C84 392 122 332 156 226"/>
+    <path class="stem2" d="M310 602 C298 522 304 450 374 332"/>
 
-  <!-- branches hugging the two corner edges -->
-  <g filter="url(#wcSoft)" fill="none" stroke-linecap="round">
-    <path d="M-8 -8 C 30 28, 44 66, 36 124" stroke="#a89a7d" stroke-width="2.2" opacity=".7"/>
-    <path d="M-8 -8 C 28 30, 66 44, 124 36" stroke="#a89a7d" stroke-width="2.2" opacity=".7"/>
-    <path d="M22 58 C 36 76, 40 96, 38 116" stroke="#b3a88c" stroke-width="1.5" opacity=".55"/>
-    <path d="M58 22 C 76 36, 96 40, 116 38" stroke="#b3a88c" stroke-width="1.5" opacity=".55"/>
-  </g>
+    <!-- leaves -->
+    <g>
+      <ellipse class="leaf" cx="81" cy="520" rx="12" ry="31" transform="rotate(34 81 520)"/>
+      <ellipse class="leaf2" cx="104" cy="455" rx="10" ry="26" transform="rotate(-38 104 455)"/>
+      <ellipse class="leaf" cx="128" cy="390" rx="11" ry="31" transform="rotate(39 128 390)"/>
+      <ellipse class="leaf2" cx="165" cy="302" rx="10" ry="27" transform="rotate(-34 165 302)"/>
+      <ellipse class="leaf" cx="196" cy="214" rx="9" ry="26" transform="rotate(36 196 214)"/>
+      <ellipse class="leaf2" cx="234" cy="498" rx="9" ry="26" transform="rotate(34 234 498)"/>
+      <ellipse class="leaf" cx="263" cy="421" rx="10" ry="28" transform="rotate(-36 263 421)"/>
+      <ellipse class="leaf2" cx="302" cy="337" rx="9" ry="27" transform="rotate(34 302 337)"/>
+      <ellipse class="leaf" cx="337" cy="245" rx="10" ry="30" transform="rotate(-35 337 245)"/>
+      <ellipse class="leaf2" cx="356" cy="160" rx="8" ry="24" transform="rotate(36 356 160)"/>
+      <ellipse class="leaf" cx="55" cy="382" rx="8" ry="23" transform="rotate(-61 55 382)"/>
+      <ellipse class="leaf2" cx="382" cy="386" rx="9" ry="24" transform="rotate(45 382 386)"/>
+    </g>
 
-  <!-- foliage: mirrored pairs across the corner diagonal -->
-  <g filter="url(#wcSoft)">
-    <use href="#leaf" fill="url(#leafA)" opacity=".85" transform="translate(34 104) rotate(16) scale(.95)"/>
-    <use href="#leaf" fill="url(#leafA)" opacity=".85" transform="translate(104 34) rotate(74) scale(.95)"/>
-    <use href="#leaf" fill="url(#leafB)" opacity=".8" transform="translate(24 76) rotate(-6) scale(.8)"/>
-    <use href="#leaf" fill="url(#leafB)" opacity=".8" transform="translate(76 24) rotate(96) scale(.8)"/>
-    <use href="#leaf" fill="url(#leafC)" opacity=".75" transform="translate(44 122) rotate(34) scale(.72)"/>
-    <use href="#leaf" fill="url(#leafC)" opacity=".75" transform="translate(122 44) rotate(56) scale(.72)"/>
-    <use href="#leaf" fill="url(#leafB)" opacity=".7" transform="translate(16 44) rotate(-24) scale(.65)"/>
-    <use href="#leaf" fill="url(#leafB)" opacity=".7" transform="translate(44 16) rotate(114) scale(.65)"/>
-    <!-- gold berry dots, symmetric -->
-    <g fill="#c9a84c" opacity=".5">
-      <circle cx="52" cy="92" r="3"/><circle cx="92" cy="52" r="3"/>
-      <circle cx="44" cy="106" r="2.2"/><circle cx="106" cy="44" r="2.2"/>
-      <circle cx="60" cy="80" r="1.8"/><circle cx="80" cy="60" r="1.8"/>
+    <!-- blue forget-me-nots -->
+    <g>
+      <circle class="blue" cx="166" cy="150" r="13"/><circle class="blue" cx="186" cy="155" r="12"/><circle class="blue2" cx="176" cy="133" r="12"/><circle class="blue" cx="158" cy="132" r="10"/><circle class="center" cx="174" cy="145" r="4"/>
+      <circle class="blue" cx="332" cy="112" r="10"/><circle class="blue2" cx="348" cy="112" r="9"/><circle class="blue" cx="340" cy="96" r="9"/><circle class="center" cx="340" cy="108" r="3"/>
+      <circle class="blue" cx="61" cy="354" r="9"/><circle class="blue2" cx="76" cy="354" r="8"/><circle class="blue" cx="68" cy="339" r="8"/><circle class="center" cx="68" cy="351" r="3"/>
     </g>
-  </g>
 
-  <!-- main bloom on the corner diagonal -->
-  <g filter="url(#wc)" transform="translate(64 64)">
-    <g fill="url(#petalShade)" opacity=".9">
-      <use href="#p" transform="rotate(15) scale(1.06)"/><use href="#p" transform="rotate(45) scale(1.06)"/>
-      <use href="#p" transform="rotate(75) scale(1.06)"/><use href="#p" transform="rotate(105) scale(1.06)"/>
-      <use href="#p" transform="rotate(135) scale(1.06)"/><use href="#p" transform="rotate(165) scale(1.06)"/>
-      <use href="#p" transform="rotate(195) scale(1.06)"/><use href="#p" transform="rotate(225) scale(1.06)"/>
-      <use href="#p" transform="rotate(255) scale(1.06)"/><use href="#p" transform="rotate(285) scale(1.06)"/>
-      <use href="#p" transform="rotate(315) scale(1.06)"/><use href="#p" transform="rotate(345) scale(1.06)"/>
+    <!-- yellow flowers -->
+    <g>
+      <ellipse class="yellow" cx="203" cy="40" rx="14" ry="24" transform="rotate(12 203 40)"/><ellipse class="yellow" cx="228" cy="50" rx="12" ry="21" transform="rotate(58 228 50)"/><ellipse class="yellow" cx="188" cy="62" rx="12" ry="20" transform="rotate(-38 188 62)"/><circle class="center" cx="205" cy="55" r="5"/>
+      <ellipse class="yellow" cx="37" cy="516" rx="9" ry="15" transform="rotate(30 37 516)"/><ellipse class="yellow" cx="53" cy="522" rx="8" ry="15" transform="rotate(75 53 522)"/><ellipse class="yellow" cx="32" cy="533" rx="8" ry="13" transform="rotate(-28 32 533)"/><circle class="center" cx="42" cy="525" r="3"/>
+      <circle class="yellow" cx="322" cy="514" r="9"/><circle class="yellow" cx="339" cy="510" r="8"/><circle class="yellow" cx="332" cy="495" r="8"/><circle class="center" cx="331" cy="507" r="3"/>
     </g>
-    <g fill="url(#petal)">
-      <use href="#p"/><use href="#p" transform="rotate(30)"/><use href="#p" transform="rotate(60)"/>
-      <use href="#p" transform="rotate(90)"/><use href="#p" transform="rotate(120)"/><use href="#p" transform="rotate(150)"/>
-      <use href="#p" transform="rotate(180)"/><use href="#p" transform="rotate(210)"/><use href="#p" transform="rotate(240)"/>
-      <use href="#p" transform="rotate(270)"/><use href="#p" transform="rotate(300)"/><use href="#p" transform="rotate(330)"/>
-    </g>
-    <circle r="10.5" fill="url(#center)"/>
-    <g fill="#8a6f30" opacity=".7">
-      <circle cx="0" cy="-6" r="1.2"/><circle cx="5.2" cy="-3" r="1.2"/><circle cx="5.2" cy="3" r="1.2"/>
-      <circle cx="0" cy="6" r="1.2"/><circle cx="-5.2" cy="3" r="1.2"/><circle cx="-5.2" cy="-3" r="1.2"/>
-      <circle r="1.4"/>
-    </g>
-  </g>
 
-  <!-- two satellite blooms, mirrored pair across the diagonal -->
-  <g filter="url(#wc)" transform="translate(34 138) rotate(-10) scale(.55)">
-    <g fill="url(#petal)">
-      <use href="#pS"/><use href="#pS" transform="rotate(45)"/><use href="#pS" transform="rotate(90)"/>
-      <use href="#pS" transform="rotate(135)"/><use href="#pS" transform="rotate(180)"/>
-      <use href="#pS" transform="rotate(225)"/><use href="#pS" transform="rotate(270)"/><use href="#pS" transform="rotate(315)"/>
+    <!-- pink sprigs -->
+    <g>
+      <ellipse class="pink" cx="121" cy="262" rx="10" ry="16" transform="rotate(-20 121 262)"/><ellipse class="pink2" cx="142" cy="249" rx="9" ry="14" transform="rotate(30 142 249)"/><ellipse class="pink" cx="156" cy="228" rx="8" ry="13" transform="rotate(66 156 228)"/>
+      <ellipse class="pink" cx="282" cy="286" rx="9" ry="15" transform="rotate(-28 282 286)"/><ellipse class="pink2" cx="304" cy="270" rx="8" ry="13" transform="rotate(28 304 270)"/><ellipse class="pink" cx="319" cy="247" rx="8" ry="13" transform="rotate(64 319 247)"/>
+      <ellipse class="pink" cx="130" cy="560" rx="12" ry="19" transform="rotate(-16 130 560)"/><ellipse class="pink2" cx="152" cy="565" rx="10" ry="17" transform="rotate(46 152 565)"/><ellipse class="pink" cx="119" cy="582" rx="9" ry="15" transform="rotate(-52 119 582)"/><circle class="center" cx="135" cy="570" r="4"/>
     </g>
-    <circle r="7.5" fill="url(#center)"/>
-  </g>
-  <g filter="url(#wc)" transform="translate(138 34) rotate(100) scale(.55)">
-    <g fill="url(#petal)">
-      <use href="#pS"/><use href="#pS" transform="rotate(45)"/><use href="#pS" transform="rotate(90)"/>
-      <use href="#pS" transform="rotate(135)"/><use href="#pS" transform="rotate(180)"/>
-      <use href="#pS" transform="rotate(225)"/><use href="#pS" transform="rotate(270)"/><use href="#pS" transform="rotate(315)"/>
+
+    <!-- white bells / daisies -->
+    <g>
+      <ellipse class="cream" cx="86" cy="298" rx="17" ry="25" transform="rotate(18 86 298)"/><ellipse class="cream" cx="112" cy="304" rx="15" ry="23" transform="rotate(62 112 304)"/><ellipse class="cream" cx="95" cy="326" rx="15" ry="21" transform="rotate(-36 95 326)"/><circle class="center" cx="98" cy="309" r="6"/>
+      <path class="white" d="M373 328 q-14 -23 5 -37 q20 14 5 37z"/><path class="white" d="M338 350 q-14 -23 5 -37 q20 14 5 37z"/><path class="white" d="M352 306 q-14 -23 5 -37 q20 14 5 37z"/>
+      <ellipse class="cream" cx="264" cy="590" rx="13" ry="20" transform="rotate(-23 264 590)"/><ellipse class="cream" cx="286" cy="587" rx="12" ry="19" transform="rotate(36 286 587)"/><circle class="center" cx="274" cy="588" r="4"/>
     </g>
-    <circle r="7.5" fill="url(#center)"/>
+
+    <!-- tiny purple lavender dots -->
+    <g fill="#a995d4" opacity=".75">
+      <ellipse cx="258" cy="182" rx="7" ry="10" transform="rotate(-28 258 182)"/><ellipse cx="270" cy="165" rx="6" ry="9" transform="rotate(-28 270 165)"/><ellipse cx="282" cy="148" rx="6" ry="9" transform="rotate(-28 282 148)"/><ellipse cx="295" cy="131" rx="5" ry="8" transform="rotate(-28 295 131)"/>
+      <ellipse cx="72" cy="460" rx="7" ry="10" transform="rotate(25 72 460)"/><ellipse cx="61" cy="441" rx="6" ry="9" transform="rotate(25 61 441)"/><ellipse cx="52" cy="423" rx="6" ry="9" transform="rotate(25 52 423)"/>
+    </g>
   </g>
 </svg>
