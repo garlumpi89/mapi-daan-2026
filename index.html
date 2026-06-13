@@ -44,9 +44,10 @@
       <p class="card-kicker" data-i18n="hero.kicker">¡Nos casamos!</p>
       <h1 class="script-names">Mapi<span class="card-amp">&amp;</span>Daan</h1>
       <p class="card-date" data-i18n="hero.date">03 · 10 · 2026</p>
+      <p class="countdown" id="countdown" aria-live="polite"></p>
       <p class="card-place" data-i18n="hero.place">Villafranca · Navarra</p>
       <div class="card-rule" aria-hidden="true"></div>
-      <img class="card-church" alt="Acuarela original de la Terraza Padres Carmelitas" src="assets/church-original-transparent.png">
+      <img class="card-church" alt="Acuarela original de la Terraza Padres Carmelitas" src="assets/church-original-transparent.webp" fetchpriority="high" decoding="async">
     </div>
 
     <div class="scroll-hint" aria-hidden="true">
@@ -80,7 +81,7 @@
           </div>
           <div class="events">
             <div class="event">
-              <span class="event-icon" aria-hidden="true"><img class="program-icon preboda" src="assets/program-preboda.png" alt=""></span>
+              <span class="event-icon" aria-hidden="true"><img class="program-icon preboda" src="assets/program-preboda.png" alt="" loading="lazy" decoding="async"></span>
               <div class="time">20:00</div>
               <div class="name" data-i18n="event.preboda">Preboda</div>
               <div class="venue" data-i18n="event.preboda.venue">Comienzo en Bar Gorría</div>
@@ -103,7 +104,7 @@
           <div class="events">
 
             <div class="event reveal">
-              <span class="event-icon" aria-hidden="true"><img class="program-icon ceremonia" src="assets/program-ceremonia.png" alt=""></span>
+              <span class="event-icon" aria-hidden="true"><img class="program-icon ceremonia" src="assets/program-ceremonia.png" alt="" loading="lazy" decoding="async"></span>
               <div class="time">12:30</div>
               <div class="name" data-i18n="event.ceremonia">Ceremonia</div>
               <div class="venue" data-i18n="event.ceremonia.venue">Terraza Padres Carmelitas</div>
@@ -114,7 +115,7 @@
             </div>
 
             <div class="event reveal">
-              <span class="event-icon" aria-hidden="true"><img class="program-icon autobus" src="assets/program-autobus.png" alt=""></span>
+              <span class="event-icon" aria-hidden="true"><img class="program-icon autobus" src="assets/program-autobus.png" alt="" loading="lazy" decoding="async"></span>
               <div class="time">14:00</div>
               <div class="name" data-i18n="event.bus">Autobuses a Zona Chic Castejón</div>
               <div class="venue" data-i18n="event.bus.venue">Salida desde Villafranca</div>
@@ -125,7 +126,7 @@
             </div>
 
             <div class="event reveal">
-              <span class="event-icon" aria-hidden="true"><img class="program-icon coctel" src="assets/program-coctel.png" alt=""></span>
+              <span class="event-icon" aria-hidden="true"><img class="program-icon coctel" src="assets/program-coctel.png" alt="" loading="lazy" decoding="async"></span>
               <div class="time">14:30</div>
               <div class="name" data-i18n="event.coctel">Cóctel</div>
               <div class="venue" data-i18n="event.luze">Hotel Luze El Villa</div>
@@ -136,7 +137,7 @@
             </div>
 
             <div class="event reveal">
-              <span class="event-icon" aria-hidden="true"><img class="program-icon comida" src="assets/program-comida.png" alt=""></span>
+              <span class="event-icon" aria-hidden="true"><img class="program-icon comida" src="assets/program-comida.png" alt="" loading="lazy" decoding="async"></span>
               <div class="time">16:00</div>
               <div class="name" data-i18n="event.comida">Comida</div>
               <div class="venue" data-i18n="event.luze">Hotel Luze El Villa</div>
@@ -147,7 +148,7 @@
             </div>
 
             <div class="event reveal">
-              <span class="event-icon" aria-hidden="true"><img class="program-icon baile" src="assets/program-baile.png" alt=""></span>
+              <span class="event-icon" aria-hidden="true"><img class="program-icon baile" src="assets/program-baile.png" alt="" loading="lazy" decoding="async"></span>
               <div class="time">19:00</div>
               <div class="name" data-i18n="event.baile">Baile</div>
               <div class="venue" data-i18n="event.luze">Hotel Luze El Villa</div>
@@ -158,13 +159,13 @@
             </div>
 
             <div class="event reveal">
-              <span class="event-icon" aria-hidden="true"><img class="program-icon autobus return-bus" src="assets/program-autobus.png" alt=""></span>
+              <span class="event-icon" aria-hidden="true"><img class="program-icon autobus return-bus" src="assets/program-autobus.png" alt="" loading="lazy" decoding="async"></span>
               <div class="time">22:00</div>
               <div class="name" data-i18n="event.bus.return">Autobuses a Villafranca</div>
             </div>
 
             <div class="event reveal">
-              <span class="event-icon" aria-hidden="true"><img class="program-icon recena" src="assets/program-recena.png" alt=""></span>
+              <span class="event-icon" aria-hidden="true"><img class="program-icon recena" src="assets/program-recena.png" alt="" loading="lazy" decoding="async"></span>
               <div class="time">22:30</div>
               <div class="name" data-i18n="event.recena">Recena</div>
               <div class="venue" data-i18n="event.recena.venue">Casino Gayarre</div>
@@ -175,13 +176,17 @@
             </div>
 
             <div class="event reveal">
-              <span class="event-icon" aria-hidden="true"><img class="program-icon fiesta" src="assets/program-fiesta.png" alt=""></span>
+              <span class="event-icon" aria-hidden="true"><img class="program-icon fiesta" src="assets/program-fiesta.png" alt="" loading="lazy" decoding="async"></span>
               <div class="time">00:00</div>
               <div class="name" data-i18n="event.fiesta">Fiesta</div>
             </div>
 
           </div>
         </div>
+      </div>
+
+      <div class="calendar-actions reveal">
+        <button class="btn calendar-btn" type="button" id="calendar-btn" data-i18n="calendar.add">Añadir al calendario</button>
       </div>
     </div>
   </section>
@@ -194,7 +199,7 @@
       <div class="cards">
 
         <article class="card reveal">
-          <img class="card-photo" alt="Hostal Martínez"
+          <img class="card-photo" loading="lazy" decoding="async" alt="Hostal Martínez"
                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeG_X1BA18ssJvLyuQpOHdSUjUHLbDzcNQCr4nrALA3cnCe6KtidanHV-OyYR22jxXks0hhojS2ZD9FXM5FxdjaW6wyQXOWd-9gOGDUoVZ2jDw4aAIgw3DgJpGG2Km3iHSUPu2f3Yg4loA644wHFYhXGFmGUC_IachZQppvIChRwiXCz26iApR1rP2ffVh8tMO8gJl_pJ6fyf3X2s4QOchxg5_5qzcYQbBg4EYU5HW8zrrXTzfWUDfpZfuS-ZjwG-lhkGAe1BLYqM"
                onerror="this.style.display='none'">
           <h3 data-i18n="stay.martinez">Hostal Martínez</h3>
@@ -206,7 +211,7 @@
         </article>
 
         <article class="card reveal d1">
-          <img class="card-photo" alt="Apartamentos Rurales Esencia de Bardenas"
+          <img class="card-photo" loading="lazy" decoding="async" alt="Apartamentos Rurales Esencia de Bardenas"
                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_-A78HQ7gyAmTE4Gn8FLDl7KGBoLcCejhq-uXnNFhHAtSWE3MwwF_XDf21POJamqe8g8yHTVjWI9jmvQxjiQ1emmyyMrwPKdtGmzOeLnkN2IH5zYutbicCiQS6EVQkZrttWfb1xu7EQ78Llop21T9bXDy3Aq3anQI1lYdJ26QJB88t5ot9W5coB-lr2Oh_EHHHDrLtEuM36TbJVVojnOY7kt1ESzVbSG_HS9-HfDuNfzbsVtNBiavXs--voRjs0l_j7LkD77jvXk"
                onerror="this.style.display='none'">
           <h3 data-i18n="stay.esencia">Apartamentos Rurales Esencia de Bardenas</h3>
@@ -218,7 +223,7 @@
         </article>
 
         <article class="card reveal d2">
-          <img class="card-photo" alt="Camping Bardenas"
+          <img class="card-photo" loading="lazy" decoding="async" alt="Camping Bardenas"
                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzof9ZcBl_NdPs7qXEPWKGK9SLskqRdnlIrKKpdAuGyp-xSUmwVwv3qGHn6B91yzoGrp8RkZhOetSqKBH8xWQCuGLAWtTX4Jyy6paC8lFtSAQneKzBqYTctFr8Ier-KY_9ml91casOP2Av-SgLKjlXCcYzcp10ii4RoVqCjWS47pChCeq9ziNHFdsY6_L85nvjJmjrVv7WDjx9SnH5fiBCfPibu2SOB2lMugj0r5l2yeleau8HJUIpruQ4-i7o1XYywREPLrYt-NM"
                onerror="this.style.display='none'">
           <h3 data-i18n="stay.camping">Camping Bardenas</h3>
@@ -230,8 +235,8 @@
         </article>
 
         <article class="card reveal d3">
-          <img class="card-photo luze-photo" alt="Hotel Luze El Villa"
-               src="assets/luze-clean.png"
+          <img class="card-photo luze-photo" loading="lazy" decoding="async" alt="Hotel Luze El Villa"
+               src="assets/luze-clean.webp"
                onerror="this.style.display='none'">
           <h3 data-i18n="stay.luze">Hotel Luze El Villa</h3>
           <p data-i18n="stay.luze.desc">Lugar de celebración del cóctel, comida y baile.</p>
@@ -468,6 +473,81 @@
   showTab(fromHash(), false);
 })();
 
+
+/* ================= COUNTDOWN + CALENDAR ================= */
+(function () {
+  const weddingDate = new Date("2026-10-03T12:30:00+02:00");
+
+  function updateCountdown() {
+    const el = document.getElementById("countdown");
+    if (!el) return;
+    const now = new Date();
+    const ms = weddingDate - now;
+    const days = Math.ceil(ms / 86400000);
+    if (days > 0) {
+      el.textContent = (t("countdown.days") || "Faltan {days} días").replace("{days}", days);
+    } else if (days === 0) {
+      el.textContent = t("countdown.today") || "¡Hoy es el gran día!";
+    } else {
+      el.textContent = t("countdown.past") || "¡Ya estamos casados!";
+    }
+  }
+
+  function formatICSDate(date) {
+    return date.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}Z$/, "Z");
+  }
+
+  function escapeICS(value) {
+    return String(value || "").replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\n/g, "\\n");
+  }
+
+  function createCalendarFile() {
+    const filename = t("calendar.filename") || "boda-mapi-daan.ics";
+    const now = formatICSDate(new Date());
+    const events = [
+      {
+        uid: "preboda-mapi-daan-2026@mapi-daan-2026.com",
+        summary: t("calendar.preboda.title") || "Preboda de Mapi y Daan",
+        start: new Date("2026-10-02T20:00:00+02:00"),
+        end: new Date("2026-10-02T23:30:00+02:00"),
+        location: "Bar Gorría, Villafranca, Navarra",
+        description: "Comienzo en Bar Gorría. Sed puntuales, habrá sorpresas."
+      },
+      {
+        uid: "boda-mapi-daan-2026@mapi-daan-2026.com",
+        summary: t("calendar.title") || "Boda de Mapi y Daan",
+        start: new Date("2026-10-03T12:30:00+02:00"),
+        end: new Date("2026-10-04T02:00:00+02:00"),
+        location: "Villafranca / Castejón, Navarra",
+        description: "Ceremonia en Terraza Padres Carmelitas. Cóctel, comida y baile en Hotel Luze El Villa. Recena y fiesta en Casino Gayarre."
+      }
+    ];
+
+    const lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Mapi & Daan//Wedding 2026//ES", "CALSCALE:GREGORIAN", "METHOD:PUBLISH"];
+    events.forEach(function (ev) {
+      lines.push("BEGIN:VEVENT", "UID:" + ev.uid, "DTSTAMP:" + now, "DTSTART:" + formatICSDate(ev.start), "DTEND:" + formatICSDate(ev.end), "SUMMARY:" + escapeICS(ev.summary), "LOCATION:" + escapeICS(ev.location), "DESCRIPTION:" + escapeICS(ev.description), "END:VEVENT");
+    });
+    lines.push("END:VCALENDAR");
+
+    const blob = new Blob([lines.join("\r\n")], { type: "text/calendar;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("calendar-btn");
+    if (btn) btn.addEventListener("click", createCalendarFile);
+    updateCountdown();
+  });
+  window.addEventListener("languagechange", updateCountdown);
+})();
+
 /* ================= RSVP → Google Sheet =================
    Sends one group row + one per-guest details array.
    Apps Script should use the companion apps-script/Code.gs file. */
@@ -625,12 +705,13 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbxRntO0ylCtCm0Bz
         document.execCommand("copy");
         document.body.removeChild(temp);
       }
+      button.dataset.feedback = t("stay.luze.copied.long") || t("stay.luze.copied") || "Código copiado ✓";
       button.classList.add("is-copied");
-      button.setAttribute("aria-label", t("stay.luze.copied"));
+      button.setAttribute("aria-label", button.dataset.feedback);
       setTimeout(function () {
         button.classList.remove("is-copied");
         button.setAttribute("aria-label", t("stay.luze.copy"));
-      }, 1500);
+      }, 2000);
     });
   });
 
@@ -648,7 +729,7 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbxRntO0ylCtCm0Bz
     form.style.display = "block";
     if (panel) panel.style.display = "none";
     const status = document.getElementById("form-status");
-    if (status) { status.className = "form-status"; status.textContent = ""; status.style.display = "none"; }
+    if (status) { status.className = "form-status"; status.textContent = ""; }
     const btnLabel = document.querySelector("#submit-btn span");
     if (btnLabel) btnLabel.textContent = t("rsvp.submit");
   }
@@ -777,7 +858,6 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbxRntO0ylCtCm0Bz
     if (missing.length) {
       const status = document.getElementById("form-status");
       if (status) {
-        status.style.display = "block";
         status.className = "form-status error";
         status.textContent = t("rsvp.required") || "Por favor, completa todos los campos obligatorios.";
       }
@@ -844,8 +924,7 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbxRntO0ylCtCm0Bz
     };
 
     status.className = "form-status";
-    status.textContent = "";
-    status.style.display = "none";
+    status.textContent = t("rsvp.sending");
     btnLabel.textContent = t("rsvp.sending");
 
     try {
@@ -870,7 +949,6 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbxRntO0ylCtCm0Bz
       panel.style.display = "block";
       panel.scrollIntoView({ behavior: "smooth", block: "center" });
     } catch (err) {
-      status.style.display = "block";
       status.className = "form-status error";
       status.textContent = t("rsvp.error");
       btnLabel.textContent = t("rsvp.submit");
