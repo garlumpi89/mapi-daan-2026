@@ -4125,3 +4125,56 @@ button.text-link.reset-rsvp {
   box-shadow: none !important;
   border: 0 !important;
 }
+
+
+/* ===============================
+   v1.32 fixes
+   =============================== */
+
+/* Preboda note under venue. */
+.event .event-note {
+  display: block;
+  margin-top: 2px;
+  font-style: italic;
+  color: var(--muted, #9f927e);
+  line-height: 1.35;
+}
+
+/* Keep Hotel Luze discount code on one line in narrow/mobile views. */
+.card .promo .promo-code-row {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  max-width: 100% !important;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
+}
+.card .promo #luze-code {
+  display: inline-block !important;
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+  max-width: none !important;
+  letter-spacing: clamp(.075em, 1.6vw, .14em) !important;
+  font-size: clamp(.95rem, 3.15vw, 1.18rem) !important;
+  line-height: 1.1 !important;
+}
+.card .promo .copy-code {
+  flex: 0 0 auto !important;
+}
+@media (max-width: 420px) {
+  .card .promo #luze-code {
+    font-size: clamp(.82rem, 3.5vw, 1rem) !important;
+    letter-spacing: .06em !important;
+  }
+  .card .promo .promo-code-row {
+    gap: 6px !important;
+  }
+  .card .promo .copy-code {
+    width: 22px !important;
+    height: 22px !important;
+    min-width: 22px !important;
+    min-height: 22px !important;
+  }
+}

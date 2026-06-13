@@ -23,6 +23,6 @@ Use `apps-script/Code.gs` in your Google Sheet Apps Script project and deploy it
 The website currently posts to the configured Apps Script endpoint in `index.html`.
 
 
-## v1.31
+## v1.32
 - Adds visible photos page title in all three languages.
 - Uses transparent camera artwork to avoid beige/white background mismatch.
