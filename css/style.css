@@ -3021,3 +3021,538 @@ main, footer { position: relative !important; z-index: 5 !important; }
   #panel-home .lead,
   #panel-rsvp .container { max-width: 90vw !important; }
 }
+
+/* =========================================================
+   v1.17 refinements
+   - quieter floral frame: softer side depth + slower parallax
+   - mobile header: Mapi & Daan left, language selector right
+   - RSVP guest details per person, no icon circles
+   ========================================================= */
+:root {
+  --frame-side-depth: .74;
+  --frame-top-depth: .97;
+  --frame-bottom-depth: .95;
+}
+
+.floral-border-left,
+.floral-border-right {
+  opacity: var(--frame-side-depth) !important;
+  background-size: 92% auto !important;
+  z-index: 1 !important;
+  filter: saturate(.96) contrast(.98);
+}
+.floral-border-top {
+  opacity: var(--frame-top-depth) !important;
+  z-index: 3 !important;
+}
+.floral-border-bottom {
+  opacity: var(--frame-bottom-depth) !important;
+  z-index: 3 !important;
+}
+
+.site-header {
+  display: grid !important;
+  grid-template-columns: minmax(120px, auto) 1fr minmax(120px, auto) !important;
+  align-items: center !important;
+}
+.site-header .brand { justify-self: start; white-space: nowrap; }
+.site-header .tab-nav { justify-self: center; flex: none !important; }
+.site-header .lang-switch { justify-self: end; white-space: nowrap; }
+
+/* RSVP layout: cleaner questions and per-person menu/allergy blocks. */
+#panel-rsvp .form-row {
+  display: block !important;
+  border-bottom: 1px solid rgba(196,178,137,.22);
+}
+#panel-rsvp .form-row:last-of-type { border-bottom: 0; }
+#panel-rsvp .q-label {
+  font-size: clamp(1.24rem, 2vw, 1.48rem) !important;
+  line-height: 1.25;
+}
+#panel-rsvp .radio-pill {
+  font-size: clamp(1.06rem, 1.6vw, 1.18rem) !important;
+  padding: 12px 24px !important;
+}
+#panel-rsvp input[type="text"],
+#panel-rsvp input[type="tel"],
+#panel-rsvp textarea,
+#panel-rsvp select {
+  font-size: clamp(1.04rem, 1.5vw, 1.16rem) !important;
+}
+.form-hint {
+  color: var(--ink-soft);
+  font-size: 1rem;
+  margin: -4px 0 18px;
+  font-style: italic;
+}
+.guest-details {
+  display: grid;
+  gap: 18px;
+  margin-top: 14px;
+}
+.guest-details-empty {
+  color: var(--ink-soft);
+  background: rgba(252,250,247,.54);
+  border: 1px dashed rgba(196,178,137,.55);
+  border-radius: 8px;
+  padding: 16px 18px;
+}
+.guest-detail-card {
+  background: rgba(252,250,247,.62);
+  border: 1px solid rgba(196,178,137,.40);
+  border-radius: 10px;
+  padding: 20px;
+}
+.guest-detail-card h3 {
+  font-family: var(--serif);
+  color: var(--olive-dark);
+  font-weight: 600;
+  font-size: 1.18rem;
+  margin-bottom: 14px;
+}
+.guest-detail-grid {
+  display: grid;
+  grid-template-columns: minmax(180px, .8fr) 1.2fr;
+  gap: 16px;
+}
+.guest-detail-grid label span {
+  display: block;
+  font-family: var(--sans);
+  font-size: .72rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+@media (max-width: 720px) {
+  .site-header {
+    grid-template-columns: 1fr auto !important;
+    grid-template-areas:
+      "brand lang"
+      "tabs tabs";
+    gap: 8px 12px !important;
+    padding: 10px 18px !important;
+  }
+  .site-header .brand { grid-area: brand; justify-self: start; font-size: 1.62rem; }
+  .site-header .lang-switch { grid-area: lang; justify-self: end; }
+  .site-header .tab-nav { grid-area: tabs; justify-self: center; flex-basis: auto !important; width: 100%; }
+  .tab-nav { order: initial !important; gap: 28px; }
+  .tab-nav a { font-size: .68rem; }
+  .guest-detail-grid { grid-template-columns: 1fr; }
+}
+
+/* =========================================================
+   v1.18 refinements
+   ========================================================= */
+#panel-home .hero-stage {
+  padding-top: clamp(88px, 12vh, 150px) !important;
+}
+
+#panel-rsvp .rsvp-section,
+#panel-rsvp .rsvp-card {
+  padding-top: clamp(24px, 5vh, 54px) !important;
+}
+
+.event-icon {
+  color: var(--olive) !important;
+  background: rgba(251, 248, 242, .72) !important;
+  border-color: rgba(164, 137, 83, .40) !important;
+}
+.event-icon svg { display: none !important; }
+.event-icon .program-icon {
+  width: 34px !important;
+  height: 34px !important;
+  object-fit: contain;
+  display: block;
+  opacity: .86;
+  filter: invert(34%) sepia(16%) saturate(505%) hue-rotate(38deg) brightness(88%) contrast(88%);
+}
+.event-icon .program-icon.autobus { width: 36px !important; height: 36px !important; }
+.event-icon .program-icon.return-bus { transform: scaleX(-1); }
+.event-icon .program-icon.fiesta { width: 35px !important; height: 35px !important; }
+.event-icon .program-icon.recena { width: 35px !important; height: 35px !important; }
+.event:hover .event-icon { transform: none !important; box-shadow: none !important; }
+
+/* RSVP guest-specific menu/allergy cards */
+.guest-detail-card {
+  min-height: auto !important;
+}
+.guest-detail-grid {
+  align-items: start !important;
+}
+.guest-detail-grid select,
+.guest-detail-grid input {
+  width: 100% !important;
+  min-height: 46px !important;
+  height: 46px !important;
+  box-sizing: border-box !important;
+}
+.guest-detail-grid input.guest-allergies {
+  resize: none !important;
+}
+button.text-link.reset-rsvp {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  padding: 0;
+}
+
+@media (max-width: 700px) {
+  #panel-home .hero-stage { padding-top: clamp(104px, 15vh, 150px) !important; }
+  #panel-rsvp .rsvp-section, #panel-rsvp .rsvp-card { padding-top: 22px !important; }
+  .event-icon .program-icon { width: 30px !important; height: 30px !important; }
+  .event-icon .program-icon.autobus { width: 32px !important; height: 32px !important; }
+}
+
+/* =========================================================
+   v1.19 refinements
+   - More breathing room above the hero names so they do not overlap the top floral border.
+   - Recena icon replaced with supplied transparent dinner icon.
+   - Program vertical line fully hidden behind icon circles.
+   - Luze discount code wraps safely on narrow screens.
+   - RSVP special-menu selects get enough height and padding.
+   ========================================================= */
+#panel-home .hero-stage {
+  padding-top: clamp(132px, 16vh, 210px) !important;
+}
+
+.event-icon {
+  background: var(--surface) !important;
+  border-color: rgba(164, 137, 83, .42) !important;
+  z-index: 4 !important;
+  overflow: visible !important;
+  isolation: isolate !important;
+}
+.event-icon::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 999px;
+  background: var(--surface);
+  z-index: -1;
+}
+.event-icon .program-icon.recena {
+  width: 36px !important;
+  height: 36px !important;
+  opacity: .88;
+}
+
+.card .promo,
+.card .promo strong {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+.card .promo strong {
+  display: inline-block !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+  line-height: 1.45 !important;
+  letter-spacing: clamp(.08em, .9vw, .18em) !important;
+  font-size: clamp(.84rem, 1.35vw, .98rem) !important;
+}
+
+#panel-rsvp .guest-detail-grid select,
+#panel-rsvp select.guest-menu {
+  min-height: 62px !important;
+  height: 62px !important;
+  line-height: 1.35 !important;
+  padding: 0 48px 0 20px !important;
+  background-position: right 18px center !important;
+  box-sizing: border-box !important;
+}
+#panel-rsvp .guest-detail-grid input.guest-allergies {
+  min-height: 62px !important;
+  height: 62px !important;
+}
+
+@media (max-width: 700px) {
+  #panel-home .hero-stage {
+    padding-top: clamp(146px, 18vh, 210px) !important;
+  }
+  .event-icon::before { inset: -6px; }
+  .card .promo strong {
+    font-size: .82rem !important;
+    letter-spacing: .08em !important;
+  }
+  #panel-rsvp .guest-detail-grid select,
+  #panel-rsvp select.guest-menu,
+  #panel-rsvp .guest-detail-grid input.guest-allergies {
+    min-height: 60px !important;
+    height: 60px !important;
+  }
+}
+
+/* v1.20 refinements */
+/* Give the main page a little more breathing room after the final CTA. */
+#panel-home .cta {
+  padding-bottom: clamp(76px, 10vw, 132px) !important;
+}
+
+/* Hotel Luze discount: avoid overflow on narrow browsers and add copy button. */
+.card .promo strong,
+#luze-code {
+  display: inline-block !important;
+  max-width: 100% !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+  letter-spacing: .12em !important;
+  line-height: 1.45 !important;
+}
+.copy-code {
+  appearance: none;
+  border: 1px solid rgba(168,139,74,.42);
+  background: rgba(255,255,255,.24);
+  color: var(--olive, #596345);
+  font-family: var(--serif, 'Cormorant Garamond', serif);
+  font-size: .82rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 8px 14px 7px;
+  margin: 4px auto 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background .2s ease, transform .2s ease, border-color .2s ease;
+}
+.copy-code:hover,
+.copy-code:focus-visible {
+  background: rgba(255,255,255,.52);
+  border-color: rgba(137,112,55,.68);
+  transform: translateY(-1px);
+}
+
+/* RSVP per-guest fields: keep all menu/allergy controls consistent, including the last guest. */
+.guest-detail-card,
+.guest-detail-card:last-child {
+  align-items: stretch !important;
+}
+.guest-detail-card .guest-detail-grid {
+  align-items: start !important;
+}
+.guest-detail-card label {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 9px !important;
+  margin: 0 !important;
+}
+.guest-detail-card select.guest-menu,
+.guest-detail-card input.guest-allergies {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  height: 56px !important;
+  min-height: 56px !important;
+  max-height: 56px !important;
+  padding: 0 18px !important;
+  line-height: 56px !important;
+  font-size: clamp(1.04rem, 2vw, 1.18rem) !important;
+}
+.guest-detail-card select.guest-menu {
+  padding-right: 46px !important;
+}
+.guest-detail-card:last-child select.guest-menu,
+.guest-detail-card:last-child input.guest-allergies {
+  height: 56px !important;
+  min-height: 56px !important;
+  max-height: 56px !important;
+}
+
+@media (max-width: 520px) {
+  .guest-detail-card select.guest-menu,
+  .guest-detail-card input.guest-allergies {
+    height: 58px !important;
+    min-height: 58px !important;
+    max-height: 58px !important;
+    line-height: 58px !important;
+  }
+  #panel-home .cta {
+    padding-bottom: 104px !important;
+  }
+}
+
+
+/* =========================================================
+   v1.21 refinements
+   - Updated spacing and new program icons supplied by Mapi.
+   - Equal vertical rhythm between all timeline events.
+   - Compact copy-code icon next to Hotel Luze discount code.
+   - RSVP fields keep identical dimensions, including last guest.
+   ========================================================= */
+
+/* More breathing room above the large names on the main page. */
+#panel-home .hero-stage {
+  padding-top: clamp(168px, 19vh, 260px) !important;
+}
+
+/* Less blank space before the RSVP title. */
+#panel-rsvp {
+  padding-top: clamp(52px, 7vh, 92px) !important;
+}
+#panel-rsvp section,
+#panel-rsvp .rsvp-section,
+#panel-rsvp .rsvp-card {
+  padding-top: clamp(12px, 2.8vh, 32px) !important;
+}
+
+/* Program icons: use supplied PNG line icons and centre them in the circles. */
+.event-icon {
+  width: 50px !important;
+  height: 50px !important;
+  background: var(--surface) !important;
+  border-color: rgba(164, 137, 83, .42) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.event-icon::before {
+  inset: -9px !important;
+  background: var(--surface) !important;
+}
+.event-icon .program-icon {
+  width: 34px !important;
+  height: 34px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  opacity: .88 !important;
+  filter: invert(34%) sepia(16%) saturate(505%) hue-rotate(38deg) brightness(88%) contrast(88%) !important;
+}
+.event-icon .program-icon.preboda {
+  width: 35px !important;
+  height: 35px !important;
+  transform: translateY(2px) !important;
+}
+.event-icon .program-icon.ceremonia { width: 35px !important; height: 35px !important; }
+.event-icon .program-icon.autobus { width: 38px !important; height: 38px !important; }
+.event-icon .program-icon.return-bus { transform: scaleX(-1) !important; }
+.event-icon .program-icon.coctel { width: 35px !important; height: 35px !important; }
+.event-icon .program-icon.comida { width: 34px !important; height: 34px !important; }
+.event-icon .program-icon.baile { width: 35px !important; height: 35px !important; }
+.event-icon .program-icon.recena { width: 34px !important; height: 34px !important; }
+.event-icon .program-icon.fiesta { width: 35px !important; height: 35px !important; }
+
+/* Equal spacing between timeline points, including return bus and recena. */
+.events { --event-gap: clamp(92px, 7.2vw, 118px); }
+.event {
+  min-height: var(--event-gap) !important;
+  padding: 14px 0 18px !important;
+  box-sizing: border-box !important;
+}
+.event-icon { top: 16px !important; }
+.events::before { top: 24px !important; bottom: 24px !important; }
+
+/* Compact copy icon beside the discount code. */
+.promo-code-row {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+.copy-code {
+  width: 28px !important;
+  height: 28px !important;
+  min-width: 28px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  background: transparent !important;
+  border: 1px solid rgba(168,139,74,.45) !important;
+  color: var(--olive, #596345) !important;
+}
+.copy-code svg { width: 15px; height: 15px; display: block; }
+.copy-code .copy-feedback { display: none; }
+.copy-code.is-copied {
+  background: rgba(119,126,88,.12) !important;
+  border-color: rgba(119,126,88,.65) !important;
+}
+.copy-code.is-copied::after {
+  content: "✓";
+  font-size: 13px;
+  line-height: 1;
+}
+.copy-code.is-copied svg { display: none; }
+
+/* Keep Hotel Luze discount code inside the card on narrow layouts. */
+.card .promo { max-width: 100%; overflow: hidden; }
+.card .promo strong,
+#luze-code {
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+  max-width: 100% !important;
+  letter-spacing: clamp(.06em, .9vw, .14em) !important;
+  font-size: clamp(.78rem, 1.25vw, .95rem) !important;
+}
+
+/* Make every per-guest menu/allergy control the same size, also for the last card. */
+#guest-details,
+.guest-details {
+  align-items: stretch !important;
+}
+.guest-detail-card,
+.guest-detail-card:last-child {
+  display: block !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 20px !important;
+}
+.guest-detail-grid {
+  display: grid !important;
+  grid-template-columns: minmax(180px, .8fr) 1.2fr !important;
+  gap: 16px !important;
+  align-items: start !important;
+}
+.guest-detail-card label,
+.guest-detail-card:last-child label {
+  min-height: 0 !important;
+  height: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+}
+.guest-detail-card select.guest-menu,
+.guest-detail-card:last-child select.guest-menu,
+.guest-detail-card input.guest-allergies,
+.guest-detail-card:last-child input.guest-allergies {
+  display: block !important;
+  width: 100% !important;
+  height: 60px !important;
+  min-height: 60px !important;
+  max-height: 60px !important;
+  line-height: 60px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 720px) {
+  #panel-home .hero-stage {
+    padding-top: clamp(182px, 22vh, 260px) !important;
+  }
+  #panel-rsvp { padding-top: 44px !important; }
+  #panel-rsvp section,
+  #panel-rsvp .rsvp-section,
+  #panel-rsvp .rsvp-card { padding-top: 10px !important; }
+  .events { --event-gap: 94px; }
+  .event { min-height: var(--event-gap) !important; }
+  .event-icon { width: 46px !important; height: 46px !important; }
+  .event-icon .program-icon { width: 31px !important; height: 31px !important; }
+  .event-icon .program-icon.autobus { width: 34px !important; height: 34px !important; }
+  .guest-detail-grid { grid-template-columns: 1fr !important; }
+}
+
+@media (max-width: 520px) {
+  .card .promo strong,
+  #luze-code {
+    font-size: .76rem !important;
+    letter-spacing: .055em !important;
+  }
+  .promo-code-row { gap: 6px; }
+}

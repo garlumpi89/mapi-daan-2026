@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateFourPartFrame() {
     const y = window.scrollY || 0;
     // Small parallax drift. It is intentionally subtle and never duplicates the artwork.
-    root.style.setProperty("--frame-side-y", `${Math.round(-y * 0.10)}px`);
+    root.style.setProperty("--frame-side-y", `${Math.round(-y * 0.045)}px`);
     ticking = false;
   }
   function requestUpdate() {
