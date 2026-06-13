@@ -234,7 +234,8 @@
                onerror="this.style.display='none'">
           <h3 data-i18n="stay.luze">Hotel Luze El Villa</h3>
           <p data-i18n="stay.luze.desc">Lugar de celebración del cóctel, comida y baile.</p>
-          <p class="promo"><span data-i18n="stay.luze.promo">Código descuento:</span><br><span class="promo-code-row"><strong id="luze-code">MARIAPILAR&amp;DAAN26</strong><button class="copy-code" type="button" data-copy="MARIAPILAR&DAAN26" data-i18n-title="stay.luze.copy" aria-label="Copiar código" title="Copiar código"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="10" height="10" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span class="copy-feedback" aria-hidden="true"></span></button></span></p>
+          <p class="promo"><span data-i18n="stay.luze.promo">Código descuento:</span><br><strong id="luze-code">MARIAPILAR&amp;DAAN26</strong></p>
+          <button class="copy-code" type="button" data-copy="MARIAPILAR&DAAN26" data-i18n="stay.luze.copy">Copiar código</button>
           <a class="map-link" href="https://www.luzehoteles.com/luze-el-villa/" target="_blank" rel="noopener">
             <span data-i18n="stay.more">Ver más</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 L17 7 M9 7 h8 v8"/></svg>
@@ -414,7 +415,6 @@
       </div>
       <h2 class="section-title" data-i18n="rsvp.success.title">¡Confirmación enviada!</h2>
       <p data-i18n="rsvp.success.text">Muchas gracias por responder. ¡Nos vemos el 3 de octubre!</p>
-      <p style="margin-top:28px; display:flex; gap:18px; justify-content:center; flex-wrap:wrap;"><button type="button" class="text-link reset-rsvp" data-i18n="rsvp.success.again">Enviar otra respuesta</button><a class="text-link" href="#inicio" data-tab="home" data-i18n="nav.home">Inicio</a></p>
     </div>
 
   </div>
@@ -473,7 +473,7 @@
 /* ================= RSVP → Google Sheet =================
    Sends one group row + one per-guest details array.
    Apps Script should use the companion apps-script/Code.gs file. */
-const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbzhp65RURLsKXJlTFURyZffvrojXtB6hn_WB2Hc3j4fNtXfrqS4Z0Lb3CAOMA1Akvy-2Q/exec";
+const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbzpeDRbGEc3iGOm8mAtPk4IgD0t7HXCQdWhR17BmzofR79TAuaytg69nz9kvAJ_ABKqbg/exec";
 
 (function () {
   const form = document.getElementById("rsvp-form");
@@ -533,13 +533,6 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbzhp65RURLsKXJlT
     return "Español";
   }
 
-  function yesNoToSpanish(value) {
-    const v = String(value || "").trim().toLowerCase();
-    if (v === "si" || v === "sí" || v === "yes" || v === "ja") return "Sí";
-    if (v === "no" || v === "nee") return "No";
-    return "";
-  }
-
   function renderGuestDetails() {
     if (!guestDetailsEl) return;
     const existing = {};
@@ -588,19 +581,11 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbzhp65RURLsKXJlT
   document.querySelectorAll(".copy-code").forEach(function (button) {
     button.addEventListener("click", async function () {
       const code = button.getAttribute("data-copy") || "MARIAPILAR&DAAN26";
-      const markCopied = function () {
-        button.classList.add("is-copied");
-        button.setAttribute("aria-label", t("stay.luze.copied"));
-        button.setAttribute("title", t("stay.luze.copied"));
-        setTimeout(function () {
-          button.classList.remove("is-copied");
-          button.setAttribute("aria-label", t("stay.luze.copy"));
-          button.setAttribute("title", t("stay.luze.copy"));
-        }, 1600);
-      };
+      const original = button.textContent;
       try {
         await navigator.clipboard.writeText(code);
-        markCopied();
+        button.textContent = t("stay.luze.copied");
+        setTimeout(function () { button.textContent = original; }, 1800);
       } catch (err) {
         const temp = document.createElement("textarea");
         temp.value = code;
@@ -608,7 +593,8 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbzhp65RURLsKXJlT
         temp.select();
         document.execCommand("copy");
         document.body.removeChild(temp);
-        markCopied();
+        button.textContent = t("stay.luze.copied");
+        setTimeout(function () { button.textContent = original; }, 1800);
       }
     });
   });
@@ -641,10 +627,6 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbzhp65RURLsKXJlT
     resetRsvpFormView(true);
   });
 
-  window.addEventListener("pageshow", function () {
-    if (location.hash === "#rsvp") resetRsvpFormView(false);
-  });
-
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
     const status = document.getElementById("form-status");
@@ -668,13 +650,13 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbzhp65RURLsKXJlT
 
     const data = {
       language: langToSpanish(window.currentLang || document.documentElement.lang || "es"),
-      attendance: yesNoToSpanish(attendance.value),
+      attendance: attendance.value,
       contactName: form.contactName ? form.contactName.value.trim() : "",
       phone: form.phone ? form.phone.value.trim() : "",
       guestCount: form.personas.value || "",
       guestNames: guestNames,
-      prewedding: yesNoToSpanish((form.querySelector('input[name="preboda"]:checked') || {}).value),
-      bus: yesNoToSpanish((form.querySelector('input[name="autobus"]:checked') || {}).value),
+      prewedding: (form.querySelector('input[name="preboda"]:checked') || {}).value || "",
+      bus: (form.querySelector('input[name="autobus"]:checked') || {}).value || "",
       guestDetails: guestDetails,
       song: form.cancion.value.trim(),
       notes: "",

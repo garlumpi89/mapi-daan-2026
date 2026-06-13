@@ -1,8 +1,8 @@
-# Mapi & Daan Wedding Website — v1.21
+# Mapi # Mapi & Daan Wedding Website — v1.20 Daan Wedding Website — v1.22
 
 Static GitHub Pages website for `mapi-daan-2026.com`.
 
-## v1.21 changes
+## v1.20 changes
 
 - RSVP payload values are now normalized to Spanish for easier management in Google Sheets.
 - Apps Script updated with Spanish tab names, Spanish headers and Spanish dashboard formulas.
@@ -21,14 +21,3 @@ Upload all files to the GitHub Pages branch/root.
 Use `apps-script/Code.gs` in your Google Sheet Apps Script project and deploy it as a Web App.
 
 The website currently posts to the configured Apps Script endpoint in `index.html`.
-
-
-## v1.21 changes
-
-- Updated Apps Script endpoint.
-- Replaced program icons with supplied PNG line icons.
-- Return bus icon is mirrored by CSS.
-- RSVP can be re-opened after submission.
-- Tightened RSVP top spacing and improved main hero top spacing.
-- Reduced copy-code control to a small icon beside the Luze discount code.
-- Equalized timeline event spacing and RSVP guest detail field sizes.
