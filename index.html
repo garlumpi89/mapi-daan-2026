@@ -289,8 +289,8 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
         </div>
         <div>
-          <label class="q-label" for="contactName" data-i18n="rsvp.contactName">Nombre de contacto</label>
-          <input type="text" id="contactName" name="contactName" data-i18n-placeholder="rsvp.contactName.placeholder" placeholder="Nombre de la persona que rellena el formulario">
+          <label class="q-label" for="contactName" data-i18n="rsvp.contactName">Tu nombre</label>
+          <input type="text" id="contactName" name="contactName" data-i18n-placeholder="rsvp.contactName.placeholder" placeholder="Tu nombre y apellidos">
         </div>
       </div>
 
@@ -338,12 +338,9 @@
       </div>
 
       <div class="form-row attendance-yes-only" id="guest-names-row">
-        <div class="q-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 19 L17 7 a2.1 2.1 0 0 1 3 3 L8 22 l-4 1 1-4 Z" stroke-linejoin="round"/><path d="M15 9 l3 3"/></svg>
-        </div>
         <div>
-          <label class="q-label" for="nombres" data-i18n="rsvp.q3">Nombres y apellidos de los asistentes</label>
-          <input type="text" id="nombres" name="nombres" data-i18n-placeholder="rsvp.q3.placeholder" placeholder="Escribe los nombres y apellidos separados por comas">
+          <label class="q-label" data-i18n="rsvp.q3">Nombres y apellidos de los asistentes</label>
+          <div id="guest-name-fields" class="guest-name-fields" aria-live="polite"></div>
         </div>
       </div>
 
@@ -387,7 +384,7 @@
         </div>
         <div>
           <label class="q-label" for="cancion" data-i18n="rsvp.q7">¿Qué canción no puede faltar en la pista de baile?</label>
-          <input type="text" id="cancion" name="cancion" data-i18n-placeholder="rsvp.q7.placeholder" placeholder="Escribe tu canción">
+          <input type="text" id="cancion" name="cancion" data-i18n-placeholder="rsvp.q7.placeholder" placeholder="Escribe tu canción (opcional)">
         </div>
       </div>
 
@@ -407,7 +404,6 @@
           <span data-i18n="rsvp.submit">Enviar confirmación</span>
         </button>
         <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
-        <p class="thanks" data-i18n="rsvp.thanks">¡Gracias! Nos hace mucha ilusión compartir este día con vosotros.</p>
       </div>
     </form>
 
@@ -475,44 +471,52 @@
 /* ================= RSVP → Google Sheet =================
    Sends one group row + one per-guest details array.
    Apps Script should use the companion apps-script/Code.gs file. */
-const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbww86HoNU6Esvz9cj748nyyZgGsxcjFAgsGcot8ir0fNmvuu34gaYIrEhSqeSLuXtj61w/exec";
+const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbxRntO0ylCtCm0Bz96d81fb57_0R50AmS2L2WFOdRxxVj5htRx5zzIx5d-1H7wbmIA0Ng/exec";
 
 (function () {
   const form = document.getElementById("rsvp-form");
   const contactNameInput = document.getElementById("contactName");
-  const guestNamesInput = document.getElementById("nombres");
+  const guestNameFieldsEl = document.getElementById("guest-name-fields");
   const guestCountSelect = document.getElementById("personas");
   const guestDetailsEl = document.getElementById("guest-details");
 
-  function parseTypedGuestNames() {
-    return (guestNamesInput.value || "")
-      .split(/[\n,]+/)
-      .map(function (name) { return name.trim(); })
-      .filter(Boolean);
-  }
-
-  function normalizeName(name) {
-    return String(name || "").trim().toLowerCase().replace(/\s+/g, " ");
+  function getGuestNameInputs() {
+    return Array.from(guestNameFieldsEl ? guestNameFieldsEl.querySelectorAll(".guest-name-input") : []);
   }
 
   function getAllGuestNames() {
-    const contact = (contactNameInput && contactNameInput.value ? contactNameInput.value.trim() : "");
-    const typed = parseTypedGuestNames();
-    const seen = new Set();
-    const all = [];
-    [contact].concat(typed).forEach(function (name) {
-      const key = normalizeName(name);
-      if (key && !seen.has(key)) {
-        seen.add(key);
-        all.push(name);
-      }
+    return getGuestNameInputs()
+      .map(function (input) { return (input.value || "").trim(); })
+      .filter(Boolean);
+  }
+
+  function renderGuestNameFields() {
+    if (!guestNameFieldsEl) return;
+    const count = Number(guestCountSelect.value || 0);
+    if (!count || isAttendanceNo()) {
+      guestNameFieldsEl.innerHTML = "";
+      renderGuestDetails();
+      return;
+    }
+
+    const previous = getGuestNameInputs().map(function (input) { return input.value || ""; });
+    const contactName = (contactNameInput && contactNameInput.value || "").trim();
+
+    guestNameFieldsEl.innerHTML = Array.from({ length: count }, function (_, i) {
+      const current = previous[i] || (i === 0 ? contactName : "");
+      const label = `${t("rsvp.guest")} ${i + 1}`;
+      return `
+        <label class="guest-name-card">
+          <span>${label}</span>
+          <input type="text" class="guest-name-input" name="guestName${i}" value="${current.replace(/"/g, "&quot;")}" placeholder="${t("rsvp.guestName.placeholder") || t("rsvp.q3.placeholder")}">
+        </label>`;
+    }).join("");
+
+    getGuestNameInputs().forEach(function (input) {
+      input.addEventListener("input", renderGuestDetails);
     });
 
-    const count = Number(guestCountSelect.value || 0);
-    if (!all.length && count) {
-      return Array.from({ length: count }, function (_, i) { return `${t("rsvp.guest")} ${i + 1}`; });
-    }
-    return all;
+    renderGuestDetails();
   }
 
   function menuOptionsHtml(selected) {
@@ -533,6 +537,18 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbww86HoNU6Esvz9c
     if (lang === "en") return "Inglés";
     if (lang === "nl") return "Neerlandés";
     return "Español";
+  }
+
+
+  function updatePluralLabels() {
+    const count = Number(guestCountSelect.value || 0);
+    const singular = count === 1;
+    const q4 = document.querySelector('[data-i18n="rsvp.q4"], [data-i18n="rsvp.q4.singular"]');
+    const q5 = document.querySelector('[data-i18n="rsvp.q5"], [data-i18n="rsvp.q5.singular"]');
+    const q8 = document.querySelector('[data-i18n="rsvp.q8"], [data-i18n="rsvp.q8.singular"]');
+    if (q4) { q4.setAttribute('data-i18n', singular ? 'rsvp.q4.singular' : 'rsvp.q4'); q4.textContent = t(singular ? 'rsvp.q4.singular' : 'rsvp.q4'); }
+    if (q5) { q5.setAttribute('data-i18n', singular ? 'rsvp.q5.singular' : 'rsvp.q5'); q5.textContent = t(singular ? 'rsvp.q5.singular' : 'rsvp.q5'); }
+    if (q8) { q8.setAttribute('data-i18n', singular ? 'rsvp.q8.singular' : 'rsvp.q8'); q8.textContent = t(singular ? 'rsvp.q8.singular' : 'rsvp.q8'); }
   }
 
   function renderGuestDetails() {
@@ -582,20 +598,17 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbww86HoNU6Esvz9c
     const row = document.getElementById("guest-names-row");
     if (!row) return;
     const count = Number(guestCountSelect.value || 0);
-    if (isAttendanceNo() || count === 1 || count === 0) {
-      row.hidden = true;
-      if (isAttendanceNo() || count === 1) guestNamesInput.value = "";
-    } else {
-      row.hidden = false;
-    }
+    row.hidden = isAttendanceNo() || count === 0;
+    if (!row.hidden) renderGuestNameFields();
+    else if (guestNameFieldsEl) guestNameFieldsEl.innerHTML = "";
   }
 
   window.renderGuestDetails = renderGuestDetails;
-  if (contactNameInput) contactNameInput.addEventListener("input", renderGuestDetails);
-  guestNamesInput.addEventListener("input", renderGuestDetails);
-  guestCountSelect.addEventListener("change", function () { updateGuestNamesVisibility(); renderGuestDetails(); });
-  window.addEventListener("languagechange", renderGuestDetails);
+  if (contactNameInput) contactNameInput.addEventListener("input", function () { renderGuestNameFields(); });
+  guestCountSelect.addEventListener("change", function () { updateGuestNamesVisibility(); updatePluralLabels(); renderGuestNameFields(); });
+  window.addEventListener("languagechange", function () { updatePluralLabels(); renderGuestDetails(); });
   updateGuestNamesVisibility();
+  updatePluralLabels();
   renderGuestDetails();
   updateAttendanceFlow();
 
@@ -635,7 +648,7 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbww86HoNU6Esvz9c
     form.style.display = "block";
     if (panel) panel.style.display = "none";
     const status = document.getElementById("form-status");
-    if (status) { status.className = "form-status"; status.textContent = ""; }
+    if (status) { status.className = "form-status"; status.textContent = ""; status.style.display = "none"; }
     const btnLabel = document.querySelector("#submit-btn span");
     if (btnLabel) btnLabel.textContent = t("rsvp.submit");
   }
@@ -651,13 +664,15 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbww86HoNU6Esvz9c
 
     if (!isYes) {
       guestCountSelect.value = "";
-      guestNamesInput.value = "";
+      updatePluralLabels();
+      if (guestNameFieldsEl) guestNameFieldsEl.innerHTML = "";
       if (form.cancion) form.cancion.value = "";
       form.querySelectorAll('input[name="autobus"], input[name="preboda"]').forEach(function (input) { input.checked = false; });
       if (guestDetailsEl) guestDetailsEl.innerHTML = "";
     } else {
       updateGuestNamesVisibility();
-      renderGuestDetails();
+      updatePluralLabels();
+      renderGuestNameFields();
     }
   }
 
@@ -677,18 +692,125 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbww86HoNU6Esvz9c
     resetRsvpFormView(true);
   });
 
+  function clearValidationState() {
+    form.querySelectorAll(".field-invalid").forEach(function (el) { el.classList.remove("field-invalid"); });
+    form.querySelectorAll(".field-invalid-group").forEach(function (el) { el.classList.remove("field-invalid-group"); });
+  }
+
+  function markInvalid(el) {
+    if (!el) return;
+    el.classList.add("field-invalid");
+  }
+
+  function markRadioInvalid(name) {
+    const first = form.querySelector('input[name="' + name + '"]');
+    if (!first) return;
+    const group = first.closest(".radio-group") || first.closest(".form-row");
+    if (group) group.classList.add("field-invalid-group");
+  }
+
+  function firstInvalidElement() {
+    return form.querySelector(".field-invalid, .field-invalid-group");
+  }
+
+  function validateRsvpBeforeSubmit() {
+    clearValidationState();
+
+    const missing = [];
+    const contactName = form.contactName;
+    const phone = form.phone;
+    const attendance = form.querySelector('input[name="asistencia"]:checked');
+
+    if (!contactName || !contactName.value.trim()) {
+      missing.push("contactName");
+      markInvalid(contactName);
+    }
+    if (!phone || !phone.value.trim()) {
+      missing.push("phone");
+      markInvalid(phone);
+    }
+    if (!attendance) {
+      missing.push("attendance");
+      markRadioInvalid("asistencia");
+    }
+
+    const isAttending = attendance && attendance.value === "si";
+    if (isAttending) {
+      const guestCount = Number(guestCountSelect.value || 0);
+      if (!guestCount) {
+        missing.push("guestCount");
+        markInvalid(guestCountSelect);
+      }
+
+      updateGuestNamesVisibility();
+      renderGuestNameFields();
+
+      const guestInputs = getGuestNameInputs();
+      if (guestCount && guestInputs.length < guestCount) {
+        missing.push("guestNames");
+      }
+      guestInputs.forEach(function (input) {
+        if (!input.value.trim()) {
+          missing.push("guestName");
+          markInvalid(input);
+        }
+      });
+
+      if (!form.querySelector('input[name="autobus"]:checked')) {
+        missing.push("bus");
+        markRadioInvalid("autobus");
+      }
+      if (!form.querySelector('input[name="preboda"]:checked')) {
+        missing.push("prewedding");
+        markRadioInvalid("preboda");
+      }
+
+      // Menu selection is explicit per guest. Allergies/intolerances remain optional.
+      guestDetailsEl.querySelectorAll(".guest-menu").forEach(function (select) {
+        if (!select.value) {
+          missing.push("menu");
+          markInvalid(select);
+        }
+      });
+    }
+
+    if (missing.length) {
+      const status = document.getElementById("form-status");
+      if (status) {
+        status.style.display = "block";
+        status.className = "form-status error";
+        status.textContent = t("rsvp.required") || "Por favor, completa todos los campos obligatorios.";
+      }
+      const target = firstInvalidElement();
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "center" });
+        if (typeof target.focus === "function") {
+          setTimeout(function () { try { target.focus({ preventScroll: true }); } catch (e) {} }, 250);
+        }
+      }
+      return false;
+    }
+    return true;
+  }
+
+  form.addEventListener("input", function (e) {
+    if (e.target && e.target.classList) e.target.classList.remove("field-invalid");
+  });
+
+  form.addEventListener("change", function (e) {
+    if (e.target && e.target.classList) e.target.classList.remove("field-invalid");
+    const row = e.target && e.target.closest ? e.target.closest(".radio-group") : null;
+    if (row) row.classList.remove("field-invalid-group");
+  });
+
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
     const status = document.getElementById("form-status");
     const btnLabel = document.querySelector("#submit-btn span");
 
-    const attendance = form.querySelector('input[name="asistencia"]:checked');
-    if (!attendance) {
-      status.className = "form-status error";
-      status.textContent = t("rsvp.required");
-      return;
-    }
+    if (!validateRsvpBeforeSubmit()) return;
 
+    const attendance = form.querySelector('input[name="asistencia"]:checked');
     const isAttending = attendance.value === "si";
     let guestNames = [];
     let guestDetails = [];
@@ -722,7 +844,8 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbww86HoNU6Esvz9c
     };
 
     status.className = "form-status";
-    status.textContent = t("rsvp.sending");
+    status.textContent = "";
+    status.style.display = "none";
     btnLabel.textContent = t("rsvp.sending");
 
     try {
@@ -747,6 +870,7 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbww86HoNU6Esvz9c
       panel.style.display = "block";
       panel.scrollIntoView({ behavior: "smooth", block: "center" });
     } catch (err) {
+      status.style.display = "block";
       status.className = "form-status error";
       status.textContent = t("rsvp.error");
       btnLabel.textContent = t("rsvp.submit");
