@@ -1,4 +1,4 @@
-# Mapi # Mapi & Daan Wedding Website — v1.20 Daan Wedding Website — v1.22
+# Mapi & Daan Wedding Website — v1.20
 
 Static GitHub Pages website for `mapi-daan-2026.com`.
 
@@ -21,3 +21,8 @@ Upload all files to the GitHub Pages branch/root.
 Use `apps-script/Code.gs` in your Google Sheet Apps Script project and deploy it as a Web App.
 
 The website currently posts to the configured Apps Script endpoint in `index.html`.
+
+
+## v1.31
+- Adds visible photos page title in all three languages.
+- Uses transparent camera artwork to avoid beige/white background mismatch.

@@ -234,8 +234,7 @@
                onerror="this.style.display='none'">
           <h3 data-i18n="stay.luze">Hotel Luze El Villa</h3>
           <p data-i18n="stay.luze.desc">Lugar de celebración del cóctel, comida y baile.</p>
-          <p class="promo"><span data-i18n="stay.luze.promo">Código descuento:</span><br><strong id="luze-code">MARIAPILAR&amp;DAAN26</strong></p>
-          <button class="copy-code" type="button" data-copy="MARIAPILAR&DAAN26" data-i18n="stay.luze.copy">Copiar código</button>
+          <p class="promo"><span data-i18n="stay.luze.promo">Código descuento:</span><br><span class="promo-code-row"><strong id="luze-code">MARIAPILAR&amp;DAAN26</strong><button class="copy-code" type="button" data-copy="MARIAPILAR&DAAN26" aria-label="Copiar código" title="Copiar código"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button></span></p>
           <a class="map-link" href="https://www.luzehoteles.com/luze-el-villa/" target="_blank" rel="noopener">
             <span data-i18n="stay.more">Ver más</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 L17 7 M9 7 h8 v8"/></svg>
@@ -276,26 +275,15 @@
   <div class="corner-floral tr animate-sway" aria-hidden="true"><img src="assets/floral-corner.svg" alt=""></div>
 
   <div class="container" style="position:relative; z-index:2;">
-    <h1 class="section-title" data-i18n="rsvp.title">Confirma tu asistencia</h1>
-    <div class="ornament" aria-hidden="true">❧</div>
-    <p class="lead" data-i18n="rsvp.intro">Por favor, completa el siguiente formulario antes del 1 de septiembre de 2026.</p>
+    <div class="rsvp-heading">
+      <h1 class="section-title" data-i18n="rsvp.title">Confirma tu asistencia</h1>
+      <div class="ornament" aria-hidden="true">❧</div>
+      <p class="lead" data-i18n="rsvp.intro">Por favor, completa el siguiente formulario antes del 1 de septiembre de 2026.</p>
+    </div>
 
     <form id="rsvp-form" class="form-wrap" novalidate>
 
-      <div class="form-row">
-        <div class="q-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3 v4 M16 3 v4 M4 10 h16"/><path d="M9 15 l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div>
-          <label class="q-label" data-i18n="rsvp.q1">1. ¿Podrás acompañarnos el 3 de octubre de 2026?</label>
-          <div class="radio-group">
-            <label class="radio-pill"><input type="radio" name="asistencia" value="si" required><span data-i18n="rsvp.q1.yes">Sí, asistiré</span></label>
-            <label class="radio-pill"><input type="radio" name="asistencia" value="no"><span data-i18n="rsvp.q1.no">No podré asistir</span></label>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-row contact-row">
+            <div class="form-row contact-row">
         <div class="q-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
         </div>
@@ -315,12 +303,25 @@
         </div>
       </div>
 
-      <div class="form-row">
+<div class="form-row">
+        <div class="q-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3 v4 M16 3 v4 M4 10 h16"/><path d="M9 15 l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <label class="q-label" data-i18n="rsvp.q1">¿Podrás acompañarnos el 3 de octubre de 2026?</label>
+          <div class="radio-group">
+            <label class="radio-pill"><input type="radio" name="asistencia" value="si" required><span data-i18n="rsvp.q1.yes">Sí, asistiré</span></label>
+            <label class="radio-pill"><input type="radio" name="asistencia" value="no"><span data-i18n="rsvp.q1.no">No podré asistir</span></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row attendance-yes-only">
         <div class="q-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19 a5.5 5.5 0 0 1 11 0"/><circle cx="16.5" cy="9.5" r="2.6"/><path d="M15.5 14.5 a4.6 4.6 0 0 1 5 4.5"/></svg>
         </div>
         <div>
-          <label class="q-label" for="personas" data-i18n="rsvp.q2">2. ¿Cuántas personas asistiréis?</label>
+          <label class="q-label" for="personas" data-i18n="rsvp.q2">¿Cuántas personas asistiréis?</label>
           <select id="personas" name="personas">
             <option value="" data-i18n-option="rsvp.q2.placeholder" selected>Selecciona una opción</option>
             <option value="1">1</option>
@@ -335,22 +336,22 @@
         </div>
       </div>
 
-      <div class="form-row">
+      <div class="form-row attendance-yes-only" id="guest-names-row">
         <div class="q-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 19 L17 7 a2.1 2.1 0 0 1 3 3 L8 22 l-4 1 1-4 Z" stroke-linejoin="round"/><path d="M15 9 l3 3"/></svg>
         </div>
         <div>
-          <label class="q-label" for="nombres" data-i18n="rsvp.q3">3. Nombres y apellidos de los asistentes</label>
+          <label class="q-label" for="nombres" data-i18n="rsvp.q3">Nombres y apellidos de los asistentes</label>
           <input type="text" id="nombres" name="nombres" data-i18n-placeholder="rsvp.q3.placeholder" placeholder="Escribe los nombres y apellidos separados por comas">
         </div>
       </div>
 
-      <div class="form-row">
+      <div class="form-row attendance-yes-only">
         <div class="q-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="13" rx="2.5"/><path d="M4 10 h16"/><circle cx="8" cy="18.5" r="1.6" fill="currentColor" stroke="none"/><circle cx="16" cy="18.5" r="1.6" fill="currentColor" stroke="none"/></svg>
         </div>
         <div>
-          <label class="q-label" data-i18n="rsvp.q4">4. ¿Necesitaréis utilizar el autobús?</label>
+          <label class="q-label" data-i18n="rsvp.q4">¿Necesitaréis utilizar el autobús?</label>
           <div class="radio-group">
             <label class="radio-pill"><input type="radio" name="autobus" value="si"><span data-i18n="rsvp.yes">Sí</span></label>
             <label class="radio-pill"><input type="radio" name="autobus" value="no"><span data-i18n="rsvp.no">No</span></label>
@@ -358,12 +359,12 @@
         </div>
       </div>
 
-      <div class="form-row">
+      <div class="form-row attendance-yes-only">
         <div class="q-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="9" cy="4.5" r="1.6"/><circle cx="16" cy="5.5" r="1.6"/><path d="M9 7 q -2 4 -1 7 l -2 6"/><path d="M9 14 l 3 6"/><path d="M16 8 q 2 4 0.5 7 l 1.5 5"/><path d="M16.5 15 l -3 5"/></svg>
         </div>
         <div>
-          <label class="q-label" data-i18n="rsvp.q5">5. ¿Asistiréis también a la preboda del viernes?</label>
+          <label class="q-label" data-i18n="rsvp.q5">¿Asistiréis también a la preboda del viernes?</label>
           <div class="radio-group">
             <label class="radio-pill"><input type="radio" name="preboda" value="si"><span data-i18n="rsvp.yes">Sí</span></label>
             <label class="radio-pill"><input type="radio" name="preboda" value="no"><span data-i18n="rsvp.no">No</span></label>
@@ -371,20 +372,20 @@
         </div>
       </div>
 
-      <div class="form-row guest-details-row">
+      <div class="form-row guest-details-row attendance-yes-only">
         <div>
-          <label class="q-label" data-i18n="rsvp.q6">6. Menús especiales y alergias (por asistente)</label>
+          <label class="q-label" data-i18n="rsvp.q6">Menús especiales y alergias (por asistente)</label>
           <p class="form-hint" data-i18n="rsvp.q6.hint">Introduce primero los nombres y aquí aparecerán automáticamente los campos de cada persona.</p>
           <div id="guest-details" class="guest-details" aria-live="polite"></div>
         </div>
       </div>
 
-      <div class="form-row">
+      <div class="form-row attendance-yes-only">
         <div class="q-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M9 18 V6 l10 -2 v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg>
         </div>
         <div>
-          <label class="q-label" for="cancion" data-i18n="rsvp.q7">7. ¿Qué canción no puede faltar en la pista de baile?</label>
+          <label class="q-label" for="cancion" data-i18n="rsvp.q7">¿Qué canción no puede faltar en la pista de baile?</label>
           <input type="text" id="cancion" name="cancion" data-i18n-placeholder="rsvp.q7.placeholder" placeholder="Escribe tu canción">
         </div>
       </div>
@@ -394,7 +395,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M4 6 h16 v11 h-9 l-4 3 v-3 h-3 Z"/></svg>
         </div>
         <div>
-          <label class="q-label" for="mensaje" data-i18n="rsvp.q8">8. ¿Queréis dejarnos algún mensaje?</label>
+          <label class="q-label" for="mensaje" data-i18n="rsvp.q8">¿Queréis dejarnos algún mensaje?</label>
           <textarea id="mensaje" name="mensaje" data-i18n-placeholder="rsvp.q8.placeholder" placeholder="Escribe tu mensaje (opcional)"></textarea>
         </div>
       </div>
@@ -414,7 +415,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20s-7.5-4.8-9.4-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.4 11c-1.9 4.2-9.4 9-9.4 9Z"/></svg>
       </div>
       <h2 class="section-title" data-i18n="rsvp.success.title">¡Confirmación enviada!</h2>
-      <p data-i18n="rsvp.success.text">Muchas gracias por responder. ¡Nos vemos el 3 de octubre!</p>
+      <p id="success-message" data-i18n="rsvp.success.text">Muchas gracias por responder. ¡Nos vemos el 3 de octubre!</p>
     </div>
 
   </div>
@@ -473,7 +474,7 @@
 /* ================= RSVP → Google Sheet =================
    Sends one group row + one per-guest details array.
    Apps Script should use the companion apps-script/Code.gs file. */
-const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbzpeDRbGEc3iGOm8mAtPk4IgD0t7HXCQdWhR17BmzofR79TAuaytg69nz9kvAJ_ABKqbg/exec";
+const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbww86HoNU6Esvz9cj748nyyZgGsxcjFAgsGcot8ir0fNmvuu34gaYIrEhSqeSLuXtj61w/exec";
 
 (function () {
   const form = document.getElementById("rsvp-form");
@@ -571,21 +572,37 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbzpeDRbGEc3iGOm8
     }).join("");
   }
 
+  function isAttendanceNo() {
+    const checked = form.querySelector('input[name="asistencia"]:checked');
+    return !!(checked && checked.value === "no");
+  }
+
+  function updateGuestNamesVisibility() {
+    const row = document.getElementById("guest-names-row");
+    if (!row) return;
+    const count = Number(guestCountSelect.value || 0);
+    if (isAttendanceNo() || count === 1 || count === 0) {
+      row.hidden = true;
+      if (isAttendanceNo() || count === 1) guestNamesInput.value = "";
+    } else {
+      row.hidden = false;
+    }
+  }
+
   window.renderGuestDetails = renderGuestDetails;
   if (contactNameInput) contactNameInput.addEventListener("input", renderGuestDetails);
   guestNamesInput.addEventListener("input", renderGuestDetails);
-  guestCountSelect.addEventListener("change", renderGuestDetails);
+  guestCountSelect.addEventListener("change", function () { updateGuestNamesVisibility(); renderGuestDetails(); });
   window.addEventListener("languagechange", renderGuestDetails);
+  updateGuestNamesVisibility();
   renderGuestDetails();
+  updateAttendanceFlow();
 
   document.querySelectorAll(".copy-code").forEach(function (button) {
     button.addEventListener("click", async function () {
       const code = button.getAttribute("data-copy") || "MARIAPILAR&DAAN26";
-      const original = button.textContent;
       try {
         await navigator.clipboard.writeText(code);
-        button.textContent = t("stay.luze.copied");
-        setTimeout(function () { button.textContent = original; }, 1800);
       } catch (err) {
         const temp = document.createElement("textarea");
         temp.value = code;
@@ -593,9 +610,13 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbzpeDRbGEc3iGOm8
         temp.select();
         document.execCommand("copy");
         document.body.removeChild(temp);
-        button.textContent = t("stay.luze.copied");
-        setTimeout(function () { button.textContent = original; }, 1800);
       }
+      button.classList.add("is-copied");
+      button.setAttribute("aria-label", t("stay.luze.copied"));
+      setTimeout(function () {
+        button.classList.remove("is-copied");
+        button.setAttribute("aria-label", t("stay.luze.copy"));
+      }, 1500);
     });
   });
 
@@ -603,10 +624,13 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbzpeDRbGEc3iGOm8
     const panel = document.getElementById("success-panel");
     if (clearFields) {
       form.reset();
+      updateGuestNamesVisibility();
       renderGuestDetails();
-
-
     }
+    updateAttendanceFlow();
+    document.getElementById("panel-rsvp")?.classList.remove("rsvp-submitted");
+    const heading = document.querySelector("#panel-rsvp .rsvp-heading");
+    if (heading) heading.style.display = "block";
     form.style.display = "block";
     if (panel) panel.style.display = "none";
     const status = document.getElementById("form-status");
@@ -614,6 +638,31 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbzpeDRbGEc3iGOm8
     const btnLabel = document.querySelector("#submit-btn span");
     if (btnLabel) btnLabel.textContent = t("rsvp.submit");
   }
+
+  function updateAttendanceFlow() {
+    const checked = form.querySelector('input[name="asistencia"]:checked');
+    const isYes = !!(checked && checked.value === "si");
+    const isNo = !!(checked && checked.value === "no");
+
+    document.querySelectorAll(".attendance-yes-only").forEach(function (row) {
+      row.hidden = !isYes;
+    });
+
+    if (!isYes) {
+      guestCountSelect.value = "";
+      guestNamesInput.value = "";
+      if (form.cancion) form.cancion.value = "";
+      form.querySelectorAll('input[name="autobus"], input[name="preboda"]').forEach(function (input) { input.checked = false; });
+      if (guestDetailsEl) guestDetailsEl.innerHTML = "";
+    } else {
+      updateGuestNamesVisibility();
+      renderGuestDetails();
+    }
+  }
+
+  form.querySelectorAll('input[name="asistencia"]').forEach(function (input) {
+    input.addEventListener("change", updateAttendanceFlow);
+  });
 
   document.addEventListener("click", function (e) {
     if (e.target.closest(".reset-rsvp")) {
@@ -639,26 +688,33 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbzpeDRbGEc3iGOm8
       return;
     }
 
-    const guestNames = getAllGuestNames();
-    const guestDetails = Array.from(guestDetailsEl.querySelectorAll(".guest-detail-card")).map(function (card) {
-      return {
-        name: card.getAttribute("data-name") || "",
-        menu: (card.querySelector(".guest-menu") || {}).value || "",
-        allergies: (card.querySelector(".guest-allergies") || {}).value.trim() || ""
-      };
-    }).filter(function (g) { return g.name || g.menu || g.allergies; });
-
+    const isAttending = attendance.value === "si";
+    let guestNames = [];
+    let guestDetails = [];
+    if (isAttending) {
+      updateGuestNamesVisibility();
+      guestNames = getAllGuestNames();
+      guestDetails = Array.from(guestDetailsEl.querySelectorAll(".guest-detail-card")).map(function (card) {
+        return {
+          name: card.getAttribute("data-name") || "",
+          menu: (card.querySelector(".guest-menu") || {}).value || "",
+          allergies: (card.querySelector(".guest-allergies") || {}).value.trim() || ""
+        };
+      }).filter(function (g) { return g.name || g.menu || g.allergies; });
+    } else {
+      updateAttendanceFlow();
+    }
     const data = {
       language: langToSpanish(window.currentLang || document.documentElement.lang || "es"),
       attendance: attendance.value,
       contactName: form.contactName ? form.contactName.value.trim() : "",
       phone: form.phone ? form.phone.value.trim() : "",
-      guestCount: form.personas.value || "",
-      guestNames: guestNames,
-      prewedding: (form.querySelector('input[name="preboda"]:checked') || {}).value || "",
-      bus: (form.querySelector('input[name="autobus"]:checked') || {}).value || "",
-      guestDetails: guestDetails,
-      song: form.cancion.value.trim(),
+      guestCount: isAttending ? (form.personas.value || "") : "",
+      guestNames: isAttending ? guestNames : [],
+      prewedding: isAttending ? ((form.querySelector('input[name="preboda"]:checked') || {}).value || "") : "",
+      bus: isAttending ? ((form.querySelector('input[name="autobus"]:checked') || {}).value || "") : "",
+      guestDetails: isAttending ? guestDetails : [],
+      song: isAttending ? form.cancion.value.trim() : "",
       notes: "",
       message: form.mensaje.value.trim(),
       source: "mapi-daan-2026.com"
@@ -676,8 +732,17 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbzpeDRbGEc3iGOm8
         body: JSON.stringify(data)
       });
       form.style.display = "none";
+      document.getElementById("panel-rsvp")?.classList.add("rsvp-submitted");
+      const heading = document.querySelector("#panel-rsvp .rsvp-heading");
+      if (heading) heading.style.display = "none";
       status.textContent = "";
       const panel = document.getElementById("success-panel");
+      const successMessage = document.getElementById("success-message");
+      if (successMessage) {
+        const key = attendance.value === "no" ? "rsvp.success.no.text" : "rsvp.success.text";
+        successMessage.textContent = t(key);
+        successMessage.setAttribute("data-i18n", key);
+      }
       panel.style.display = "block";
       panel.scrollIntoView({ behavior: "smooth", block: "center" });
     } catch (err) {
