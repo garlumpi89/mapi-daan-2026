@@ -1,4 +1,4 @@
-# Web Mapi & Daan v2.5
+# Web Mapi & Daan v2.7
 
 # Web Mapi & Daan v2.0
 
@@ -22,5 +22,5 @@ Cambios principales:
 - Incluido Apple Touch Icon para iPhone/iPad.
 
 
-## v2.6
+## v2.7
 - Corrige el fondo negro de la corona floral inicial usando siempre el PNG transparente (`brand-wreath.png`) y eliminando la referencia al WebP con matte negro.
