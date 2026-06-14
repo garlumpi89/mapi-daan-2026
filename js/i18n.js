@@ -70,6 +70,7 @@ const I18N = {
     "cta.title": "¿Nos acompañáis?",
     "cta.text": "Confirma tu asistencia antes del 1 de septiembre.",
     "cta.rsvp": "Confirmar asistencia",
+    "cta.closing": "Nos vemos el 3 de octubre de 2026 ❤️",
     "cta.photos": "Compartir fotos",
 
     // RSVP
@@ -199,6 +200,7 @@ const I18N = {
     "cta.title": "Will you join us?",
     "cta.text": "Please confirm your attendance before 1 September.",
     "cta.rsvp": "Confirm attendance",
+    "cta.closing": "See you on 3 October 2026 ❤️",
     "cta.photos": "Share photos",
 
     "rsvp.title": "Confirm your attendance",
@@ -326,6 +328,7 @@ const I18N = {
     "cta.title": "Vieren jullie met ons mee?",
     "cta.text": "Bevestig je aanwezigheid vóór 1 september.",
     "cta.rsvp": "Aanwezigheid bevestigen",
+    "cta.closing": "Tot 3 oktober 2026 ❤️",
     "cta.photos": "Foto's delen",
 
     "rsvp.title": "Bevestig je aanwezigheid",

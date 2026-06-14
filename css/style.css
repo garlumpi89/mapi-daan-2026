@@ -4940,3 +4940,59 @@ body.rsvp-active .site-footer {
     padding-bottom: 8px !important;
   }
 }
+
+
+/* v2.0 final: unify Dress code title with the rest of section titles */
+.dress-code-section .section-title {
+  font-family: var(--serif) !important;
+  font-weight: 500 !important;
+  font-size: clamp(1.5rem, 4vw, 2rem) !important;
+  letter-spacing: .22em !important;
+  text-transform: uppercase !important;
+  text-align: center !important;
+  color: var(--fg) !important;
+  margin-bottom: 26px !important;
+}
+
+/* =========================================================
+   v2.3 — favicon/social preview, elegant preloader and final polish
+   ========================================================= */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: grid;
+  place-items: center;
+  background: var(--bg, #f8f5ef);
+  transition: opacity .55s ease, visibility .55s ease;
+}
+.page-loader-mark {
+  width: min(46vw, 360px);
+  height: auto;
+  display: block;
+  opacity: 0;
+  transform: scale(.965);
+  animation: loaderMarkIn .55s ease forwards;
+}
+body.loaded .page-loader {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+@keyframes loaderMarkIn {
+  to { opacity: 1; transform: scale(1); }
+}
+.closing-line {
+  margin: 24px auto 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+  color: rgba(61,53,41,.72);
+}
+.photos-page.reveal {
+  transition-delay: .12s;
+}
+@media (max-width: 640px) {
+  .page-loader-mark { width: min(70vw, 300px); }
+  .closing-line { margin-top: 20px; }
+}

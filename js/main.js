@@ -126,3 +126,15 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", requestUpdate, { passive: true });
   updateFourPartFrame();
 });
+
+// v2.3: subtle loading screen fade-out.
+(function () {
+  function finishLoading() {
+    // Small delay so the wreath appears deliberately, not as a flash.
+    window.setTimeout(function () {
+      document.body.classList.add("loaded");
+    }, 350);
+  }
+  if (document.readyState === "complete") finishLoading();
+  else window.addEventListener("load", finishLoading, { once: true });
+})();

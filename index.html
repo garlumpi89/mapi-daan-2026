@@ -9,9 +9,27 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🤍</text></svg>">
+
+<meta property="og:title" content="Mapi &amp; Daan · 03 · 10 · 2026">
+<meta property="og:description" content="Boda de Mapi y Daan · Villafranca (Navarra)">
+<meta property="og:image" content="https://mapi-daan-2026.com/assets/og-image.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mapi-daan-2026.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mapi &amp; Daan · 03 · 10 · 2026">
+<meta name="twitter:description" content="Boda de Mapi y Daan · Villafranca (Navarra)">
+<meta name="twitter:image" content="https://mapi-daan-2026.com/assets/og-image.jpg">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
 </head>
 <body>
+<div id="page-loader" class="page-loader" aria-hidden="true">
+  <img src="assets/brand-wreath.png" alt="" class="page-loader-mark">
+</div>
 <div class="flower-frame-bg" aria-hidden="true"></div>
 <div class="floral-border floral-border-top" aria-hidden="true"></div>
 <div class="floral-border floral-border-left" aria-hidden="true"></div>
@@ -44,7 +62,9 @@
       <p class="card-kicker" data-i18n="hero.kicker">¡Nos casamos!</p>
       <h1 class="script-names">Mapi<span class="card-amp">&amp;</span>Daan</h1>
       <p class="card-date" data-i18n="hero.date">03 · 10 · 2026</p>
+      <p class="countdown" id="countdown" aria-live="polite"></p>
       <p class="card-place" data-i18n="hero.place">Villafranca · Navarra</p>
+      <div class="card-rule" aria-hidden="true"></div>
       <img class="card-church" alt="Acuarela original de la Terraza Padres Carmelitas" src="assets/church-original-transparent.webp" fetchpriority="high" decoding="async">
     </div>
 
@@ -258,16 +278,16 @@
   </section>
 
   <!-- countdown -->
-  <section class="countdown-section" aria-labelledby="countdown-title">
-    <div class="container reveal">
-      <div class="wedding-countdown" id="countdown" aria-live="polite">
-        <h2 class="countdown-title" id="countdown-title" data-i18n="countdown.title">Cuenta atrás</h2>
+  <section class="countdown-section reveal" id="countdown-section">
+    <div class="container">
+      <div class="wedding-countdown" aria-live="polite">
+        <h2 class="countdown-title" data-i18n="countdown.title">Cuenta atrás</h2>
         <div class="countdown-grid">
-          <div class="countdown-item"><span data-count="months">00</span><small data-i18n="countdown.months">meses</small></div>
-          <div class="countdown-item"><span data-count="days">00</span><small data-i18n="countdown.days.label">días</small></div>
-          <div class="countdown-item"><span data-count="hours">00</span><small data-i18n="countdown.hours">horas</small></div>
-          <div class="countdown-item"><span data-count="minutes">00</span><small data-i18n="countdown.minutes">minutos</small></div>
-          <div class="countdown-item"><span data-count="seconds">00</span><small data-i18n="countdown.seconds">segundos</small></div>
+          <div class="countdown-item"><span id="countdown-months">0</span><small data-i18n="countdown.months">meses</small></div>
+          <div class="countdown-item"><span id="countdown-days-full">0</span><small data-i18n="countdown.days.label">días</small></div>
+          <div class="countdown-item"><span id="countdown-hours">0</span><small data-i18n="countdown.hours">horas</small></div>
+          <div class="countdown-item"><span id="countdown-minutes">0</span><small data-i18n="countdown.minutes">minutos</small></div>
+          <div class="countdown-item"><span id="countdown-seconds">0</span><small data-i18n="countdown.seconds">segundos</small></div>
         </div>
       </div>
     </div>
@@ -282,6 +302,7 @@
       <h2 class="section-title" data-i18n="cta.title">¿Nos acompañáis?</h2>
       <p data-i18n="cta.text">Confirma tu asistencia antes del 1 de septiembre.</p>
       <a class="btn" href="#rsvp" data-tab="rsvp" data-i18n="cta.rsvp">Confirmar asistencia</a>
+      <p class="closing-line reveal" data-i18n="cta.closing">Nos vemos el 3 de octubre de 2026 ❤️</p>
     </div>
   </section>
 
@@ -493,19 +514,39 @@
 (function () {
   const weddingDate = new Date("2026-10-03T12:30:00+02:00");
 
-  function diffCalendarParts(now, target) {
-    if (target <= now) return { months: 0, days: 0, hours: 0, minutes: 0, seconds: 0, past: true };
+  function updateCountdown() {
+    const smallEl = document.getElementById("countdown");
+    if (smallEl) smallEl.textContent = "";
 
-    let months = (target.getFullYear() - now.getFullYear()) * 12 + (target.getMonth() - now.getMonth());
-    let anchor = new Date(now);
-    anchor.setMonth(anchor.getMonth() + months);
-    if (anchor > target) {
-      months -= 1;
-      anchor = new Date(now);
-      anchor.setMonth(anchor.getMonth() + months);
+    const monthsEl = document.getElementById("countdown-months");
+    const daysEl = document.getElementById("countdown-days-full");
+    const hoursEl = document.getElementById("countdown-hours");
+    const minutesEl = document.getElementById("countdown-minutes");
+    const secondsEl = document.getElementById("countdown-seconds");
+    if (!monthsEl || !daysEl || !hoursEl || !minutesEl || !secondsEl) return;
+
+    const now = new Date();
+    let diff = weddingDate - now;
+
+    if (diff <= 0) {
+      monthsEl.textContent = "0";
+      daysEl.textContent = "0";
+      hoursEl.textContent = "0";
+      minutesEl.textContent = "0";
+      secondsEl.textContent = "0";
+      return;
     }
 
-    let remaining = target - anchor;
+    let months = (weddingDate.getFullYear() - now.getFullYear()) * 12 + (weddingDate.getMonth() - now.getMonth());
+    let monthAnchor = new Date(now);
+    monthAnchor.setMonth(now.getMonth() + months);
+    if (monthAnchor > weddingDate) {
+      months -= 1;
+      monthAnchor = new Date(now);
+      monthAnchor.setMonth(now.getMonth() + months);
+    }
+
+    let remaining = weddingDate - monthAnchor;
     const days = Math.floor(remaining / 86400000);
     remaining -= days * 86400000;
     const hours = Math.floor(remaining / 3600000);
@@ -514,31 +555,11 @@
     remaining -= minutes * 60000;
     const seconds = Math.floor(remaining / 1000);
 
-    return { months, days, hours, minutes, seconds, past: false };
-  }
-
-  function updateCountdown() {
-    const el = document.getElementById("countdown");
-    if (!el) return;
-
-    const parts = diffCalendarParts(new Date(), weddingDate);
-    const title = el.querySelector(".countdown-title");
-    const grid = el.querySelector(".countdown-grid");
-
-    if (parts.past) {
-      if (title) title.textContent = t("countdown.past") || "¡Ya estamos casados!";
-      if (grid) grid.style.display = "none";
-      return;
-    }
-
-    if (title) title.textContent = t("countdown.title") || "Cuenta atrás";
-    if (grid) grid.style.display = "grid";
-
-    Object.entries(parts).forEach(function ([key, value]) {
-      if (key === "past") return;
-      const node = el.querySelector('[data-count="' + key + '"]');
-      if (node) node.textContent = String(value).padStart(2, "0");
-    });
+    monthsEl.textContent = Math.max(0, months);
+    daysEl.textContent = days;
+    hoursEl.textContent = String(hours).padStart(2, "0");
+    minutesEl.textContent = String(minutes).padStart(2, "0");
+    secondsEl.textContent = String(seconds).padStart(2, "0");
   }
 
   function formatICSDate(date) {
