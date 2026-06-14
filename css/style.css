@@ -4996,3 +4996,91 @@ body.loaded .page-loader {
   .page-loader-mark { width: min(70vw, 300px); }
   .closing-line { margin-top: 20px; }
 }
+
+
+/* v2.4 — menu infantil + refined loading screen */
+.page-loader {
+  background: var(--page-bg, #f7f0e7);
+  transition: opacity .75s ease, visibility .75s ease;
+}
+.page-loader-mark {
+  width: clamp(280px, 38vw, 560px);
+  max-width: 76vw;
+  height: auto;
+}
+@media (min-width: 1100px) {
+  .page-loader-mark { width: clamp(360px, 34vw, 580px); }
+}
+@media (max-width: 520px) {
+  .page-loader-mark { width: min(76vw, 340px); }
+}
+
+
+/* =========================================================
+   v2.5 — final refinements
+   - Mobile footer in a single line: names left, love right.
+   - Loader uses beige background and responsive wreath, no dark/black layer.
+   - RSVP first guest is read-only and kept in sync with "Tu nombre".
+   ========================================================= */
+.page-loader {
+  background: #f7f0e7 !important;
+  background-color: #f7f0e7 !important;
+  z-index: 999999 !important;
+}
+.page-loader picture { display: grid; place-items: center; }
+.page-loader-mark {
+  width: clamp(300px, 42vw, 620px) !important;
+  max-width: 82vw !important;
+  height: auto !important;
+  display: block !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+@media (max-width: 520px) {
+  .page-loader-mark { width: min(78vw, 360px) !important; }
+}
+@media (max-height: 620px) {
+  .page-loader-mark { width: min(58vh, 420px) !important; }
+}
+
+@media (max-width: 640px) {
+  .site-footer {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 12px !important;
+    text-align: left !important;
+    padding: 14px 16px !important;
+    font-size: .58rem !important;
+    letter-spacing: .12em !important;
+    white-space: nowrap !important;
+  }
+  .site-footer .love {
+    margin-left: auto !important;
+    justify-content: flex-end !important;
+    gap: 5px !important;
+  }
+  .site-footer svg { width: 12px !important; height: 12px !important; }
+}
+
+.guest-name-card-primary input[readonly] {
+  background: rgba(245,241,232,.72) !important;
+  color: var(--ink) !important;
+  cursor: default !important;
+  pointer-events: none !important;
+}
+
+
+/* v2.6 — loader wreath fix: use transparent PNG, never WebP with black matte */
+.page-loader {
+  background: #f7f0e7 !important;
+  background-image: none !important;
+}
+.page-loader-mark {
+  background: transparent !important;
+  mix-blend-mode: normal !important;
+}
+.page-loader picture, .page-loader img {
+  background: transparent !important;
+}

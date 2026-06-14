@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Small delay so the wreath appears deliberately, not as a flash.
     window.setTimeout(function () {
       document.body.classList.add("loaded");
-    }, 350);
+    }, 1250);
   }
   if (document.readyState === "complete") finishLoading();
   else window.addEventListener("load", finishLoading, { once: true });

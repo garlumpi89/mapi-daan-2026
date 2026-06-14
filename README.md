@@ -1,10 +1,26 @@
-# Mapi & Daan — Wedding website v2.3
+# Web Mapi & Daan v2.5
+
+# Web Mapi & Daan v2.0
+
+# Mapi & Daan wedding website — v1.42
 
 Cambios principales:
-- Nuevo favicon definitivo (monograma M&D cuadrado).
-- Imagen Open Graph / WhatsApp con corona floral y fecha.
-- Pantalla inicial de carga con fondo beige y corona floral.
-- Transiciones suaves de entrada al hacer scroll.
-- Cuenta atrás dinámica, calendario y RSVP mantenidos.
+- Cuenta atrás discreta bajo la fecha.
+- Botón "Añadir al calendario" con descarga de archivo `.ics`.
+- Mensaje "código copiado" durante 2 segundos al copiar el descuento del Hotel Luze.
+- Imágenes locales principales optimizadas a WebP y carga diferida en imágenes no críticas.
 
-Publicación: subir el contenido completo de esta carpeta al repositorio GitHub Pages.
+
+## v1.44
+- Elimina el texto de estado bajo el botón durante el envío del RSVP.
+- Añade botón Inicio tras confirmar.
+- Ajusta el icono de copiar código para no solaparse con el descuento.
+
+
+## v2.2
+- Añadido favicon personalizado M&D en PNG/ICO.
+- Incluido Apple Touch Icon para iPhone/iPad.
+
+
+## v2.6
+- Corrige el fondo negro de la corona floral inicial usando siempre el PNG transparente (`brand-wreath.png`) y eliminando la referencia al WebP con matte negro.

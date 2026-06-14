@@ -5,31 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mapi &amp; Daan · 03 · 10 · 2026</title>
 <meta name="description" content="Boda de Mapi y Daan — 3 de octubre de 2026, Villafranca, Navarra.">
+<meta property="og:title" content="Mapi &amp; Daan">
+<meta property="og:description" content="03 Octubre 2026 · Villafranca (Navarra)">
+<meta property="og:image" content="assets/og-image.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mapi &amp; Daan">
+<meta name="twitter:description" content="03 Octubre 2026 · Villafranca (Navarra)">
+<meta name="twitter:image" content="assets/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/brand-wreath.png">
 <link rel="stylesheet" href="css/style.css">
 
-<meta property="og:title" content="Mapi &amp; Daan · 03 · 10 · 2026">
-<meta property="og:description" content="Boda de Mapi y Daan · Villafranca (Navarra)">
-<meta property="og:image" content="https://mapi-daan-2026.com/assets/og-image.jpg">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://mapi-daan-2026.com/">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Mapi &amp; Daan · 03 · 10 · 2026">
-<meta name="twitter:description" content="Boda de Mapi y Daan · Villafranca (Navarra)">
-<meta name="twitter:image" content="https://mapi-daan-2026.com/assets/og-image.jpg">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
 <link rel="shortcut icon" href="assets/favicon.ico">
 </head>
 <body>
-<div id="page-loader" class="page-loader" aria-hidden="true">
-  <img src="assets/brand-wreath.png" alt="" class="page-loader-mark">
-</div>
+<div class="page-loader" aria-hidden="true"><img class="page-loader-mark" src="assets/brand-wreath.png" alt=""></div>
 <div class="flower-frame-bg" aria-hidden="true"></div>
 <div class="floral-border floral-border-top" aria-hidden="true"></div>
 <div class="floral-border floral-border-left" aria-hidden="true"></div>
@@ -277,22 +275,6 @@
     </div>
   </section>
 
-  <!-- countdown -->
-  <section class="countdown-section reveal" id="countdown-section">
-    <div class="container">
-      <div class="wedding-countdown" aria-live="polite">
-        <h2 class="countdown-title" data-i18n="countdown.title">Cuenta atrás</h2>
-        <div class="countdown-grid">
-          <div class="countdown-item"><span id="countdown-months">0</span><small data-i18n="countdown.months">meses</small></div>
-          <div class="countdown-item"><span id="countdown-days-full">0</span><small data-i18n="countdown.days.label">días</small></div>
-          <div class="countdown-item"><span id="countdown-hours">0</span><small data-i18n="countdown.hours">horas</small></div>
-          <div class="countdown-item"><span id="countdown-minutes">0</span><small data-i18n="countdown.minutes">minutos</small></div>
-          <div class="countdown-item"><span id="countdown-seconds">0</span><small data-i18n="countdown.seconds">segundos</small></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- CTA -->
   <section class="cta">
     <div class="container reveal">
@@ -302,7 +284,6 @@
       <h2 class="section-title" data-i18n="cta.title">¿Nos acompañáis?</h2>
       <p data-i18n="cta.text">Confirma tu asistencia antes del 1 de septiembre.</p>
       <a class="btn" href="#rsvp" data-tab="rsvp" data-i18n="cta.rsvp">Confirmar asistencia</a>
-      <p class="closing-line reveal" data-i18n="cta.closing">Nos vemos el 3 de octubre de 2026 ❤️</p>
     </div>
   </section>
 
@@ -515,51 +496,18 @@
   const weddingDate = new Date("2026-10-03T12:30:00+02:00");
 
   function updateCountdown() {
-    const smallEl = document.getElementById("countdown");
-    if (smallEl) smallEl.textContent = "";
-
-    const monthsEl = document.getElementById("countdown-months");
-    const daysEl = document.getElementById("countdown-days-full");
-    const hoursEl = document.getElementById("countdown-hours");
-    const minutesEl = document.getElementById("countdown-minutes");
-    const secondsEl = document.getElementById("countdown-seconds");
-    if (!monthsEl || !daysEl || !hoursEl || !minutesEl || !secondsEl) return;
-
+    const el = document.getElementById("countdown");
+    if (!el) return;
     const now = new Date();
-    let diff = weddingDate - now;
-
-    if (diff <= 0) {
-      monthsEl.textContent = "0";
-      daysEl.textContent = "0";
-      hoursEl.textContent = "0";
-      minutesEl.textContent = "0";
-      secondsEl.textContent = "0";
-      return;
+    const ms = weddingDate - now;
+    const days = Math.ceil(ms / 86400000);
+    if (days > 0) {
+      el.textContent = (t("countdown.days") || "Faltan {days} días").replace("{days}", days);
+    } else if (days === 0) {
+      el.textContent = t("countdown.today") || "¡Hoy es el gran día!";
+    } else {
+      el.textContent = t("countdown.past") || "¡Ya estamos casados!";
     }
-
-    let months = (weddingDate.getFullYear() - now.getFullYear()) * 12 + (weddingDate.getMonth() - now.getMonth());
-    let monthAnchor = new Date(now);
-    monthAnchor.setMonth(now.getMonth() + months);
-    if (monthAnchor > weddingDate) {
-      months -= 1;
-      monthAnchor = new Date(now);
-      monthAnchor.setMonth(now.getMonth() + months);
-    }
-
-    let remaining = weddingDate - monthAnchor;
-    const days = Math.floor(remaining / 86400000);
-    remaining -= days * 86400000;
-    const hours = Math.floor(remaining / 3600000);
-    remaining -= hours * 3600000;
-    const minutes = Math.floor(remaining / 60000);
-    remaining -= minutes * 60000;
-    const seconds = Math.floor(remaining / 1000);
-
-    monthsEl.textContent = Math.max(0, months);
-    daysEl.textContent = days;
-    hoursEl.textContent = String(hours).padStart(2, "0");
-    minutesEl.textContent = String(minutes).padStart(2, "0");
-    secondsEl.textContent = String(seconds).padStart(2, "0");
   }
 
   function formatICSDate(date) {
@@ -613,7 +561,6 @@
     const btn = document.getElementById("calendar-btn");
     if (btn) btn.addEventListener("click", createCalendarFile);
     updateCountdown();
-    setInterval(updateCountdown, 1000);
   });
   window.addEventListener("languagechange", updateCountdown);
 })();
@@ -621,7 +568,7 @@
 /* ================= RSVP → Google Sheet =================
    Sends one group row + one per-guest details array.
    Apps Script should use the companion apps-script/Code.gs file. */
-const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbxRntO0ylCtCm0Bz96d81fb57_0R50AmS2L2WFOdRxxVj5htRx5zzIx5d-1H7wbmIA0Ng/exec";
+const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbylpgvwyVXRPpcxP49B6dB51KiL4mb6MZnVfSVHzjq9332w4tKGDcemkOOo6DZIPx8zWA/exec";
 
 (function () {
   const form = document.getElementById("rsvp-form");
@@ -640,6 +587,10 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbxRntO0ylCtCm0Bz
       .filter(Boolean);
   }
 
+  function escapeAttr(value) {
+    return String(value || "").replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+
   function renderGuestNameFields() {
     if (!guestNameFieldsEl) return;
     const count = Number(guestCountSelect.value || 0);
@@ -653,17 +604,20 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbxRntO0ylCtCm0Bz
     const contactName = (contactNameInput && contactNameInput.value || "").trim();
 
     guestNameFieldsEl.innerHTML = Array.from({ length: count }, function (_, i) {
-      const current = previous[i] || (i === 0 ? contactName : "");
+      // Invitado 1 is always an exact, read-only copy of "Tu nombre".
+      const current = i === 0 ? contactName : (previous[i] || "");
       const label = `${t("rsvp.guest")} ${i + 1}`;
+      const readonly = i === 0 ? " readonly aria-readonly=\"true\"" : "";
+      const primaryClass = i === 0 ? " guest-name-card-primary" : "";
       return `
-        <label class="guest-name-card">
+        <label class="guest-name-card${primaryClass}">
           <span>${label}</span>
-          <input type="text" class="guest-name-input" name="guestName${i}" value="${current.replace(/"/g, "&quot;")}" placeholder="${t("rsvp.guestName.placeholder") || t("rsvp.q3.placeholder")}">
+          <input type="text" class="guest-name-input" name="guestName${i}" value="${escapeAttr(current)}" placeholder="${t("rsvp.guestName.placeholder") || t("rsvp.q3.placeholder")}"${readonly}>
         </label>`;
     }).join("");
 
-    getGuestNameInputs().forEach(function (input) {
-      input.addEventListener("input", renderGuestDetails);
+    getGuestNameInputs().forEach(function (input, index) {
+      if (index > 0) input.addEventListener("input", renderGuestDetails);
     });
 
     renderGuestDetails();
@@ -675,6 +629,7 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbxRntO0ylCtCm0Bz
       ["Vegetariano", t("rsvp.menu.vegetarian")],
       ["Vegano", t("rsvp.menu.vegan")],
       ["Sin gluten", t("rsvp.menu.glutenFree")],
+      ["Infantil", t("rsvp.menu.child")],
       ["Otro", t("rsvp.menu.other")]
     ];
     const selectedNormalized = selected || "Ninguno";
