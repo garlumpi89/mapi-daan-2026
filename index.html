@@ -44,9 +44,7 @@
       <p class="card-kicker" data-i18n="hero.kicker">¡Nos casamos!</p>
       <h1 class="script-names">Mapi<span class="card-amp">&amp;</span>Daan</h1>
       <p class="card-date" data-i18n="hero.date">03 · 10 · 2026</p>
-      <p class="countdown" id="countdown" aria-live="polite"></p>
       <p class="card-place" data-i18n="hero.place">Villafranca · Navarra</p>
-      <div class="card-rule" aria-hidden="true"></div>
       <img class="card-church" alt="Acuarela original de la Terraza Padres Carmelitas" src="assets/church-original-transparent.webp" fetchpriority="high" decoding="async">
     </div>
 
@@ -256,6 +254,22 @@
     <div class="container reveal">
       <h2 class="section-title" data-i18n="dress.title">Dress code</h2>
       <p class="dress-code-note" data-i18n="dress.note">Os pedimos vestir de manera formal para celebrar este día tan especial.</p>
+    </div>
+  </section>
+
+  <!-- countdown -->
+  <section class="countdown-section" aria-labelledby="countdown-title">
+    <div class="container reveal">
+      <div class="wedding-countdown" id="countdown" aria-live="polite">
+        <h2 class="countdown-title" id="countdown-title" data-i18n="countdown.title">Cuenta atrás</h2>
+        <div class="countdown-grid">
+          <div class="countdown-item"><span data-count="months">00</span><small data-i18n="countdown.months">meses</small></div>
+          <div class="countdown-item"><span data-count="days">00</span><small data-i18n="countdown.days.label">días</small></div>
+          <div class="countdown-item"><span data-count="hours">00</span><small data-i18n="countdown.hours">horas</small></div>
+          <div class="countdown-item"><span data-count="minutes">00</span><small data-i18n="countdown.minutes">minutos</small></div>
+          <div class="countdown-item"><span data-count="seconds">00</span><small data-i18n="countdown.seconds">segundos</small></div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -479,19 +493,52 @@
 (function () {
   const weddingDate = new Date("2026-10-03T12:30:00+02:00");
 
+  function diffCalendarParts(now, target) {
+    if (target <= now) return { months: 0, days: 0, hours: 0, minutes: 0, seconds: 0, past: true };
+
+    let months = (target.getFullYear() - now.getFullYear()) * 12 + (target.getMonth() - now.getMonth());
+    let anchor = new Date(now);
+    anchor.setMonth(anchor.getMonth() + months);
+    if (anchor > target) {
+      months -= 1;
+      anchor = new Date(now);
+      anchor.setMonth(anchor.getMonth() + months);
+    }
+
+    let remaining = target - anchor;
+    const days = Math.floor(remaining / 86400000);
+    remaining -= days * 86400000;
+    const hours = Math.floor(remaining / 3600000);
+    remaining -= hours * 3600000;
+    const minutes = Math.floor(remaining / 60000);
+    remaining -= minutes * 60000;
+    const seconds = Math.floor(remaining / 1000);
+
+    return { months, days, hours, minutes, seconds, past: false };
+  }
+
   function updateCountdown() {
     const el = document.getElementById("countdown");
     if (!el) return;
-    const now = new Date();
-    const ms = weddingDate - now;
-    const days = Math.ceil(ms / 86400000);
-    if (days > 0) {
-      el.textContent = (t("countdown.days") || "Faltan {days} días").replace("{days}", days);
-    } else if (days === 0) {
-      el.textContent = t("countdown.today") || "¡Hoy es el gran día!";
-    } else {
-      el.textContent = t("countdown.past") || "¡Ya estamos casados!";
+
+    const parts = diffCalendarParts(new Date(), weddingDate);
+    const title = el.querySelector(".countdown-title");
+    const grid = el.querySelector(".countdown-grid");
+
+    if (parts.past) {
+      if (title) title.textContent = t("countdown.past") || "¡Ya estamos casados!";
+      if (grid) grid.style.display = "none";
+      return;
     }
+
+    if (title) title.textContent = t("countdown.title") || "Cuenta atrás";
+    if (grid) grid.style.display = "grid";
+
+    Object.entries(parts).forEach(function ([key, value]) {
+      if (key === "past") return;
+      const node = el.querySelector('[data-count="' + key + '"]');
+      if (node) node.textContent = String(value).padStart(2, "0");
+    });
   }
 
   function formatICSDate(date) {
@@ -545,6 +592,7 @@
     const btn = document.getElementById("calendar-btn");
     if (btn) btn.addEventListener("click", createCalendarFile);
     updateCountdown();
+    setInterval(updateCountdown, 1000);
   });
   window.addEventListener("languagechange", updateCountdown);
 })();

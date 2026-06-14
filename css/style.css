@@ -4906,3 +4906,37 @@ body.rsvp-active .site-footer {
     min-height: 21px !important;
   }
 }
+
+/* =========================================================
+   v1.45 refinements
+   - Remove the small hero countdown and decorative rule.
+   - Restore the full live countdown before the CTA.
+   ========================================================= */
+.invite-card > .countdown,
+.invite-card > .card-rule {
+  display: none !important;
+}
+.countdown-section {
+  padding: clamp(18px, 4vw, 34px) 0 clamp(10px, 3vw, 22px) !important;
+  position: relative;
+  z-index: 2;
+}
+.countdown-section .container {
+  max-width: 820px;
+}
+.wedding-countdown {
+  margin: 0 auto clamp(18px, 3vw, 28px) !important;
+  padding: 0 clamp(10px, 2vw, 18px);
+}
+.countdown-title {
+  margin-bottom: clamp(14px, 2.8vw, 22px) !important;
+}
+.cta {
+  padding-top: clamp(18px, 4vw, 34px) !important;
+}
+@media (max-width: 640px) {
+  .countdown-section {
+    padding-top: 12px !important;
+    padding-bottom: 8px !important;
+  }
+}
