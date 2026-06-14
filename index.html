@@ -418,6 +418,7 @@
       </div>
       <h2 class="section-title" data-i18n="rsvp.success.title">¡Confirmación enviada!</h2>
       <p id="success-message" data-i18n="rsvp.success.text">Muchas gracias por responder. ¡Nos vemos el 3 de octubre!</p>
+      <a class="btn success-home-btn" href="#inicio" data-tab="home" data-i18n="nav.home">Inicio</a>
     </div>
 
   </div>
@@ -729,7 +730,7 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbxRntO0ylCtCm0Bz
     form.style.display = "block";
     if (panel) panel.style.display = "none";
     const status = document.getElementById("form-status");
-    if (status) { status.className = "form-status"; status.textContent = ""; }
+    if (status) { status.className = "form-status"; status.textContent = ""; status.style.display = "none"; }
     const btnLabel = document.querySelector("#submit-btn span");
     if (btnLabel) btnLabel.textContent = t("rsvp.submit");
   }
@@ -858,6 +859,7 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbxRntO0ylCtCm0Bz
     if (missing.length) {
       const status = document.getElementById("form-status");
       if (status) {
+        status.style.display = "block";
         status.className = "form-status error";
         status.textContent = t("rsvp.required") || "Por favor, completa todos los campos obligatorios.";
       }
@@ -924,7 +926,8 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbxRntO0ylCtCm0Bz
     };
 
     status.className = "form-status";
-    status.textContent = t("rsvp.sending");
+    status.textContent = "";
+    status.style.display = "none";
     btnLabel.textContent = t("rsvp.sending");
 
     try {
@@ -949,6 +952,7 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbxRntO0ylCtCm0Bz
       panel.style.display = "block";
       panel.scrollIntoView({ behavior: "smooth", block: "center" });
     } catch (err) {
+      status.style.display = "block";
       status.className = "form-status error";
       status.textContent = t("rsvp.error");
       btnLabel.textContent = t("rsvp.submit");
