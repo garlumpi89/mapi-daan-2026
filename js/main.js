@@ -138,3 +138,10 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.readyState === "complete") finishLoading();
   else window.addEventListener("load", finishLoading, { once: true });
 })();
+
+// v2.12: flying animals now use independent CSS animations, not scroll position.
+document.addEventListener("DOMContentLoaded", function () {
+  const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const layer = document.querySelector(".flying-animals");
+  if (reduceMotion && layer) layer.style.display = "none";
+});

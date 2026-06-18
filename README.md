@@ -24,3 +24,12 @@ Cambios principales:
 
 ## v2.7
 - Corrige el fondo negro de la corona floral inicial usando siempre el PNG transparente (`brand-wreath.png`) y eliminando la referencia al WebP con matte negro.
+
+
+## v2.10
+- Imagen Hotel Luze sustituida por fuente PNG de mayor resolución (`luze-clean@2x.png`).
+- Tarjetas de alojamiento ajustadas con `object-fit: contain` para evitar recortes y mantener el mismo tamaño visual en desktop y móvil.
+
+
+## v2.10
+- Sustituida la imagen de Hotel Luze El Villa por una nueva ilustración en acuarela de mayor resolución, con vegetación y proporción 4:3 para igualarse al resto de tarjetas.

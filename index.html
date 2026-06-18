@@ -34,6 +34,12 @@
 <div class="floral-border floral-border-right" aria-hidden="true"></div>
 <div class="floral-border floral-border-bottom" aria-hidden="true"></div>
 
+<div class="flying-animals" aria-hidden="true">
+  <img class="flying-animal flying-bee" src="assets/animal-bee.webp" alt="">
+  <img class="flying-animal flying-butterfly" src="assets/animal-butterfly.webp" alt="">
+  <img class="flying-animal flying-dragonfly" src="assets/animal-dragonfly.webp" alt="">
+</div>
+
 <header class="site-header">
   <a class="brand" href="#inicio" data-tab="home">Mapi &amp; Daan</a>
 
@@ -252,7 +258,9 @@
 
         <article class="card reveal d3">
           <img class="card-photo luze-photo" loading="lazy" decoding="async" alt="Hotel Luze El Villa"
-               src="assets/luze-clean.webp"
+               src="assets/luze-clean@2x.png"
+               srcset="assets/luze-clean.png 640w, assets/luze-clean@2x.png 1280w"
+               sizes="(max-width: 700px) 82vw, 260px"
                onerror="this.style.display='none'">
           <h3 data-i18n="stay.luze">Hotel Luze El Villa</h3>
           <p data-i18n="stay.luze.desc">Lugar de celebración del cóctel, comida y baile.</p>
@@ -272,6 +280,24 @@
     <div class="container reveal">
       <h2 class="section-title" data-i18n="dress.title">Dress code</h2>
       <p class="dress-code-note" data-i18n="dress.note">Os pedimos vestir de manera formal para celebrar este día tan especial.</p>
+    </div>
+  </section>
+
+
+
+  <!-- countdown -->
+  <section class="countdown-section reveal" id="cuenta-atras">
+    <div class="container">
+      <div class="wedding-countdown" aria-live="polite">
+        <p class="countdown-title" data-i18n="countdown.title">Cuenta atrás</p>
+        <div class="countdown-grid">
+          <div class="countdown-item"><span id="countdown-months">0</span><small data-i18n="countdown.months">meses</small></div>
+          <div class="countdown-item"><span id="countdown-days">0</span><small data-i18n="countdown.days.label">días</small></div>
+          <div class="countdown-item"><span id="countdown-hours">0</span><small data-i18n="countdown.hours">horas</small></div>
+          <div class="countdown-item"><span id="countdown-minutes">0</span><small data-i18n="countdown.minutes">minutos</small></div>
+          <div class="countdown-item"><span id="countdown-seconds">0</span><small data-i18n="countdown.seconds">segundos</small></div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -495,19 +521,52 @@
 (function () {
   const weddingDate = new Date("2026-10-03T12:30:00+02:00");
 
-  function updateCountdown() {
-    const el = document.getElementById("countdown");
-    if (!el) return;
-    const now = new Date();
-    const ms = weddingDate - now;
-    const days = Math.ceil(ms / 86400000);
-    if (days > 0) {
-      el.textContent = (t("countdown.days") || "Faltan {days} días").replace("{days}", days);
-    } else if (days === 0) {
-      el.textContent = t("countdown.today") || "¡Hoy es el gran día!";
-    } else {
-      el.textContent = t("countdown.past") || "¡Ya estamos casados!";
+  function setCountdownValue(id, value) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = String(value).padStart(2, "0");
+  }
+
+  function diffParts(from, to) {
+    if (to <= from) return { months: 0, days: 0, hours: 0, minutes: 0, seconds: 0 };
+
+    let cursor = new Date(from.getTime());
+    let months = 0;
+
+    while (true) {
+      const next = new Date(cursor.getTime());
+      next.setMonth(next.getMonth() + 1);
+      if (next <= to) {
+        months += 1;
+        cursor = next;
+      } else {
+        break;
+      }
     }
+
+    let remaining = Math.max(0, to - cursor);
+    const days = Math.floor(remaining / 86400000);
+    remaining -= days * 86400000;
+    const hours = Math.floor(remaining / 3600000);
+    remaining -= hours * 3600000;
+    const minutes = Math.floor(remaining / 60000);
+    remaining -= minutes * 60000;
+    const seconds = Math.floor(remaining / 1000);
+
+    return { months, days, hours, minutes, seconds };
+  }
+
+  function updateCountdown() {
+    const smallHeroCountdown = document.getElementById("countdown");
+    if (smallHeroCountdown) smallHeroCountdown.textContent = "";
+
+    const now = new Date();
+    const parts = diffParts(now, weddingDate);
+
+    setCountdownValue("countdown-months", parts.months);
+    setCountdownValue("countdown-days", parts.days);
+    setCountdownValue("countdown-hours", parts.hours);
+    setCountdownValue("countdown-minutes", parts.minutes);
+    setCountdownValue("countdown-seconds", parts.seconds);
   }
 
   function formatICSDate(date) {
@@ -561,6 +620,7 @@
     const btn = document.getElementById("calendar-btn");
     if (btn) btn.addEventListener("click", createCalendarFile);
     updateCountdown();
+    window.setInterval(updateCountdown, 1000);
   });
   window.addEventListener("languagechange", updateCountdown);
 })();
