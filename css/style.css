@@ -5344,3 +5344,8 @@ body.rsvp-active .flying-animals { display: none; }
 @media (prefers-reduced-motion: reduce) {
   .flying-animals { display: none !important; }
 }
+
+
+/* v2.13 — corona loader removed after invitation redesign. */
+.page-loader, .page-loader-mark { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+body { overflow: auto; }

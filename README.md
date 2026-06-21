@@ -33,3 +33,8 @@ Cambios principales:
 
 ## v2.10
 - Sustituida la imagen de Hotel Luze El Villa por una nueva ilustración en acuarela de mayor resolución, con vegetación y proporción 4:3 para igualarse al resto de tarjetas.
+
+
+## v2.13
+- Elimina la pantalla inicial con la corona floral.
+- Corrige fotos.html eliminando el loader que podía dejar la página bloqueada.

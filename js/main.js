@@ -127,18 +127,6 @@ document.addEventListener("DOMContentLoaded", function () {
   updateFourPartFrame();
 });
 
-// v2.3: subtle loading screen fade-out.
-(function () {
-  function finishLoading() {
-    // Small delay so the wreath appears deliberately, not as a flash.
-    window.setTimeout(function () {
-      document.body.classList.add("loaded");
-    }, 2200);
-  }
-  if (document.readyState === "complete") finishLoading();
-  else window.addEventListener("load", finishLoading, { once: true });
-})();
-
 // v2.12: flying animals now use independent CSS animations, not scroll position.
 document.addEventListener("DOMContentLoaded", function () {
   const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
