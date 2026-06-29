@@ -38,3 +38,8 @@ Cambios principales:
 ## v2.13
 - Elimina la pantalla inicial con la corona floral.
 - Corrige fotos.html eliminando el loader que podía dejar la página bloqueada.
+
+
+## v2.17
+- Menú Fotos preparado y activación automática el 2 de octubre de 2026 a las 12:30.
+- fotos.html queda protegido antes de esa fecha y redirige a la home.

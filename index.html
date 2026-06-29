@@ -80,6 +80,7 @@
   <nav class="tab-nav" aria-label="Secciones">
     <a href="#inicio" data-tab="home" class="active" data-i18n="nav.home">Inicio</a>
     <a href="#rsvp" data-tab="rsvp" data-i18n="nav.rsvp">RSVP</a>
+    <a href="fotos.html" class="photos-release-link" data-i18n="nav.photos" hidden>Fotos</a>
   </nav>
 
   <nav class="lang-switch" aria-label="Idioma">
@@ -512,6 +513,20 @@
 
 <script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
+
+<script>
+(function(){
+  const PHOTOS_RELEASE = new Date("2026-10-02T12:30:00+02:00");
+  const photosEnabled = new Date() >= PHOTOS_RELEASE;
+  document.addEventListener("DOMContentLoaded", function(){
+    document.querySelectorAll(".photos-release-link").forEach(function(link){
+      if (photosEnabled) link.hidden = false;
+      else link.hidden = true;
+    });
+  });
+})();
+</script>
+
 <script>
 /* ================= TABS ================= */
 (function () {
