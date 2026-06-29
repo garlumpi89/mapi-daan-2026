@@ -26,26 +26,37 @@
 <link rel="shortcut icon" href="assets/favicon.ico">
 
 <style>
-@media (max-width:768px){
-  .flying-dragonfly{display:block !important; opacity:1 !important; width:70px !important; top:35vh !important; animation-duration:22s !important;}
-}
-
+/* Dragonfly: subtle independent flight, tuned smaller for mobile */
 .flying-dragonfly{
- width:48px!important;
- top:32vh!important;
- left:auto!important;
- right:-80px;
- animation:dragonflyFly 18s linear infinite!important;
+  display:block !important;
+  opacity:.82 !important;
+  width:34px !important;
+  top:34vh !important;
+  left:auto !important;
+  right:-70px !important;
+  z-index:12 !important;
+  pointer-events:none;
+  will-change:transform;
+  animation:dragonflyFly 24s linear infinite !important;
 }
 @keyframes dragonflyFly{
- 0%{transform:translateX(0) translateY(0) rotate(-3deg);}
- 25%{transform:translateX(-30vw) translateY(-12px) rotate(2deg);}
- 50%{transform:translateX(-60vw) translateY(8px) rotate(-2deg);}
- 75%{transform:translateX(-90vw) translateY(-10px) rotate(2deg);}
- 100%{transform:translateX(calc(-100vw - 120px)) translateY(0) rotate(-3deg);}
+  0%{transform:translate3d(0,0,0) rotate(-4deg);}
+  12%{transform:translate3d(-14vw,-8px,0) rotate(3deg);}
+  25%{transform:translate3d(-28vw,7px,0) rotate(-2deg);}
+  38%{transform:translate3d(-43vw,-10px,0) rotate(2deg);}
+  50%{transform:translate3d(-58vw,6px,0) rotate(-3deg);}
+  63%{transform:translate3d(-72vw,-7px,0) rotate(2deg);}
+  78%{transform:translate3d(-88vw,9px,0) rotate(-2deg);}
+  100%{transform:translate3d(calc(-100vw - 120px),0,0) rotate(-4deg);}
 }
 @media (max-width:768px){
- .flying-dragonfly{width:42px!important;}
+  .flying-dragonfly{
+    width:24px !important;
+    top:38vh !important;
+    right:-44px !important;
+    opacity:.78 !important;
+    animation-duration:26s !important;
+  }
 }
 
 </style>
