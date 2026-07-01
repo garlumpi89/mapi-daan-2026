@@ -1,4 +1,4 @@
-/* Mapi & Daan — simple interactions (no parallax flower layers) */
+/* Daan & Mapi — simple interactions (no parallax flower layers) */
 
 document.addEventListener("DOMContentLoaded", function () {
   const header = document.querySelector(".site-header");

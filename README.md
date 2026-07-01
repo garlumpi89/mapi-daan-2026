@@ -1,8 +1,8 @@
-# Web Mapi & Daan v2.7
+# Web Daan & Mapi v2.26
 
-# Web Mapi & Daan v2.0
+# Web Daan & Mapi v2.0
 
-# Mapi & Daan wedding website — v1.42
+# Daan & Mapi wedding website — v1.42
 
 Cambios principales:
 - Cuenta atrás discreta bajo la fecha.
@@ -43,3 +43,33 @@ Cambios principales:
 ## v2.17
 - Menú Fotos preparado y activación automática el 2 de octubre de 2026 a las 12:30.
 - fotos.html queda protegido antes de esa fecha y redirige a la home.
+
+## v2.22
+- Imagen Open Graph actualizada a la nueva versión floral con fecha.
+- Favicon actualizado al nuevo monograma D&M.
+- Portada actualizada a Daan & Mapi usando assets renderizados con la tipografía Amsterdam Four para garantizar que se vea igual en todos los dispositivos.
+- El símbolo & se mantiene en Cormorant Garamond y verde suave.
+
+
+## v2.22
+- Reduced hero name assets further and added extra safe vertical padding/visible overflow so Amsterdam Four swashes are not clipped.
+
+## v2.22
+- Reduced the hero name image layout (Daan, &, Mapi) by approximately 30%, including the wrapper/container sizes.
+- Preserved visible overflow and extra safe padding so Amsterdam Four swashes are not clipped.
+
+## v2.23
+- Cropped transparent padding around the rendered Amsterdam Four name assets to reduce excessive vertical whitespace.
+- Tightened spacing between “Daan”, “&”, “Mapi” and the date.
+- Kept the same visual name size while forcing overflow visible to avoid clipping the D swash.
+
+## v2.24
+- Re-rendered `hero-name-daan.png` from the Amsterdam Four webfont with a larger safe transparent canvas so the D swash is no longer clipped.
+- Kept the existing v2.23 hero composition and spacing.
+
+## v2.25
+- Updated the top navigation logo to match the invitation identity: `Daan & Mapi` with rendered Amsterdam Four word assets and a Cormorant Garamond green ampersand.
+- Adjusted optical alignment and responsive sizing of the header logo for desktop and mobile.
+
+
+v2.26: Ajuste del logotipo superior: ampersand reducido y Cormorant Garamond Regular.

@@ -1,15 +1,15 @@
 /* ============================================
-   Mapi & Daan — i18n (ES / EN / NL)
+   Daan & Mapi — i18n (ES / EN / NL)
    ============================================ */
 
 const I18N = {
   es: {
     // Shared
-    "nav.title": "Mapi & Daan",
+    "nav.title": "Daan & Mapi",
     "nav.home": "Inicio",
     "nav.rsvp": "RSVP",
     "nav.photos": "Fotos",
-    "footer.copy": "© Mapi & Daan 2026",
+    "footer.copy": "© Daan & Mapi 2026",
     "footer.love": "Hecho con amor",
 
     // Home
@@ -26,8 +26,8 @@ const I18N = {
     "countdown.seconds": "segundos",
     "calendar.add": "Añadir al calendario",
     "calendar.filename": "boda-mapi-daan.ics",
-    "calendar.title": "Boda de Mapi y Daan",
-    "calendar.preboda.title": "Preboda de Mapi y Daan",
+    "calendar.title": "Boda de Daan y Mapi",
+    "calendar.preboda.title": "Preboda de Daan y Mapi",
     "stay.luze.copied.long": "Código copiado ✓",
     "hero.place": "Villafranca · Navarra",
     "hero.intro": "Nos encantaría compartir este día tan especial con vosotros. Aquí encontraréis toda la información necesaria para acompañarnos durante el fin de semana.",
@@ -137,11 +137,11 @@ const I18N = {
   },
 
   en: {
-    "nav.title": "Mapi & Daan",
+    "nav.title": "Daan & Mapi",
     "nav.home": "Home",
     "nav.rsvp": "RSVP",
     "nav.photos": "Photos",
-    "footer.copy": "© Mapi & Daan 2026",
+    "footer.copy": "© Daan & Mapi 2026",
     "footer.love": "Made with love",
 
     "hero.kicker": "We're getting married!",
@@ -157,8 +157,8 @@ const I18N = {
     "countdown.seconds": "seconds",
     "calendar.add": "Add to calendar",
     "calendar.filename": "mapi-daan-wedding.ics",
-    "calendar.title": "Mapi and Daan's wedding",
-    "calendar.preboda.title": "Mapi and Daan's pre-wedding party",
+    "calendar.title": "Daan and Mapi's wedding",
+    "calendar.preboda.title": "Daan and Mapi's pre-wedding party",
     "stay.luze.copied.long": "Code copied ✓",
     "hero.place": "Villafranca · Navarra",
     "hero.intro": "We would love to share this special day with you. Here you will find all the information you need to join us throughout the weekend.",
@@ -266,11 +266,11 @@ const I18N = {
   },
 
   nl: {
-    "nav.title": "Mapi & Daan",
+    "nav.title": "Daan & Mapi",
     "nav.home": "Home",
     "nav.rsvp": "RSVP",
     "nav.photos": "Foto's",
-    "footer.copy": "© Mapi & Daan 2026",
+    "footer.copy": "© Daan & Mapi 2026",
     "footer.love": "Gemaakt met liefde",
 
     "hero.kicker": "Wij gaan trouwen!",
@@ -286,8 +286,8 @@ const I18N = {
     "countdown.seconds": "seconden",
     "calendar.add": "Toevoegen aan agenda",
     "calendar.filename": "bruiloft-mapi-daan.ics",
-    "calendar.title": "Bruiloft van Mapi en Daan",
-    "calendar.preboda.title": "Pre-bruiloft van Mapi en Daan",
+    "calendar.title": "Bruiloft van Daan en Mapi",
+    "calendar.preboda.title": "Pre-bruiloft van Daan en Mapi",
     "stay.luze.copied.long": "Code gekopieerd ✓",
     "hero.place": "Villafranca · Navarra",
     "hero.intro": "We zouden deze bijzondere dag heel graag met jullie delen. Hier vinden jullie alle informatie om het hele weekend met ons mee te vieren.",

@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mapi &amp; Daan · 03 · 10 · 2026</title>
-<meta name="description" content="Boda de Mapi y Daan — 3 de octubre de 2026, Villafranca, Navarra.">
-<meta property="og:title" content="Mapi &amp; Daan">
+<title>Daan &amp; Mapi · 03 · 10 · 2026</title>
+<meta name="description" content="Boda de Daan y Mapi — 3 de octubre de 2026, Villafranca, Navarra.">
+<meta property="og:title" content="Daan &amp; Mapi">
 <meta property="og:description" content="03 Octubre 2026 · Villafranca (Navarra)">
 <meta property="og:image" content="assets/og-image.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Mapi &amp; Daan">
+<meta name="twitter:title" content="Daan &amp; Mapi">
 <meta name="twitter:description" content="03 Octubre 2026 · Villafranca (Navarra)">
 <meta name="twitter:image" content="assets/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -75,7 +75,7 @@
 </div>
 
 <header class="site-header">
-  <a class="brand" href="#inicio" data-tab="home">Mapi &amp; Daan</a>
+  <a class="brand" href="#inicio" data-tab="home"><span class="brand-logo" aria-hidden="true"><img class="brand-word brand-word-daan" src="assets/brand-daan.png" alt=""><span class="brand-amp" aria-hidden="true"><img class="brand-amp-img" src="assets/amp-cormorant-italic.png" alt=""></span><img class="brand-word brand-word-mapi" src="assets/brand-mapi.png" alt=""></span><span class="brand-sr">Daan &amp; Mapi</span></a>
 
   <nav class="tab-nav" aria-label="Secciones">
     <a href="#inicio" data-tab="home" class="active" data-i18n="nav.home">Inicio</a>
@@ -99,7 +99,11 @@
   <section class="hero-stage" id="hero-stage">
     <div class="invite-card" id="invite-card">
       <p class="card-kicker" data-i18n="hero.kicker">¡Nos casamos!</p>
-      <h1 class="script-names">Mapi<span class="card-amp">&amp;</span>Daan</h1>
+      <h1 class="script-names hero-names-image" aria-label="Daan &amp; Mapi">
+        <span class="hero-name-line"><img class="hero-name-img hero-name-daan" src="assets/hero-name-daan.png" alt="" decoding="async"></span>
+        <span class="card-amp" aria-hidden="true"><img class="hero-amp-img" src="assets/amp-cormorant-italic.png" alt=""></span>
+        <span class="hero-name-line"><img class="hero-name-img hero-name-mapi" src="assets/hero-name-mapi.png" alt="" decoding="async"></span>
+      </h1>
       <p class="card-date" data-i18n="hero.date">03 · 10 · 2026</p>
       <p class="countdown" id="countdown" aria-live="polite"></p>
       <p class="card-place" data-i18n="hero.place">Villafranca · Navarra</p>
@@ -505,7 +509,7 @@
 </main>
 
 <footer class="site-footer">
-  <span data-i18n="footer.copy">© Mapi &amp; Daan 2026</span>
+  <span data-i18n="footer.copy">© Daan &amp; Mapi 2026</span>
   <span class="love"><span data-i18n="footer.love">Hecho con amor</span>
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7.5-4.8-9.4-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.4 11c-1.9 4.2-9.4 9-9.4 9Z"/></svg>
   </span>
@@ -632,7 +636,7 @@
     const events = [
       {
         uid: "preboda-mapi-daan-2026@mapi-daan-2026.com",
-        summary: t("calendar.preboda.title") || "Preboda de Mapi y Daan",
+        summary: t("calendar.preboda.title") || "Preboda de Daan y Mapi",
         start: new Date("2026-10-02T20:00:00+02:00"),
         end: new Date("2026-10-02T23:30:00+02:00"),
         location: "Bar Gorría, Villafranca, Navarra",
@@ -640,7 +644,7 @@
       },
       {
         uid: "boda-mapi-daan-2026@mapi-daan-2026.com",
-        summary: t("calendar.title") || "Boda de Mapi y Daan",
+        summary: t("calendar.title") || "Boda de Daan y Mapi",
         start: new Date("2026-10-03T12:30:00+02:00"),
         end: new Date("2026-10-04T02:00:00+02:00"),
         location: "Villafranca / Castejón, Navarra",
@@ -648,7 +652,7 @@
       }
     ];
 
-    const lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Mapi & Daan//Wedding 2026//ES", "CALSCALE:GREGORIAN", "METHOD:PUBLISH"];
+    const lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Daan & Mapi//Wedding 2026//ES", "CALSCALE:GREGORIAN", "METHOD:PUBLISH"];
     events.forEach(function (ev) {
       lines.push("BEGIN:VEVENT", "UID:" + ev.uid, "DTSTAMP:" + now, "DTSTART:" + formatICSDate(ev.start), "DTEND:" + formatICSDate(ev.end), "SUMMARY:" + escapeICS(ev.summary), "LOCATION:" + escapeICS(ev.location), "DESCRIPTION:" + escapeICS(ev.description), "END:VEVENT");
     });

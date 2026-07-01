@@ -70,7 +70,7 @@
     const events = [
       {
         uid: "preboda-mapi-daan-2026@mapi-daan-2026.com",
-        summary: t("calendar.preboda.title") || "Preboda de Mapi y Daan",
+        summary: t("calendar.preboda.title") || "Preboda de Daan y Mapi",
         start: new Date("2026-10-02T20:00:00+02:00"),
         end: new Date("2026-10-02T23:30:00+02:00"),
         location: "Bar Gorría, Villafranca, Navarra",
@@ -78,7 +78,7 @@
       },
       {
         uid: "boda-mapi-daan-2026@mapi-daan-2026.com",
-        summary: t("calendar.title") || "Boda de Mapi y Daan",
+        summary: t("calendar.title") || "Boda de Daan y Mapi",
         start: new Date("2026-10-03T12:30:00+02:00"),
         end: new Date("2026-10-04T02:00:00+02:00"),
         location: "Villafranca / Castejón, Navarra",
@@ -86,7 +86,7 @@
       }
     ];
 
-    const lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Mapi & Daan//Wedding 2026//ES", "CALSCALE:GREGORIAN", "METHOD:PUBLISH"];
+    const lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Daan & Mapi//Wedding 2026//ES", "CALSCALE:GREGORIAN", "METHOD:PUBLISH"];
     events.forEach(function (ev) {
       lines.push("BEGIN:VEVENT", "UID:" + ev.uid, "DTSTAMP:" + now, "DTSTART:" + formatICSDate(ev.start), "DTEND:" + formatICSDate(ev.end), "SUMMARY:" + escapeICS(ev.summary), "LOCATION:" + escapeICS(ev.location), "DESCRIPTION:" + escapeICS(ev.description), "END:VEVENT");
     });

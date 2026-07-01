@@ -1,5 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&display=swap");
 /* ============================================
-   Mapi & Daan — 03 · 10 · 2026
+   Daan & Mapi — 03 · 10 · 2026
    Shared stylesheet
    ============================================ */
 
@@ -28,7 +29,7 @@
 
   --serif: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-  --script: "Parisienne", "Imperial Script", cursive;
+  --script: "Amsterdam Four", "AmsterdamFour", "Amsterdam 4", "Alex Brush", "Parisienne", "Imperial Script", cursive;
   --script-weight: 400;
   /* If you buy the "Dashing" font (scratchones), drop the .woff2 in assets/
      and uncomment the @font-face below, then set --script: "Dashing", cursive; */
@@ -107,7 +108,7 @@ body {
   border-bottom: 1px solid transparent;
   transition: color .3s, border-color .3s;
 }
-.tab-nav a:hover { color: var(--fg); }
+.tab-nav a:hover { color: var(--olive); }
 .tab-nav a.active {
   color: var(--fg);
   border-bottom-color: var(--accent);
@@ -3025,7 +3026,7 @@ main, footer { position: relative !important; z-index: 5 !important; }
 /* =========================================================
    v1.17 refinements
    - quieter floral frame: softer side depth + slower parallax
-   - mobile header: Mapi & Daan left, language selector right
+   - mobile header: Daan & Mapi left, language selector right
    - RSVP guest details per person, no icon circles
    ========================================================= */
 :root {
@@ -5349,3 +5350,483 @@ body.rsvp-active .flying-animals { display: none; }
 /* v2.13 — corona loader removed after invitation redesign. */
 .page-loader, .page-loader-mark { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
 body { overflow: auto; }
+
+
+/* v2.18 — invitation typography alignment
+   Uses Amsterdam Four when available; falls back gracefully if the webfont is not installed/hosted.
+   The ampersand intentionally uses Cormorant Garamond in soft green. */
+.brand,
+.script-names,
+.invite-card .script-names {
+  font-family: "Amsterdam Four", "AmsterdamFour", "Amsterdam 4", "Alex Brush", "Parisienne", "Imperial Script", cursive !important;
+  font-weight: 400 !important;
+}
+.invite-card .script-names {
+  color: #454850 !important;
+}
+.invite-card .card-amp {
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  color: #aebf9e !important;
+  font-weight: 500 !important;
+}
+
+/* v2.19 — Amsterdam Four applied through rendered name assets.
+   The font file is not shipped in the public bundle; the names are rendered as image assets
+   so all devices see the same invitation typography. */
+.invite-card .script-names.hero-names-image{
+  font-family: inherit !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0 !important;
+  line-height: 1 !important;
+  margin: clamp(.2rem, 1vw, .6rem) auto clamp(.25rem, 1vw, .55rem) !important;
+  width: min(92vw, 760px) !important;
+  color: transparent !important;
+}
+.invite-card .hero-name-line{
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+  line-height: 0 !important;
+}
+.invite-card .hero-name-img{
+  display: block !important;
+  height: auto !important;
+  max-width: 100% !important;
+  pointer-events: none !important;
+  user-select: none !important;
+}
+.invite-card .hero-name-daan{
+  width: min(76vw, 590px) !important;
+}
+.invite-card .hero-name-mapi{
+  width: min(78vw, 610px) !important;
+  margin-top: clamp(-18px, -1.6vw, -8px) !important;
+}
+.invite-card .script-names.hero-names-image .card-amp{
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  color: #aebf9e !important;
+  font-size: clamp(2.1rem, 4.8vw, 3.2rem) !important;
+  font-weight: 500 !important;
+  line-height: .85 !important;
+  display: block !important;
+  margin: clamp(-8px, -0.6vw, -2px) 0 clamp(-12px, -1vw, -4px) !important;
+}
+
+@media (max-width: 700px){
+  .invite-card .script-names.hero-names-image{
+    width: min(94vw, 420px) !important;
+    margin-top: .25rem !important;
+  }
+  .invite-card .hero-name-daan{
+    width: min(86vw, 390px) !important;
+  }
+  .invite-card .hero-name-mapi{
+    width: min(88vw, 400px) !important;
+    margin-top: -10px !important;
+  }
+  .invite-card .script-names.hero-names-image .card-amp{
+    font-size: clamp(2rem, 8vw, 2.6rem) !important;
+    margin: -5px 0 -8px !important;
+  }
+}
+
+/* v2.20 — reduce hero name size and add safe vertical room for Amsterdam Four swashes. */
+.invite-card .script-names.hero-names-image{
+  width: min(90vw, 650px) !important;
+  overflow: visible !important;
+  margin: clamp(.2rem, 1vw, .6rem) auto clamp(.5rem, 1.2vw, .85rem) !important;
+}
+.invite-card .hero-name-line{
+  overflow: visible !important;
+}
+.invite-card .hero-name-img{
+  overflow: visible !important;
+}
+.invite-card .hero-name-daan{
+  width: min(70vw, 505px) !important;
+}
+.invite-card .hero-name-mapi{
+  width: min(72vw, 525px) !important;
+  margin-top: clamp(-12px, -1.1vw, -5px) !important;
+}
+.invite-card .script-names.hero-names-image .card-amp{
+  font-size: clamp(1.8rem, 4.1vw, 2.7rem) !important;
+  margin: clamp(-6px, -0.5vw, -2px) 0 clamp(-8px, -0.7vw, -3px) !important;
+}
+
+@media (max-width: 700px){
+  .invite-card .script-names.hero-names-image{
+    width: min(92vw, 360px) !important;
+    margin-top: .2rem !important;
+    margin-bottom: .5rem !important;
+  }
+  .invite-card .hero-name-daan{
+    width: min(78vw, 320px) !important;
+  }
+  .invite-card .hero-name-mapi{
+    width: min(80vw, 330px) !important;
+    margin-top: -6px !important;
+  }
+  .invite-card .script-names.hero-names-image .card-amp{
+    font-size: clamp(1.55rem, 6.8vw, 2.1rem) !important;
+    margin: -4px 0 -5px !important;
+  }
+}
+
+/* v2.21 — final hero name sizing: smaller and no clipping for Amsterdam Four swashes */
+.invite-card,
+.hero-stage,
+.invite-card .script-names.hero-names-image,
+.invite-card .hero-name-line,
+.invite-card .hero-name-img {
+  overflow: visible !important;
+}
+
+.invite-card .script-names.hero-names-image{
+  width: min(84vw, 560px) !important;
+  max-width: 560px !important;
+  line-height: 1 !important;
+  gap: 0 !important;
+  margin: clamp(.35rem, 1vw, .75rem) auto clamp(.75rem, 1.4vw, 1.05rem) !important;
+  padding: 0.35em 0 0.45em !important;
+}
+
+.invite-card .hero-name-line{
+  line-height: 0 !important;
+  padding: .08em 0 .16em !important;
+}
+
+.invite-card .hero-name-daan{
+  width: min(62vw, 430px) !important;
+  max-width: 430px !important;
+}
+
+.invite-card .hero-name-mapi{
+  width: min(64vw, 445px) !important;
+  max-width: 445px !important;
+  margin-top: clamp(-4px, -0.55vw, -2px) !important;
+}
+
+.invite-card .script-names.hero-names-image .card-amp{
+  font-size: clamp(1.55rem, 3.4vw, 2.25rem) !important;
+  line-height: 1.05 !important;
+  margin: clamp(-2px, -0.25vw, 0px) 0 clamp(-3px, -0.35vw, -1px) !important;
+}
+
+@media (max-width: 700px){
+  .invite-card .script-names.hero-names-image{
+    width: min(88vw, 310px) !important;
+    max-width: 310px !important;
+    margin-top: .35rem !important;
+    margin-bottom: .75rem !important;
+    padding: .45em 0 .55em !important;
+  }
+  .invite-card .hero-name-line{
+    padding: .10em 0 .18em !important;
+  }
+  .invite-card .hero-name-daan{
+    width: min(68vw, 270px) !important;
+    max-width: 270px !important;
+  }
+  .invite-card .hero-name-mapi{
+    width: min(70vw, 280px) !important;
+    max-width: 280px !important;
+    margin-top: -2px !important;
+  }
+  .invite-card .script-names.hero-names-image .card-amp{
+    font-size: clamp(1.35rem, 5.6vw, 1.75rem) !important;
+    margin: -1px 0 -2px !important;
+  }
+}
+
+/* v2.22 — reduce Daan & Mapi hero name image assets by 30% including containers */
+.invite-card,
+.hero-stage,
+.invite-card .script-names.hero-names-image,
+.invite-card .hero-name-line,
+.invite-card .hero-name-img {
+  overflow: visible !important;
+}
+
+.invite-card .script-names.hero-names-image{
+  width: min(58.8vw, 392px) !important;
+  max-width: 392px !important;
+  line-height: 1 !important;
+  gap: 0 !important;
+  margin: clamp(.25rem, .75vw, .55rem) auto clamp(.55rem, 1vw, .75rem) !important;
+  padding: 0.35em 0 0.55em !important;
+}
+
+.invite-card .hero-name-line{
+  line-height: 0 !important;
+  padding: .10em 0 .20em !important;
+}
+
+.invite-card .hero-name-daan{
+  width: min(43.4vw, 301px) !important;
+  max-width: 301px !important;
+}
+
+.invite-card .hero-name-mapi{
+  width: min(44.8vw, 312px) !important;
+  max-width: 312px !important;
+  margin-top: clamp(-3px, -0.4vw, -1px) !important;
+}
+
+.invite-card .script-names.hero-names-image .card-amp{
+  font-size: clamp(1.10rem, 2.4vw, 1.58rem) !important;
+  line-height: 1.05 !important;
+  margin: clamp(-1px, -0.2vw, 0px) 0 clamp(-2px, -0.25vw, -1px) !important;
+}
+
+@media (max-width: 700px){
+  .invite-card .script-names.hero-names-image{
+    width: min(61.6vw, 217px) !important;
+    max-width: 217px !important;
+    margin-top: .25rem !important;
+    margin-bottom: .55rem !important;
+    padding: .45em 0 .65em !important;
+  }
+  .invite-card .hero-name-line{
+    padding: .12em 0 .22em !important;
+  }
+  .invite-card .hero-name-daan{
+    width: min(47.6vw, 189px) !important;
+    max-width: 189px !important;
+  }
+  .invite-card .hero-name-mapi{
+    width: min(49vw, 196px) !important;
+    max-width: 196px !important;
+    margin-top: -1px !important;
+  }
+  .invite-card .script-names.hero-names-image .card-amp{
+    font-size: clamp(.95rem, 3.9vw, 1.22rem) !important;
+    margin: -1px 0 -1px !important;
+  }
+}
+
+/* v2.23 — tighten Amsterdam Four hero composition and prevent D swash clipping.
+   Uses cropped transparent name assets and compact spacing between Daan, &, Mapi and date. */
+.invite-card,
+.hero-stage,
+.invite-card .script-names.hero-names-image,
+.invite-card .hero-name-line,
+.invite-card .hero-name-img {
+  overflow: visible !important;
+}
+
+.invite-card .script-names.hero-names-image{
+  width: min(58.8vw, 392px) !important;
+  max-width: 392px !important;
+  gap: 0 !important;
+  line-height: 1 !important;
+  padding: 0.02em 0 0.04em !important;
+  margin: clamp(.12rem, .45vw, .35rem) auto clamp(.10rem, .4vw, .28rem) !important;
+}
+
+.invite-card .hero-name-line{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: visible !important;
+}
+
+.invite-card .hero-name-img{
+  display: block !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+.invite-card .hero-name-daan{
+  width: min(43.4vw, 301px) !important;
+  max-width: 301px !important;
+}
+
+.invite-card .hero-name-mapi{
+  width: min(44.8vw, 312px) !important;
+  max-width: 312px !important;
+  margin-top: 0 !important;
+}
+
+.invite-card .script-names.hero-names-image .card-amp{
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  color: #aebf9e !important;
+  font-size: clamp(1.10rem, 2.4vw, 1.58rem) !important;
+  line-height: 1 !important;
+  display: block !important;
+  margin: clamp(-18px, -2.1vw, -8px) 0 clamp(-20px, -2.4vw, -10px) !important;
+}
+
+.invite-card .card-date{
+  margin-top: clamp(.05rem, .35vw, .25rem) !important;
+}
+
+@media (max-width: 700px){
+  .invite-card .script-names.hero-names-image{
+    width: min(61.6vw, 217px) !important;
+    max-width: 217px !important;
+    padding: 0 !important;
+    margin-top: .12rem !important;
+    margin-bottom: .08rem !important;
+  }
+  .invite-card .hero-name-line{
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .invite-card .hero-name-daan{
+    width: min(47.6vw, 189px) !important;
+    max-width: 189px !important;
+  }
+  .invite-card .hero-name-mapi{
+    width: min(49vw, 196px) !important;
+    max-width: 196px !important;
+    margin-top: 0 !important;
+  }
+  .invite-card .script-names.hero-names-image .card-amp{
+    font-size: clamp(.95rem, 3.9vw, 1.22rem) !important;
+    margin: -16px 0 -18px !important;
+  }
+  .invite-card .card-date{
+    margin-top: .05rem !important;
+  }
+}
+
+/* v2.26 — top-menu brand aligned with invitation typography.
+   Daan/Mapi are rendered Amsterdam Four assets; ampersand uses smaller Cormorant Garamond Regular in soft green. */
+.site-header .brand{
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  line-height: 1 !important;
+  overflow: visible !important;
+  min-width: 0 !important;
+  color: #454850 !important;
+}
+.site-header .brand-logo{
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.035em !important;
+  height: clamp(34px, 4.4vw, 48px) !important;
+  overflow: visible !important;
+  white-space: nowrap !important;
+}
+.site-header .brand-word{
+  display: block !important;
+  height: 100% !important;
+  width: auto !important;
+  object-fit: contain !important;
+  overflow: visible !important;
+  pointer-events: none !important;
+  user-select: none !important;
+}
+.site-header .brand-amp{
+  font-family: "Cormorant Garamond", "Cormorant Garamond Regular", Garamond, Georgia, serif !important;
+  color: #aebf9e !important;
+  font-size: clamp(0.78rem, 1.35vw, 1.08rem) !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  font-optical-sizing: auto !important;
+  line-height: 0.95 !important;
+  display: inline-block !important;
+  margin: 0 -0.10em !important;
+  transform: translateY(0.08em) !important;
+}
+.site-header .brand-sr{
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+@media (max-width: 700px){
+  .site-header .brand-logo{
+    height: clamp(31px, 7.8vw, 40px) !important;
+    gap: 0.025em !important;
+  }
+  .site-header .brand-amp{
+    font-size: clamp(0.68rem, 2.7vw, 0.92rem) !important;
+    transform: translateY(0.08em) !important;
+  }
+}
+
+/* v2.26 — menu logo ampersand refined: smaller Cormorant Garamond Regular, optically aligned with invitation. */
+
+
+/* v2.27 — Cormorant Garamond Italic ampersand rendered as image.
+   Avoids browser fallback and matches the invitation without shipping font files. */
+.site-header .brand-logo{
+  gap: 0.018em !important;
+}
+.site-header .brand-amp{
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 auto !important;
+  height: 100% !important;
+  width: auto !important;
+  margin: 0 -0.18em !important;
+  transform: translateY(0.03em) !important;
+  line-height: 1 !important;
+  overflow: visible !important;
+}
+.site-header .brand-amp-img{
+  display: block !important;
+  height: 32% !important;
+  width: auto !important;
+  object-fit: contain !important;
+  opacity: 1 !important;
+  pointer-events: none !important;
+  user-select: none !important;
+}
+@media (max-width: 700px){
+  .site-header .brand-logo{
+    gap: 0.01em !important;
+  }
+  .site-header .brand-amp{
+    margin: 0 -0.16em !important;
+    transform: translateY(0.035em) !important;
+  }
+  .site-header .brand-amp-img{
+    height: 30% !important;
+  }
+}
+
+.invite-card .script-names.hero-names-image .card-amp{
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  margin: -0.18em auto -0.18em !important;
+  padding: 0 !important;
+  height: clamp(30px, 4.8vw, 50px) !important;
+  overflow: visible !important;
+  color: transparent !important;
+}
+.invite-card .script-names.hero-names-image .card-amp .hero-amp-img{
+  display: block !important;
+  height: 100% !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+@media (max-width: 700px){
+  .invite-card .script-names.hero-names-image .card-amp{
+    height: clamp(24px, 8vw, 38px) !important;
+    margin: -0.14em auto -0.14em !important;
+  }
+}
+
+/* v2.29 — match invitation: date uses the same soft green as the ampersand */
+.invite-card .card-date{
+  color: #aebf9e !important;
+}
