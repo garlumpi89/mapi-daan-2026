@@ -5830,3 +5830,105 @@ body { overflow: auto; }
 .invite-card .card-date{
   color: #aebf9e !important;
 }
+
+/* v2.30 — accommodation availability */
+.card-photo-wrap {
+  position: relative;
+  width: 100%;
+}
+.card-photo-wrap .card-photo {
+  width: 100%;
+}
+.booked-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 5px 10px;
+  border: 1px solid rgba(73, 81, 54, .26);
+  border-radius: 999px;
+  background: rgba(247, 243, 233, .94);
+  color: #4b5439;
+  font-family: var(--sans);
+  font-size: .72rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 14px rgba(43, 44, 34, .08);
+  backdrop-filter: blur(4px);
+}
+.is-booked .card-photo {
+  filter: saturate(.78) contrast(.96) brightness(1.025);
+}
+.disabled-link {
+  opacity: .62;
+  cursor: default;
+  text-decoration: none !important;
+  pointer-events: none;
+}
+.hotel-note {
+  flex: 0 0 auto !important;
+  margin-top: 12px !important;
+  padding: 10px 12px;
+  border-left: 2px solid rgba(147, 166, 130, .72);
+  background: rgba(147, 166, 130, .08);
+  color: #4f5145 !important;
+  font-size: .82rem !important;
+  line-height: 1.5;
+  text-align: left;
+}
+@media (max-width: 700px) {
+  .booked-badge {
+    top: 9px;
+    right: 9px;
+    font-size: .7rem;
+  }
+  .hotel-note {
+    font-size: .86rem !important;
+  }
+}
+
+/* =========================================================
+   v2.32 — accommodation layout with two available options
+   Keep the two remaining cards balanced and centered on desktop.
+   ========================================================= */
+@media (min-width: 901px) {
+  #panel-home #alojamiento .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: clamp(28px, 3vw, 42px) !important;
+    max-width: 960px !important;
+    width: min(100%, 960px) !important;
+    margin: 46px auto 0 !important;
+    align-items: stretch !important;
+  }
+
+  #panel-home #alojamiento .card {
+    width: 100% !important;
+    max-width: none !important;
+    padding-left: clamp(28px, 3vw, 42px) !important;
+    padding-right: clamp(28px, 3vw, 42px) !important;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 900px) {
+  #panel-home #alojamiento .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    max-width: 760px !important;
+    width: min(100%, 760px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+@media (max-width: 700px) {
+  #panel-home #alojamiento .cards {
+    grid-template-columns: 1fr !important;
+    max-width: 430px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}

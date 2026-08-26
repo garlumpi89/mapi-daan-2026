@@ -73,3 +73,7 @@ Cambios principales:
 
 
 v2.26: Ajuste del logotipo superior: ampersand reducido y Cormorant Garamond Regular.
+
+## v2.32
+- Rebalanced the accommodation section after removing sold-out properties.
+- The two remaining cards now form a centered two-column layout on desktop/tablet and a single column on mobile.
